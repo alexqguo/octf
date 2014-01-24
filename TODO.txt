@@ -1,0 +1,7 @@
+-- change index.html to some intro page which links to sessions#new
+
+-- add associations to models
+
+-- finish sessions helper
+
+-- add before_filters to basically every page so that you have to be logged in to see anything

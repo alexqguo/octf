@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AthleteLookup</title>
+</head>
+<body>
+	
+	<% if current_user %>
+		Logged in as: <%= current_user.username %>
+		<form action=<%=session_url%> method="POST">
+		    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+		    <input type="hidden" name="_method" value="DELETE">
+		    <input type="submit" value="Log out!">
+		</form>
+	<% end %>
+
+	<!-- debugging -->
+	<%= debug params %>
+	<%= "Session token: "+session[:session_token].inspect %>
+	<br>
+	<%= "Current user: "+current_user.inspect %>
+	<br>
+	
+	<%= flash[:errors] %>
+	<%= yield %>
+
+</body>
+</html>
