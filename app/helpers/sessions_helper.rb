@@ -20,5 +20,9 @@ module SessionsHelper
       redirect_to new_session_url
     end
   end
+  
+  def require_no_user!
+    redirect_to athletes_url if current_user
+  end
 
 end

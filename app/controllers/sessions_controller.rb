@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  
+  before_filter :require_no_user!, only: [:new]
 
   def new
     render :new

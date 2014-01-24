@@ -16,10 +16,6 @@
 
 	<!-- debugging -->
 	<%= debug params %>
-	<%= "Session token: "+session[:session_token].inspect %>
-	<br>
-	<%= "Current user: "+current_user.inspect %>
-	<br>
 	
 	<%= flash[:errors] %>
 	<%= yield %>
