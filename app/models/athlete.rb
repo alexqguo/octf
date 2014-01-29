@@ -11,4 +11,6 @@ class Athlete < ActiveRecord::Base
   attr_accessible :name, :graduating_class
   
   validates :name, :class, presence: true
+  
+  has_many :marks
 end

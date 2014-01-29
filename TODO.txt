@@ -1,10 +1,9 @@
--- change index.html to some intro page which links to sessions#new
-	-> basically just root to: "session#new"
-
 -- add associations to models
 
--- finish sessions helper
-
--- add before_filters to basically every page so that you have to be logged in to see anything
+-- change column name marks/event to marks/event_name
 
 -- don't need users controller because I only want there to be one user
+
+-- implement algorithm into athlete helper or maybe controller since the view doesn't need to be gathering the data for the athlete, it only needs to happen once and that can/should take place in controller
+
+-- clean up event.rb

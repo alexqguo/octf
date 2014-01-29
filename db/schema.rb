@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140123234303) do
+ActiveRecord::Schema.define(:version => 20140129210952) do
 
   create_table "athlete_marks", :force => true do |t|
     t.integer  "athlete_id", :null => false
@@ -29,12 +29,13 @@ ActiveRecord::Schema.define(:version => 20140123234303) do
   end
 
   create_table "marks", :force => true do |t|
-    t.string   "event",      :null => false
     t.integer  "year",       :null => false
-    t.integer  "mark",       :null => false
-    t.integer  "season",     :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "athlete_id", :null => false
+    t.string   "season"
+    t.string   "event_name"
+    t.float    "mark"
   end
 
   create_table "users", :force => true do |t|

@@ -3,17 +3,20 @@
 # Table name: marks
 #
 #  id         :integer          not null, primary key
-#  event      :string(255)      not null
 #  year       :integer          not null
-#  mark       :integer          not null
-#  season     :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  athlete_id :integer          not null
+#  season     :string(255)
+#  event_name :string(255)
+#  mark       :float
 #
 
 class Mark < ActiveRecord::Base
-  attr_accessible :event, :year, :mark, :season
+  attr_accessible :event_name, :year, :mark, :season, :athlete_id
   
-  validates :event, :year, :mark, :season, presence: true
-  validates :season, inclusion: { in: "INDOOR OUTDOOR" }
+  validates :event_name, :year, :mark, :season, :athlete_id, presence: true
+  validates :season, inclusion: { in: "Indoor Outdoor" }
+  
+  belongs_to :athlete
 end
