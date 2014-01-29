@@ -2,7 +2,7 @@
 
 <ul>
 	<% Athlete.all.each do |athlete| %>
-	<li><a href="/session/athletes/<%= athlete.id %>"><%= athlete.name %></a></li>
+	<li><a href="<%= athlete_url(athlete) %>"><%= athlete.name %></a></li>
 	<% end %>
 </ul>
 
