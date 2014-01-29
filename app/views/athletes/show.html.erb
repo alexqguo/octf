@@ -1,6 +1,14 @@
 <h1>Details for <%= @athlete.name %></h1>
 
-<%= @athlete.inspect %>
-<br>
+<p>
+	Class of <%= @athlete.graduating_class %>
+</p>
+
+<% if @athlete.has_data? %>
+	<!-- DISPLAY DATA -->
+<% else %>
+	<a href="<%= new_athlete_mark_url(@athlete.id) %>">Import Data</a>
+	<br>
+<% end %>
 
 <a href="<%= athletes_url %>">Back to all athletes...</a>

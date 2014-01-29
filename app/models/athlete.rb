@@ -13,4 +13,9 @@ class Athlete < ActiveRecord::Base
   validates :name, :class, presence: true
   
   has_many :marks
+  
+  def has_data?
+    Mark.where("athlete_id = ?", self.id).length > 0
+  end
+  
 end

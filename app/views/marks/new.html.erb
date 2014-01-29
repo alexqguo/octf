@@ -1,0 +1,24 @@
+<h1>Create data for <%= @athlete.name %></h1>
+<p>
+	Instructions
+	<ol>
+		<li>Go to www.directathletics.com</li>
+		<li>Find the athlete's profile</li>
+		<li>Paste the code into the form below</li>
+	</ol>
+	The code looks like this: 
+	<img src="/app/assets/images/url_code.png">
+</p>
+
+<form action="<%= athlete_marks_url(@athlete.id) %>" method="POST">
+	
+	<%= auth_token %>
+	
+	<label>
+		URL Code
+		<input name="url_code" type="text">
+	</label>
+	
+	<input type="submit" value="Go!">
+	
+</form>

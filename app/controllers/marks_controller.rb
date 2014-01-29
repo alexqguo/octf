@@ -1,5 +1,13 @@
 class MarksController < ApplicationController
-  # include EventHelper -- won't need this cuz lookuphelper does all that?
+  include EventHelper
   include LookupHelper
+  
+  def new
+    @athlete = Athlete.find(params[:athlete_id])
+  end
+  
+  def create
+    
+  end
   
 end

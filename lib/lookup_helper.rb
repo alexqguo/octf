@@ -1,5 +1,3 @@
-require 'nokogiri'
-require 'open-uri'
 include EventHelper
 
 module LookupHelper

@@ -1,9 +1,12 @@
--- add associations to models
-
--- change column name marks/event to marks/event_name
-
--- don't need users controller because I only want there to be one user
-
 -- implement algorithm into athlete helper or maybe controller since the view doesn't need to be gathering the data for the athlete, it only needs to happen once and that can/should take place in controller
 
--- clean up event.rb
+-- on athlete's show page:
+	-- if athlete has no marks, have a button to import data (maybe routes to marks#new)
+	-- else, display that data
+	
+-- refactor Athlete#has_data? so that it doesn't gather all the objects, just gets a count
+	-- probably do a custom sql query?
+	
+-- display data on athletes#show
+
+-- fix url_code.png to have a red box around the number
