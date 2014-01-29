@@ -10,9 +10,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
 
     if @user
-      @user.reset_session_token!
-      self.current_user = @user
-      
+      login_user(@user)
       redirect_to athletes_url
     else
       flash[:errors] = "Invalid username/password!"
@@ -21,7 +19,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    self.logout_current_user!
+    logout_user
     redirect_to root_path
   end
 

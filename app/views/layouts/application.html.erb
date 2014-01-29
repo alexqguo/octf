@@ -17,6 +17,9 @@
 	<!-- debugging -->	
 	<%= flash[:errors] %>
 	<%= yield %>
+	<%= current_user.inspect %>
+	<br>
+	<%= session[:session_token] %>
 	<%= debug params %>
 
 </body>
