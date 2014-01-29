@@ -5,3 +5,5 @@
 -- finish sessions helper
 
 -- add before_filters to basically every page so that you have to be logged in to see anything
+
+-- don't need users controller because I only want there to be one user
