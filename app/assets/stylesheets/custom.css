@@ -1,4 +1,8 @@
 body {
-	background-color: #B1A1A1;
+	background-color: #A00000;
 	font-family: Georgia, serif;
+}
+
+a {
+	color: #FFFF00;
 }

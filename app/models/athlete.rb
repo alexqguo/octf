@@ -12,7 +12,7 @@ class Athlete < ActiveRecord::Base
   
   validates :name, :class, presence: true
   
-  has_many :marks, inverse_of: :athlete
+  has_many :marks, inverse_of: :athlete, dependent: :destroy
   
   def has_data?
     Mark.where("athlete_id = ?", self.id).length > 0
