@@ -3,7 +3,7 @@
 
 <ul>
 	<% @athletes.each do |athlete| %>
-		<div class="athlete-list">
+		<div class="athlete-list-el">
 			<li><a href="<%= athlete_url(athlete) %>"><%= athlete.name %></a></li>
 		</div>
 	<% end %>

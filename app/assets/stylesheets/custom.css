@@ -1,16 +1,18 @@
 body {
-	background-color: white; 
+	background-color: #E0E0E0; 
 	font-family: Georgia, serif;
 }
 
-.athlete-list {
+.athlete-list-el {
 	/* For button to athlete page from athletes index */
+	list-style-type: none;
 	margin: 7px;
+	margin-left: 0px;
 }
 
-.athlete-list a {
+.athlete-list-el a {
 	border-radius: 3px;
+	color: black;
 	border: 1px solid black;
 	text-decoration: none;
-/*	color: #FFFF44; Yellowish */
 }
