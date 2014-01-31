@@ -45,7 +45,7 @@ module LookupHelper
       end
       
     end
-    puts event_list
+    
     event_list
   end
 

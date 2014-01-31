@@ -13,10 +13,10 @@
 #
 
 class Mark < ActiveRecord::Base
-  attr_accessible :event_name, :year, :mark, :season, :athlete_id
+  attr_accessible :event_name, :year, :mark, :season
   
-  validates :event_name, :year, :mark, :season, :athlete_id, presence: true
+  validates :event_name, :year, :mark, :season, :athlete, presence: true
   validates :season, inclusion: { in: "Indoor Outdoor" }
   
-  belongs_to :athlete
+  belongs_to :athlete, inverse_of: :marks
 end

@@ -9,7 +9,7 @@
 <body>
 	
 	<% if current_user %>
-		Logged in as: <%= current_user.username %>
+		Logged in as: <%= current_user.username.upcase %>
 		<form action=<%=session_url%> method="POST">
 		    <%= auth_token %>
 		    <input type="hidden" name="_method" value="DELETE">
@@ -18,9 +18,10 @@
 	<% end %>
 
 	<!-- debugging -->	
+	<%= flash[:notice] %>
 	<%= flash[:errors] %>
 	<%= yield %>
-	<%= debug params %>
+	<!-- <%= debug params %> -->
 
 </body>
 </html>

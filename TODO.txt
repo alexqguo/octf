@@ -1,10 +1,8 @@
--- implement algorithm into athlete helper or maybe controller since the view doesn't need to be gathering the data for the athlete, it only needs to happen once and that can/should take place in controller
-
--- on athlete's show page:
-	-- if athlete has no marks, have a button to import data (maybe routes to marks#new)
-	-- else, display that data
+-- possibly find a better way to sort the hashes in EventHelper
 	
 -- refactor Athlete#has_data? so that it doesn't gather all the objects, just gets a count
 	-- probably do a custom sql query?
-	
--- display data on athletes#show
+
+-- refactor event_list.each in MarksController
+
+-- school records page?
