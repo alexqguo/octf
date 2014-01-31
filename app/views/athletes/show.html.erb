@@ -6,8 +6,28 @@
 
 <% if @athlete.has_data? %>
 	<ul>
-		<% @athlete.marks.each do |mark| %>
-			<li><%= "#{mark.event_name}, #{mark.season} #{mark.year}: #{mark.mark} " %></li>
+		<% @marks_by_event.keys.each do |event_name| %>
+			<li><%= event_name %></li>
+			<% if @marks_by_event[event_name]["Indoor"] %>
+				<ul>
+					<li>Indoor</li>
+					<ul>
+						<% @marks_by_event[event_name]["Indoor"].each do |mark| %>
+							<li><%= mark.year %>: <%= mark.mark %></li>
+						<% end %>
+					</ul>
+				</ul>
+			<% end %>
+			<% if @marks_by_event[event_name]["Outdoor"] %>
+				<ul>
+					<li>Outdoor</li>
+					<ul>
+						<% @marks_by_event[event_name]["Outdoor"].each do |mark| %>
+							<li><%= mark.year %>: <%= mark.mark %></li>
+						<% end %>
+					</ul>
+				</ul>
+			<% end %>
 		<% end %>
 	</ul>
 <% else %>

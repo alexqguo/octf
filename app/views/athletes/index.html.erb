@@ -1,8 +1,11 @@
 <h3>All Athletes:</h3>
 
+
 <ul>
 	<% @athletes.each do |athlete| %>
-	<li><a href="<%= athlete_url(athlete) %>"><%= athlete.name %></a></li>
+		<div class="athlete-list">
+			<li><a href="<%= athlete_url(athlete) %>"><%= athlete.name %></a></li>
+		</div>
 	<% end %>
 </ul>
 
