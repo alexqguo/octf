@@ -8,5 +8,3 @@
 	-- probably do a custom sql query?
 	
 -- display data on athletes#show
-
--- fix url_code.png to have a red box around the number

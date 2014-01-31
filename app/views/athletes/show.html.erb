@@ -5,7 +5,9 @@
 </p>
 
 <% if @athlete.has_data? %>
-	<!-- DISPLAY DATA -->
+	<p>
+		data goes here
+	</p>
 <% else %>
 	<a href="<%= new_athlete_mark_url(@athlete.id) %>">Import Data</a>
 	<br>

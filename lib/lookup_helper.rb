@@ -1,5 +1,8 @@
 include EventHelper
+require 'open-uri'
 
+# NOTE!! I wrote this a while ago so it's not the cleanest thing
+# I've made small tweaks here and there --ag, 1/30/2014
 module LookupHelper
   
   # This gathers the selected athlete's name once its URL is found
@@ -8,42 +11,42 @@ module LookupHelper
     event_list = []
   
     doc = Nokogiri::HTML(open(url))
-    table = doc.xpath("//table")[1] #this is a Nokogiri::XML::Element
-    rows = table.xpath("tr") #array of Nokogiri elements for each row
+    table = doc.xpath("//table")[1] # this is a Nokogiri::XML::Element
+    rows = table.xpath("tr") # array of Nokogiri elements for each row
   
-    #Getting the list of events
+    # Getting the list of events
     first_row = []
-    first = table.xpath("thead") #first row of table that has events
+    first = table.xpath("thead") # first row of table that has events
 
-    return if first.to_s == "" #Break if there is no data on this page
+    return if first.to_s == "" # Break if there is no data on this page
 
     first.inner_text().split("\n").each do |line|
       line = line.strip
-      unless line=="" or line=="Year" or line=="Class" or line=="Season"
+      
+      unless line == "" || line == "Year" || line == "Class" || line == "Season"
         event_list << Event.new(line) #Add the event 
       end
     end
-    num_events = event_list.length
-
-    rows.each do |x| #For each row
-      cur_row = x.inner_text().split("\n")
-      cur_year = cur_row[1].to_i
-      cur_season = cur_row[3] == "Outdoor" ? 0 : 1
+    
+    rows.each do |row| #For each row
+      cur_row = row.inner_text.split("\n").select { |el| 
+        el == "-" || el == "Indoor" || el == "Outdoor" || el.to_f != 0.0
+      }
+      cur_year = cur_row[0].to_i
+      cur_season = cur_row[1]
       event_list_index = 0
-  
-      cur_row.each_with_index do |el, i| #For each element
-        el = el.strip
-        unless el=="" or i<7 #Unless it's blank OR not an actual time
-      
-          unless el == "-"
-            event_list[event_list_index].add_time(format_to_float(el),cur_year,cur_season)
-          end
-      
-          event_list_index += 1
-        end
-      end
-    end
 
+      cur_row.each_with_index do |mark, idx|
+        next if idx <= 1
+        unless mark == "-"
+          event_list[event_list_index].add_time(format_to_float(mark), cur_year, cur_season)
+        end
+        event_list_index += 1
+      end
+      
+    end
+    puts event_list
+    event_list
   end
 
   # This formats a string representation of a float into a float
