@@ -6,3 +6,10 @@
 -- school records page?
 
 -- add JS popup loading thing for import data
+
+-- header on the top of page
+	-- have Title, link to all athletes, sign out, if admin add athlete, username
+	
+-- athlete new/create
+
+-- limit routes (only, except, etc.)

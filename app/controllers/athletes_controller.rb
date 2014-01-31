@@ -11,6 +11,10 @@ class AthletesController < ApplicationController
     @marks_by_event = @athlete.marks_by_event
   end
   
+  def new
+    render json: "Add new athlete page"
+  end
+  
   def create
     # new athlete
   end
