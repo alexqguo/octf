@@ -1,5 +1,3 @@
--- possibly find a better way to sort the hashes in EventHelper
-
 -- refactor Athlete#has_data? so that it doesn't gather all the objects, just gets a count
 	-- probably do a custom sql query?
 

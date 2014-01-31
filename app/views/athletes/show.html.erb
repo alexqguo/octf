@@ -12,7 +12,7 @@
 				<ul>
 					<li>Indoor</li>
 					<ul>
-						<% @marks_by_event[event_name]["Indoor"].each do |mark| %>
+						<% @marks_by_event[event_name]["Indoor"].reverse.each do |mark| %>
 							<li><%= mark.year %>: <%= mark.mark %></li>
 						<% end %>
 					</ul>
@@ -22,7 +22,7 @@
 				<ul>
 					<li>Outdoor</li>
 					<ul>
-						<% @marks_by_event[event_name]["Outdoor"].each do |mark| %>
+						<% @marks_by_event[event_name]["Outdoor"].reverse.each do |mark| %>
 							<li><%= mark.year %>: <%= mark.mark %></li>
 						<% end %>
 					</ul>

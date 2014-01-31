@@ -27,6 +27,7 @@ class Athlete < ActiveRecord::Base
       marks_hash[event_name] = marks_hash[event_name].group_by { |mark| mark.season }
     end
     
+    
     marks_hash
   end
   
