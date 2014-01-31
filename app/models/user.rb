@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
   def self.generate_session_token
     SecureRandom::urlsafe_base64(16)
   end
+  
+  def admin?
+    self.type == "Admin"
+  end
 
   private
   def ensure_session_token

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140129210952) do
+ActiveRecord::Schema.define(:version => 20140131204530) do
 
   create_table "athlete_marks", :force => true do |t|
     t.integer  "athlete_id", :null => false
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20140129210952) do
     t.string   "session_token",   :null => false
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "type"
   end
 
   add_index "users", ["password_digest"], :name => "index_users_on_password_digest", :unique => true
