@@ -13,3 +13,5 @@
 -- athlete new/create
 
 -- limit routes (only, except, etc.)
+
+-- helper method for rendering mark (formatting string, adding "m" or "s" etc.)

@@ -11,3 +11,76 @@
  *= require_self
  *= require_tree .
  */
+
+/* Navigation Bar */
+header nav h1 ul li {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+header nav ul {
+	list-style-type: none;
+}
+
+.header-wrap {
+	background: #202020;
+	border-bottom: 3px solid #A00000;
+  	color: white;
+}
+
+.navbar {
+	width: 900;
+	margin: 0px auto;
+	border-top: 4px solid #A00000;
+	border-left: 4px solid #A00000 ;
+	border-right: 4px solid #A00000;
+}
+
+.nav-list {
+	float: right;
+}
+
+.logo {
+  	padding: 10px;
+}
+
+.nav-list-item {
+	float: left;
+  	border-left: 3px solid #333;
+}
+
+.nav-list-item a {
+	display: block;
+	padding: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-list-item form {
+	padding: 15px;
+}
+
+.nav-list-item form input {
+	
+	border 0px;
+	border-radius: 2px;
+	border: 2px solid #333;
+	
+	color: white;
+	cursor: pointer;
+	background-color: #202020;
+
+	font-size: 14px;
+}
+
+.logo {
+	float: left;
+}
+
+.navbar:after {
+  	clear: both;
+ 	content: "";
+  	display: block;
+}
+

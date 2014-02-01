@@ -1,3 +1,18 @@
 // Place all the styles related to the Athletes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.athlete-list-el {
+	/* For button to athlete page from athletes index */
+	font-weight: 300;
+	list-style-type: none;
+	margin: 7px;
+	margin-left: 0px;
+}
+
+.athlete-list-el a {
+	border-radius: 3px;
+	color: black;
+//	border: 1px solid black;
+	text-decoration: none;
+}
