@@ -31,6 +31,7 @@ header nav ul {
 }
 
 .navbar {
+	height: 60px;
 	margin: 0px auto;
 	border-top: 4px solid #A00000;
 	border-left: 4px solid #A00000 ;
@@ -42,27 +43,27 @@ header nav ul {
 }
 
 .logo {
-	padding: 10px;
+	margin: 5px;
+	padding-left: 10px;
+	float: left;
+	font-size: 40px;
 }
 
 .nav-list-item {
 	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
   	border-left: 3px solid #333;
 }
 
 .nav-list-item a {
 	display: block;
-	padding: 20px;
+	padding: 5px;
     color: white;
     text-decoration: none;
 }
 
-.nav-list-item form {
-	padding: 15px;
-}
-
 .nav-list-item form input {
-	
 	border-radius: 2px;
 	border: 2px solid #333;
 	
@@ -72,11 +73,6 @@ header nav ul {
 
 	font-size: 14px;
 }
-
-.logo {
-	float: left;
-}
-
 .navbar:after {
   	clear: both;
  	content: "";
