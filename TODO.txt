@@ -4,8 +4,6 @@
 	
 -- view: athletes#new
 
--- still need to tweak the string formatting helper method
-
 -- DRY up:
 	-- athletes#index
 	-- event_list.each in MarksController

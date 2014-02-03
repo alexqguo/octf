@@ -25,5 +25,9 @@ module SessionsHelper
   def require_no_user!
     redirect_to athletes_url if !!current_user
   end
+  
+  def require_admin!
+    redirect_to athletes_url if current_user.type != "Admin"
+  end
 
 end

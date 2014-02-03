@@ -1,0 +1,23 @@
+<h1>New Athlete</h1>
+
+<form action="<%= athletes_url %>" method="POST">
+	<%= auth_token %>
+	
+	<label>
+		Name
+		<input type="text" name="athlete[name]">
+	</label>
+	
+	<label>
+		Male
+		<input type="radio" name="athlete[gender]" value="m">
+	</label>
+	
+	<label>
+		Female
+		<input type="radio" name="athlete[gender]" value="f">
+	</label>
+	
+	<input type="submit" value="Create Athlete!">
+	
+</form>

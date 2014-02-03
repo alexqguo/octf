@@ -2,7 +2,10 @@ module AthletesHelper
   
   def format(mark)
     if Athlete::FIELD_EVENTS.include?(mark.event_name)
-      mark.mark.to_s + "m"
+      str = mark.mark.to_s
+      str += "0" if str.split(".").last.length == 1 # should be two
+      
+      str + "m"
     elsif Athlete::MULTI_EVENTS.include?(mark.event_name)
       mark.mark.to_i.to_s
     else
@@ -11,7 +14,12 @@ module AthletesHelper
   end
   
   def to_hms(float)
-    return float.to_s if float < 60
+    if float < 60
+      str = float.to_s
+      str += "0" if str.split(".").last.length == 1 # should be two
+      
+      return str
+    end
   
     string = ""
 
