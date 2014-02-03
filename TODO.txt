@@ -4,7 +4,7 @@
 	
 -- view: athletes#new
 
--- helper method for rendering mark (formatting string, adding "m" or "s" etc.)
+-- still need to tweak the string formatting helper method
 
 -- DRY up:
 	-- athletes#index
@@ -24,4 +24,7 @@
 	-- collin cowdery (lol)
 	-- josh gallagher
 
--- dump db just in case
+-- look into direct athletics API: http://images.tfrrs.org/TFRRS_API_18.pdf
+
+Notes:
+-- dump db: pg_dump athlete_lookup_development > backup_db (or whatever name you want)

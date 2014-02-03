@@ -17,9 +17,25 @@ class Athlete < ActiveRecord::Base
   
   has_many :marks, inverse_of: :athlete, dependent: :destroy
   
-  def has_data?
-    !!self.url || Mark.where("athlete_id = ?", self.id).length > 0
-  end
+  FIELD_EVENTS = [
+    "High Jump",
+    "Long Jump",
+    "Triple Jump",
+    "Pole Vault",
+    "Hammer Throw",
+    "Weight Throw",
+    "Discus Throw",
+    "Shot Put",
+    "Javelin",
+    "Discus Throw"
+  ]
+  
+  MULTI_EVENTS = [
+    "Heptathlon",
+    "Indoor Pentathlon",
+    "Pentathlon",
+    "Decathlon"
+  ]
   
   # Returns a hash in the format:
   # { event_1 => { "Indoor" => [], "Outdoor" => [] },
@@ -36,6 +52,10 @@ class Athlete < ActiveRecord::Base
   def url_code
     return nil if self.url.nil?
     /track\/(.......)\.html/.match(self.url).captures.first
+  end
+  
+  def has_data?
+    !!self.url || Mark.where("athlete_id = ?", self.id).length > 0
   end
   
   def self.males
