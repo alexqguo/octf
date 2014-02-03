@@ -3,7 +3,8 @@ class AthletesController < ApplicationController
   before_filter :require_current_user!
   
   def index
-    @athletes = Athlete.all
+    @males = Athlete.males.sort_by { |athlete| athlete.name }
+    @females = Athlete.females.sort_by { |athlete| athlete.name }
   end
   
   def show
@@ -12,11 +13,18 @@ class AthletesController < ApplicationController
   end
   
   def new
-    render json: "Add new athlete page"
+    @athlete = Athlete.new
   end
   
   def create
-    # new athlete
+    @athlete = Athlete.new(params[:athlete])
+    
+    if @athlete.save
+      redirect_to @athlete
+    else
+      flash.now[:errors] = @athlete.errors.full_messages
+      render :new
+    end
   end
   
 end

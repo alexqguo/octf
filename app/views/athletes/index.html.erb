@@ -1,11 +1,29 @@
 <h3>All Athletes:</h3>
 
-<ul>
-	<% @athletes.each do |athlete| %>
-		<div class="athlete-list-el">
-			<li><a href="<%= athlete_url(athlete) %>"><%= athlete.name %></a></li>
-		</div>
-	<% end %>
-</ul>
+<div class="males">
+	<ul>
+		<% @males.each do |athlete| %>
+			<div class="athlete-list-el">
+				<li>
+					<a href="<%= athlete_url(athlete) %>"><%= athlete.name %></a>
+					<%= "*" unless athlete.has_data? %>
+				</li>
+			</div>
+		<% end %>
+	</ul>
+</div>
+
+<div class="females">
+	<ul>
+		<% @females.each do |athlete| %>
+			<div class="athlete-list-el">
+				<li>
+					<a href="<%= athlete_url(athlete) %>"><%= athlete.name %></a>
+					<%= "*" unless athlete.has_data? %>
+				</li>
+			</div>
+		<% end %>
+	</ul>
+</div>
 
 <br>

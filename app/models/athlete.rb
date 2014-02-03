@@ -5,12 +5,14 @@
 #  id               :integer          not null, primary key
 #  name             :string(255)      not null
 #  graduating_class :integer
+#  gender           :string(255)
 #
 
 class Athlete < ActiveRecord::Base
-  attr_accessible :name, :graduating_class
+  attr_accessible :name, :graduating_class, :gender
   
-  validates :name, :class, presence: true
+  validates :name, :class, :gender, presence: true
+  validates :gender, inclusion: { in: "m f" }
   
   has_many :marks, inverse_of: :athlete, dependent: :destroy
   
@@ -27,8 +29,15 @@ class Athlete < ActiveRecord::Base
       marks_hash[event_name] = marks_hash[event_name].group_by { |mark| mark.season }
     end
     
-    
     marks_hash
+  end
+  
+  def self.males
+    where(gender: "m")
+  end
+  
+  def self.females
+    where(gender: "f")
   end
   
 end

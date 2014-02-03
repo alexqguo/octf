@@ -1,8 +1,10 @@
 <h1>Details for <%= @athlete.name %></h1>
 
-<p>
-	Class of <%= @athlete.graduating_class %>
-</p>
+<% if @athlete.graduating_class %>
+	<p>
+		Class of <%= @athlete.graduating_class %>
+	</p>
+<% end %>
 
 <% if @athlete.has_data? %>
 	<ul>

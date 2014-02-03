@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140131204530) do
+ActiveRecord::Schema.define(:version => 20140203001226) do
 
   create_table "athlete_marks", :force => true do |t|
     t.integer  "athlete_id", :null => false
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20140131204530) do
   create_table "athletes", :force => true do |t|
     t.string  "name",             :null => false
     t.integer "graduating_class"
+    t.string  "gender"
   end
 
   create_table "marks", :force => true do |t|
