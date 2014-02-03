@@ -11,3 +11,17 @@
 	-- event_list.each in MarksController
 	-- Athlete#has_data? so that it doesn't gather all the objects, just gets a count
 		-- probably do a custom sql query?
+	-- athletes#update and marks#create
+		-- almost exactly the same except for the destroy_all in athletes#update
+
+-- make athlete pages have URLs that aren't /athletes/id
+	-- ex) /athletes/matt+bernstein or something like that
+	
+-- athletes to add:
+	-- seth wimberly
+	-- solomon turner
+	-- maddy schultz
+	-- collin cowdery (lol)
+	-- josh gallagher
+
+-- dump db just in case

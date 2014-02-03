@@ -15,16 +15,19 @@ class MarksController < ApplicationController
 
     event_list = get_data(@url)
     
-    event_list.each do |event|
-      event.times_indoor.each do |year, mark| # key, value
-        @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Indoor")
-      end
-      event.times_outdoor.each do |year, mark|
-        @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Outdoor")
+    if event_list
+      event_list.each do |event|
+        event.times_indoor.each do |year, mark| # key, value
+          @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Indoor")
+        end
+        event.times_outdoor.each do |year, mark|
+          @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Outdoor")
+        end
       end
     end
     
     if @athlete.save
+      @athlete.update_attributes(url: @url)
       flash[:notice] = "Data for #{@athlete.name} imported successfully!"
       redirect_to @athlete
     else

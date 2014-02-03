@@ -6,10 +6,11 @@
 #  name             :string(255)      not null
 #  graduating_class :integer
 #  gender           :string(255)
+#  url              :string(255)
 #
 
 class Athlete < ActiveRecord::Base
-  attr_accessible :name, :graduating_class, :gender
+  attr_accessible :name, :graduating_class, :gender, :url
   
   validates :name, :class, :gender, presence: true
   validates :gender, inclusion: { in: "m f" }
@@ -17,7 +18,7 @@ class Athlete < ActiveRecord::Base
   has_many :marks, inverse_of: :athlete, dependent: :destroy
   
   def has_data?
-    Mark.where("athlete_id = ?", self.id).length > 0
+    !!self.url || Mark.where("athlete_id = ?", self.id).length > 0
   end
   
   # Returns a hash in the format:
@@ -30,6 +31,11 @@ class Athlete < ActiveRecord::Base
     end
     
     marks_hash
+  end
+  
+  def url_code
+    return nil if self.url.nil?
+    /track\/(.......)\.html/.match(self.url).captures.first
   end
   
   def self.males

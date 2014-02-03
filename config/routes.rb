@@ -1,6 +1,6 @@
 AthleteLookup::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
-  resources :athletes, only: [:new, :create, :show, :index] do
+  resources :athletes, except: :destroy do
     resources :marks, only: [:new, :create]
   end
   
