@@ -16,11 +16,20 @@
 	-- ex) /athletes/matt+bernstein or something like that
 	
 -- athletes to add:
-	-- seth wimberly
+	-- seth wimberly (didn't work)
 	-- solomon turner
 	-- maddy schultz
 	-- collin cowdery (lol)
 	-- josh gallagher
+	
+-- switch this to tfrrs.org!!!! (more reliable, directathletics repeats data)
+
+-- athletes to delete duplicate indoor/outdoor marks:
+	-- molly martorella (mile)
+	-- amanda gracia
+	-- DJ (mile)
+	-- Krichels (mile)
+	-- quinn (mile)
 
 -- look into direct athletics API: http://images.tfrrs.org/TFRRS_API_18.pdf
 
