@@ -11,7 +11,7 @@ class MarksController < ApplicationController
   def create
     @athlete = Athlete.find(params[:athlete_id])
     @url_code = params[:url_code].to_i
-    @url = "http://www.directathletics.com/athletes/track/#{@url_code}.html"
+    @url = "http://www.tfrrs.org/athletes/#{@url_code}.html"
 
     event_list = get_data(@url)
     

@@ -36,8 +36,7 @@ class AthletesController < ApplicationController
   
   def update
     @athlete = Athlete.find(params[:id])
-    @url_code = params[:url_code].to_i
-    @url = "http://www.directathletics.com/athletes/track/#{@url_code}.html"
+    @url = @athlete.url
     
     @athlete.marks.destroy_all
     

@@ -33,6 +33,7 @@ class Athlete < ActiveRecord::Base
   MULTI_EVENTS = [
     "Heptathlon",
     "Indoor Pentathlon",
+    "IPent",
     "Pentathlon",
     "Decathlon"
   ]
@@ -51,8 +52,26 @@ class Athlete < ActiveRecord::Base
   
   def url_code
     return nil if self.url.nil?
-    /track\/(.......)\.html/.match(self.url).captures.first
+    /athletes\/(.......)\.html/.match(self.url).captures.first if self.url.include?("tfrrs")
   end
+  
+  
+  # def set_url(code)
+ #    if self.url.include?("athletes/.html")
+ #      puts code
+ #      self.url = self.url.gsub(".html", "#{code.to_s}.html")
+ #      self.save!
+ #    end
+ #  end
+ #  
+ #  def switch_url_to_tfrrs
+ #    if self.url.include?("direct")
+ #      puts self.name, self.id
+ #      self.url = "http://www.tfrrs.org/athletes/#{self.url_code}.html"
+ #      self.save!
+ #    end
+ #  end
+  
   
   def has_data?
     !!self.url || Mark.where("athlete_id = ?", self.id).length > 0
