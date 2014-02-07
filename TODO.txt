@@ -1,8 +1,23 @@
--- school records page?
-
--- add JS popup loading thing for import data
+-- OCTF (change the title to something more interesting)
+	-- recent headlines
 	
--- view: athletes#new
+	-- page about ray!
+	
+	-- all athletes
+		-- add JS/AJAX popup loading thing for import data
+		-- view: athletes#new
+		-- make athlete pages have URLs that aren't /athletes/id
+			-- ex) /athletes/matt+bernstein or something like that
+		-- athletes to add:
+			-- seth wimberly (didn't work)
+			-- solomon turner
+			-- maddy schultz
+			-- collin cowdery (lol)
+			-- josh gallagher
+			
+	-- school records
+
+---------------------------------------------------------------------------------------
 
 -- DRY up:
 	-- athletes#index
@@ -12,26 +27,8 @@
 	-- athletes#update and marks#create
 		-- almost exactly the same except for the destroy_all in athletes#update
 
--- make athlete pages have URLs that aren't /athletes/id
-	-- ex) /athletes/matt+bernstein or something like that
-	
--- athletes to add:
-	-- seth wimberly (didn't work)
-	-- solomon turner
-	-- maddy schultz
-	-- collin cowdery (lol)
-	-- josh gallagher
-	
--- switch this to tfrrs.org!!!! (more reliable, directathletics repeats data)
+-- look into tfrrs API: http://images.tfrrs.org/TFRRS_API_18.pdf
 
--- athletes to delete duplicate indoor/outdoor marks:
-	-- molly martorella (mile)
-	-- amanda gracia
-	-- DJ (mile)
-	-- Krichels (mile)
-	-- quinn (mile)
-
--- look into direct athletics API: http://images.tfrrs.org/TFRRS_API_18.pdf
 
 Notes:
 -- dump db: pg_dump athlete_lookup_development > backup_db (or whatever name you want)

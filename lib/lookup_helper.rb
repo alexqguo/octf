@@ -29,8 +29,10 @@ module LookupHelper
       event_list_idx = 0
       
       cur_row[(cur_row.length - event_list.length)..-1].each do |mark|
-        unless mark.include?("-- --")
-          event_list[event_list_idx].add_time(format_to_float(mark), year, season)
+        float = format_to_float(mark)
+        
+        unless mark.include?("-- --") || float == 0.0 # prevents weird bug
+          event_list[event_list_idx].add_time(float, year, season)
         end
         
         event_list_idx += 1
@@ -41,7 +43,7 @@ module LookupHelper
   end
 
   # This formats a string representation of a float into a float
-  # If it's in hour:minute:second format, it will change it into just a float
+  # Sof if it's in hour:minute:second format, it will change it into just a float
   def format_to_float(str)
     return str.to_f if !str.include?(":")
   
