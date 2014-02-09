@@ -1,4 +1,23 @@
-body {
-	background-color: #E6E6E6; 
+html, body {
+	background-color: #FFFFFF; 
 	font-family: 'Source Sans Pro', sans-serif;
+	
+	height: 99%;
+}
+
+body > #container {
+	height: auto;
+	min-height: 100%;
+}
+
+footer {
+	clear: both;
+	margin-top: -3em;
+	
+	text-align: center;
+	font-size: 14px;
+}
+
+.debug_dump {
+	clear: both;
 }

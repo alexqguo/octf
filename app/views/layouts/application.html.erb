@@ -9,31 +9,47 @@
 </head>
 <body>
 	
+	<div id="container">
+		
 	<% if current_user %>
 	
-	<header class="header-wrap">
-		<nav class="navbar">
-			<h1 class="logo">OCTF</h1>
+		<header class="header-wrap">
+			<nav class="navbar">
+				<h1 class="logo">OCTF</h1>
 			
-			<ul class="nav-list">
-				<li class="nav-list-item"><a href="<%= athletes_url %>">All Athletes</a></li>
-				<li class="nav-list-item"><a href="<%= records_url %>">School Records</a></li>
-				<li class="nav-list-item"><a href="#"><%= current_user.username.upcase %></a></li>
-				<li class="nav-list-item"><%= button_to "Sign Out", session_url, method: :delete %></li>
-				<% if current_user.admin? %>
-					<li class="nav-list-item"><%= link_to "Add Athlete", new_athlete_url %></li>
-				<% end %>
-			</ul>
-		</nav>
-	</header>
+				<ul class="nav-list">
+					<li class="nav-list-item"><a href="<%= athletes_url %>">All Athletes</a></li>
+					<li class="nav-list-item"><a href="<%= records_url %>">School Records</a></li>
+					<li class="nav-list-item"><a href="#"><%= current_user.username.upcase %></a></li>
+					<li class="nav-list-item"><%= button_to "Sign Out", session_url, method: :delete %></li>
+					<% if current_user.admin? %>
+						<li class="nav-list-item"><%= link_to "Add Athlete", new_athlete_url %></li>
+					<% end %>
+				</ul>
+			</nav>
 		
+		</header>
+	
 	<% end %>
 
-	<!-- debugging -->	
 	<%= flash[:notice] %>
 	<%= flash[:errors] %>
 	<%= yield %>
-	<!-- <%= debug params %> -->
+	
+	<% if current_user %>
 
+		<% if current_user.type == "Admin" %>
+			<%= debug params %>
+		<% end %>
+	
+		
+	<% end %>
+	
+	</div> <!-- container -->
+
+	<footer>
+		Why hello there, I am a footer.
+	</footer>
+	<br>
 </body>
 </html>

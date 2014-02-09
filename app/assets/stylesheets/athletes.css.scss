@@ -18,13 +18,18 @@
 
 .males {
 	float: left;
+	width: 250px;
 }
 
 .females {
 	margin-left: 200px;
 	float: left;
+//	width: 70%;
 }
 
 .selected {
 	background-color: yellow;
+	font-weight: 400;
+	border-radius: 3px;
+	transition: 0.1s linear;
 }

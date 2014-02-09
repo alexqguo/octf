@@ -3,7 +3,7 @@ class AthletesController < ApplicationController
   include LookupHelper
   
   before_filter :require_current_user!
-  before_filter :require_admin!, only: [:new, :create]
+  before_filter :require_admin!, only: [:new, :create, :update]
   
   def index
     @males = Athlete.males.sort_by { |athlete| athlete.name }

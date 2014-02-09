@@ -1,8 +1,11 @@
+# 2764966
+# http://www.directathletics.com/athletes/track/2764966.html
+
 class MarksController < ApplicationController
   include EventHelper
   include LookupHelper
-  # 2764966
-  # http://www.directathletics.com/athletes/track/2764966.html
+  
+  before_filter :require_admin!, only: [:new, :create]
   
   def new
     @athlete = Athlete.find(params[:athlete_id])
