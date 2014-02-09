@@ -14,8 +14,12 @@
 			-- maddy schultz
 			-- collin cowdery (lol)
 			-- josh gallagher
-			
-	-- school records
+	
+	-- fix matt bernstein bug
+		-- gets cur_row twice??
+	
+	-- email page (maybe put a link to this on a footer)
+		
 
 ---------------------------------------------------------------------------------------
 

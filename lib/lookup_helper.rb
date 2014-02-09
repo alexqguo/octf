@@ -30,7 +30,7 @@ module LookupHelper
       
       cur_row[(cur_row.length - event_list.length)..-1].each do |mark|
         float = format_to_float(mark)
-        
+        print cur_row
         unless mark.include?("-- --") || float == 0.0 # prevents weird bug
           event_list[event_list_idx].add_time(float, year, season)
         end

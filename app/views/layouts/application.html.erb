@@ -17,6 +17,7 @@
 			
 			<ul class="nav-list">
 				<li class="nav-list-item"><a href="<%= athletes_url %>">All Athletes</a></li>
+				<li class="nav-list-item"><a href="<%= records_url %>">School Records</a></li>
 				<li class="nav-list-item"><a href="#"><%= current_user.username.upcase %></a></li>
 				<li class="nav-list-item"><%= button_to "Sign Out", session_url, method: :delete %></li>
 				<% if current_user.admin? %>
