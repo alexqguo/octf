@@ -15,10 +15,7 @@
 			-- collin cowdery (lol)
 			-- josh gallagher
 	
-	-- email page (maybe put a link to this on a footer)
-	
-	-- jquery hover stuff for athletes index
-	
+	-- email page (link on footer)	
 
 ---------------------------------------------------------------------------------------
 
