@@ -21,6 +21,7 @@
 
 -- DRY up:
 	-- athletes#index
+	-- app.html.erb -> a lot of (if current_user) statements
 	-- event_list.each in MarksController
 	-- Athlete#has_data? so that it doesn't gather all the objects, just gets a count
 		-- probably do a custom sql query?

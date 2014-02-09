@@ -15,7 +15,7 @@
 	
 		<header class="header-wrap">
 			<nav class="navbar">
-				<h1 class="logo">OCTF</h1>
+				<h1 class="logo">OCTF (beta)</h1>
 			
 				<ul class="nav-list">
 					<li class="nav-list-item"><a href="<%= athletes_url %>">All Athletes</a></li>
@@ -46,11 +46,14 @@
 	<% end %>
 	
 	</div> <!-- container -->
-
-	<footer>
-		Why hello there, I am a footer. 
-		I don't have anything to say right now :(
-	</footer>
-	<br>
+	
+	<% if current_user %>
+		<footer>
+			Why hello there.
+			This is just a small side project of mine and it's still under construction, but I have a LOT more planned :)
+		</footer>
+		<br>
+	<% end %>
+	
 </body>
 </html>
