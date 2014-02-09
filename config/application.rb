@@ -61,5 +61,7 @@ module AthleteLookup
     
     # Load custom files from /lib
     config.autoload_paths += %W(#{config.root}/lib)
+    
+    config.assets.initialize_on_precompile = false
   end
 end
