@@ -15,7 +15,9 @@
 			-- collin cowdery (lol)
 			-- josh gallagher
 	
-	-- email page (link on footer)	
+	-- email page (link on footer)
+	
+	-- add support for multiple browswer login (IMPORTANT)
 
 ---------------------------------------------------------------------------------------
 
