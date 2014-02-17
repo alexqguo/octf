@@ -11,7 +11,8 @@
 </div>
 
 <% if @athlete.has_data? %>
-	<ul>
+	<!-- TEXT VERSION -->
+	<!-- <ul>
 		<% @marks_by_event.keys.each do |event_name| %>
 			<li><%= event_name %></li>
 			<% if @marks_by_event[event_name]["Indoor"] %>
@@ -35,7 +36,12 @@
 				</ul>
 			<% end %>
 		<% end %>
-	</ul>
+	</ul> -->
+	<!-- TEXT VERSION -->
+	
+	<% @marks_by_event.keys.each do |event_name| %>
+		<div id="<%= event_name.gsub(" ", "-") %>"></div>
+	<% end %>
 	
 	<% if current_user.type == "Admin" %>
 		<a href="<%= edit_athlete_url(@athlete) %>">Update Data</a>
@@ -47,3 +53,39 @@
 <% end %>
 
 <a href="<%= athletes_url %>">Back to all athletes...</a>
+
+<script>
+	$(function () {
+		var events = <%=raw @marks_by_event.keys.map {
+			|event_name| event_name.gsub(" ", "-")
+		}.to_json %>;
+		
+		for (var i = 0; i < events.length; i++) {
+			// console.log("#" + events[i]);
+			$("#" + events[i]).toggleClass("asdfasdf");
+		}
+		/*
+		chart: { type: "line" },
+		title: { text: EVENT_NAME },
+		xAxis: { categories: YEARS_ARRAY },
+		yAxis: { title: { text: UNIT_OF_MEASUREMENT } },
+		tooltip: { enabled: false }, //for now
+		plotOptions: {
+      line: {
+        dataLabels: {
+            enabled: false
+        },
+        enableMouseTracking: true
+      }
+    },
+		series: [{
+			name: "Indoor",
+			data: INDOOR_EVENT_DATA
+		}, {
+			name: "Outdoor",
+			data: OUTDOOR_EVENT_DATA
+		}]
+		
+		*/
+	});
+</script>
