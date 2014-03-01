@@ -14,13 +14,13 @@
  */
 
 /*
-Crimson: BE0F0F
+Crimson: #BE0F0F
 Gold: #FAE902
 Blue: #3F94DC
 */
 
 
-html, body, header, nav, h1, ul, li, div, footer, form, input, a {
+html, body, header, nav, h1, h3, ul, li, div, footer, form, input, a {
   border: 0px;
   margin: 0px;
   padding: 0px;
@@ -41,11 +41,36 @@ body > #container {
 
 h1 {
 	font-size: 42px;
-	margin: 20px 0 ;
+	margin: 20px 0;
+}
+
+h3 {
+	font-size: 24px;
+	margin: 15px 0;
 }
 
 form {
 	
+}
+
+.input {
+	margin: 20px 0;
+	width: 275px;
+}
+
+.input input {
+	float: right;
+	border: 1px solid #ccc;
+	height: 15px;
+	
+	padding: 5px 10px;
+	border-radius: 3px;
+	outline: none;
+	transition: 0.2s;
+}
+
+.input input:focus {
+	box-shadow: 0 0 5px #3F94DC;
 }
 
 a {
