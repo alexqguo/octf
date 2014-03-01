@@ -15,7 +15,7 @@
 			-- collin cowdery (lol)
 			-- josh gallagher
 	
-	-- email page (link on footer)
+	-- email page (link on header 'OCTF')
 	
 	-- add support for multiple browswer login (IMPORTANT)
 	
