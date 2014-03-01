@@ -12,12 +12,29 @@
  *= require_tree .
  */
 
+/*
+Red color: BE0F0F
+Gold: #FAE902
+*/
 
-/* Navigation Bar */
-header nav h1 ul li {
+
+html, body, header, nav, h1, ul, li, div, footer, form, input {
   border: 0px;
   margin: 0px;
   padding: 0px;
+	
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body {
+	background-color: #fff; 
+	font-family: 'Source Sans Pro', sans-serif;
+}
+
+body > #container {
+	height: auto;
+	min-height: 100%;
 }
 
 header nav ul {
@@ -25,17 +42,17 @@ header nav ul {
 }
 
 .header-wrap {
-	background: #202020;
-	border-bottom: 3px solid #A00000;
-  	color: white;
+	width: 100%;
+	background: rgb(180, 20, 20);
 }
 
 .navbar {
 	height: 60px;
+	width: 1000px;
 	margin: 0px auto;
-	border-top: 4px solid #A00000;
-	border-left: 4px solid #A00000 ;
-	border-right: 4px solid #A00000;
+	font-weight: 100;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
 }
 
 .nav-list {
@@ -51,31 +68,69 @@ header nav ul {
 
 .nav-list-item {
 	float: left;
-	padding-left: 10px;
-	padding-right: 10px;
-  	border-left: 3px solid #333;
+	width: 120px;
+	height: 60px;
+	
+	text-align: center;
+	border-left: 1px solid black;
 }
 
 .nav-list-item a {
 	display: block;
-	padding: 5px;
-    color: white;
-    text-decoration: none;
+	padding: 20px 0;
+  text-decoration: none;
+  color: white;
 }
 
-.nav-list-item form input {
-	border-radius: 2px;
-	border: 2px solid #333;
+.nav-list-item form {
+	height: 0;
+	width: 0;
+}
+
+.nav-list-item input[type="submit"] {
+	-webkit-appearance: none;
+	outline: none;
+	background: transparent;
 	
+	border: none;
 	color: white;
-	cursor: pointer;
-	background-color: #202020;
-
-	font-size: 14px;
+	font: inherit;
+	
+	height: 60px;
+	width: 120px;
 }
-.navbar:after {
+
+.nav-list-item input[type="submit"]:hover {
+	cursor: pointer;
+	color: black;
+}
+
+.nav-list-item:hover, .nav-list-item:hover a {
+	background: #FAE902;
+	color: black;
+}
+
+.group:after {
   clear: both;
  	content: "";
   display: block;
 }
 
+footer {
+	position: absolute;
+	bottom: 0;
+	
+	clear: both;
+	
+	text-align: center;
+	font-size: 14px;
+}
+
+.debug_dump {
+	clear: both;
+}
+
+#container {
+	width: 1000px;
+	margin: 10px auto
+}

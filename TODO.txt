@@ -18,6 +18,8 @@
 	-- email page (link on footer)
 	
 	-- add support for multiple browswer login (IMPORTANT)
+	
+	-- chosen for athlete search
 
 ---------------------------------------------------------------------------------------
 
