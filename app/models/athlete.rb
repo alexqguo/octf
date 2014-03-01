@@ -74,7 +74,7 @@ class Athlete < ActiveRecord::Base
   
   
   def has_data?
-    !!self.url || Mark.where("athlete_id = ?", self.id).length > 0
+    !!self.url || Mark.where("athlete_id = ?", self.id).count > 0
   end
   
   def self.males

@@ -1,2 +1,0 @@
-== OCTF Bible
-By Alex Guo, OC '13
