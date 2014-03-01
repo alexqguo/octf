@@ -1,4 +1,5 @@
-#OCTF Bible
-By Alex Guo, OC '13
+#OCTF App
+Alex Guo
 
-##Read my todo file (todo.txt)
+##Read my todo file
+TODO.txt
