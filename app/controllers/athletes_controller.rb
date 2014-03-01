@@ -3,7 +3,7 @@ class AthletesController < ApplicationController
   include LookupHelper
   
   before_filter :require_current_user!
-  before_filter :require_admin!, only: [:new, :create, :update]
+  before_filter :require_admin!, only: [:new, :create, :edit]
   
   def index
     @males = Athlete.males.sort_by { |athlete| athlete.name }
@@ -37,9 +37,11 @@ class AthletesController < ApplicationController
   def update
     @athlete = Athlete.find(params[:id])
     url = @athlete.url
-    
+
+    # TODO: this needs to change
+    # Maybe below instead of adding each mark, check to see if a mark with that year and season exists
+    # If not, then add
     @athlete.marks.destroy_all
-    
     event_list = get_data(url)
     
     if event_list
