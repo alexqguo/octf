@@ -14,12 +14,12 @@
 	
 		<header class="header-wrap">
 			<nav class="navbar group">
-				<h1 class="logo"><a href="<%= root_url %>">OCTF (beta)</a></h1>
+				<h1 class="logo"><a href="<%= root_url %>">OCTF (alpha)</a></h1>
 				<form class="chosen-form" action="" method="GET">
 					<%= auth_token %>
 	
 					<select class="chosen-select">
-						<option value=""></option>
+						<!-- <option value=""></option> -->
 						<% Athlete.all.each do |athlete| %>
 							<option value="<%= athlete.id %>"><%= athlete.name %></option>
 						<% end %>

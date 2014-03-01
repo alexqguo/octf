@@ -1,4 +1,6 @@
 $(function () {
+	$(".chosen-select").prop("selectedIndex", -1);
+	
 	$(".chosen-select").chosen({
 		placeholder_text_single: "Find an athlete...",
 		width: "200px"
