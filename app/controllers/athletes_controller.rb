@@ -36,11 +36,11 @@ class AthletesController < ApplicationController
   
   def update
     @athlete = Athlete.find(params[:id])
-    @url = @athlete.url
+    url = @athlete.url
     
     @athlete.marks.destroy_all
     
-    event_list = get_data(@url)
+    event_list = get_data(url)
     
     if event_list
       event_list.each do |event|
@@ -54,7 +54,6 @@ class AthletesController < ApplicationController
     end
     
     if @athlete.save
-      @athlete.update_attributes(url: @url)
       flash[:notice] = "Data for #{@athlete.name} updated successfully!"
       redirect_to @athlete
     else

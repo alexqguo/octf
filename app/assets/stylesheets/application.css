@@ -116,16 +116,6 @@ header nav ul {
   display: block;
 }
 
-footer {
-	position: absolute;
-	bottom: 0;
-	
-	clear: both;
-	
-	text-align: center;
-	font-size: 14px;
-}
-
 .debug_dump {
 	clear: both;
 }
