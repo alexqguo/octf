@@ -5,7 +5,7 @@ class AssetsController < ApplicationController
   def records
   end
   
-  def octf
+  def about
   end
 
 end

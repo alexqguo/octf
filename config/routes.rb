@@ -1,7 +1,7 @@
 AthleteLookup::Application.routes.draw do
   
   get "records", action: "records", controller: "assets"
-  get "octf", action: "octf", controller: "assets"
+  get "about", action: "about", controller: "assets"
   resource :session, only: [:new, :create, :destroy]
   
   resources :athletes, except: :destroy do
