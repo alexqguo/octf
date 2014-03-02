@@ -12,6 +12,8 @@
 		-- use moment.js?
 		-- yAxis title
 	
+	-- just write own library to format times, put in asset pipeline
+	
 ---------------------------------------------------------------------------------------
 
 -- DRY up:
