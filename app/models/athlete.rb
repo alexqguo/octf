@@ -65,6 +65,7 @@ class Athlete < ActiveRecord::Base
     self.marks_by_event.each do |event_name, mark_data|
       mark_hash = {}
       mark_hash["years"] = years_array(mark_data)
+      mark_hash["is_running_event"] = mark_data.values.first[0].is_running_event?
       mark_hash["units"] = mark_data.values.first[0].units_of_measurement
       mark_hash["series"] = []
       

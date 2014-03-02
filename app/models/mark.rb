@@ -30,4 +30,8 @@ class Mark < ActiveRecord::Base
     end
   end
   
+  def is_running_event?
+    Athlete::FIELD_EVENTS.exclude?(self.event_name) && Athlete::MULTI_EVENTS.exclude?(self.event_name)
+  end
+  
 end
