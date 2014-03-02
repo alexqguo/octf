@@ -40,7 +40,7 @@
 	<!-- TEXT VERSION -->
 
 	<% @marks_by_event.keys.each do |event_name| %>
-		<div id="<%= event_name.gsub(" ", "-") %>"></div>
+		<div id="<%= event_name.gsub(" ", "-") %>" class="graph"></div>
 	<% end %>
 
 	<% if current_user.type == "Admin" %>
@@ -69,21 +69,14 @@
 
 			for (var key in athlete_data) {
 				
-				/*
-				
-				TODO: write formatter function in yAxis labels
-				
-				*/
-				
 				$("#" + key.replace(" ", "-")).highcharts({
 					chart: { type: "line" },
 					title: { text: key },
 					tooltip: {
 						enabled: true,
 						formatter: function () {
-							var formattedY;
-							
-							if (athlete_data[key].is_running_event) {
+							var eventName = this.series.chart.title.text;
+							if (athlete_data[eventName].is_running_event) {
 								formattedY = this.y.formatTime();
 							} else {
 								formattedY = this.y.toFixed(2);
@@ -98,7 +91,8 @@
 						title: { text: athlete_data[key].units },
 						labels: {
 							formatter: function () {
-								if (athlete_data[key].is_running_event) {
+								var eventName = this.chart.title.text;
+								if (athlete_data[eventName].is_running_event) {
 									return this.value.formatTime();
 								} else {
 									return this.value.toFixed(2);

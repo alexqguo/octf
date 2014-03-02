@@ -73,7 +73,8 @@ class Athlete < ActiveRecord::Base
       mark_data.each do |season, season_data|
         mark_hash["series"] << {
           name: season,
-          data: mark_array(mark_hash["years"], season_data) 
+          data: mark_array(mark_hash["years"], season_data),
+          color: (season == "Indoor" ? "#BE0F0F" : "#EAD900")
         }
       end
       
