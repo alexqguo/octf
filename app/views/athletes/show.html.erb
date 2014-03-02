@@ -69,6 +69,12 @@
 
 			for (var key in athlete_data) {
 				
+				/*
+				
+				TODO: write formatter function in yAxis labels
+				
+				*/
+				
 				$("#" + key.replace(" ", "-")).highcharts({
 					chart: { type: "line" },
 					title: { text: key },
@@ -80,7 +86,15 @@
 						}
 					},
 					xAxis: { categories: athlete_data[key].years },
-					yAxis: { title: { text: athlete_data[key].units } },
+					yAxis: { 
+						title: { text: athlete_data[key].units },
+						labels: {
+							formatter: function () {
+								// if whatever, else
+								return this.value;
+							}
+						}
+					},
 					series: athlete_data[key].series
 				})
 			}
