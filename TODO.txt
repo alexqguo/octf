@@ -1,23 +1,14 @@
 -- OCTF (change the title to something more interesting)
 	-- recent headlines
-	
-	-- page about ray!
-	
+		
 	-- all athletes
-		-- add JS/AJAX popup loading thing for import data
-		-- view: athletes#new
-		-- make athlete pages have URLs that aren't /athletes/id
-			-- ex) /athletes/matt+bernstein or something like that
-		-- athletes to add:
-			-- seth wimberly (didn't work)
-			-- solomon turner
-			-- maddy schultz
-			-- collin cowdery (lol)
-			-- josh gallagher
+		-- add jQuery popup loading thing for import data
+		-- work on view: athletes#new
+		-- fancy athlete page urls
 	
 	-- email page (link on header 'OCTF')
 	
-	-- add support for multiple browswer login (IMPORTANT)
+	-- add support for multiple browser login (IMPORTANT)
 	
 ---------------------------------------------------------------------------------------
 
