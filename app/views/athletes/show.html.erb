@@ -81,8 +81,16 @@
 					tooltip: {
 						enabled: true,
 						formatter: function () {
+							var formattedY;
+							
+							if (athlete_data[key].is_running_event) {
+								formattedY = this.y.formatTime();
+							} else {
+								formattedY = this.y.toFixed(2);
+							}
+
 							return '<b>' + this.series.name + '</b><br>' + 
-							this.x +': '+ this.y;
+							this.x +': '+ formattedY;
 						}
 					},
 					xAxis: { categories: athlete_data[key].years },
@@ -90,8 +98,11 @@
 						title: { text: athlete_data[key].units },
 						labels: {
 							formatter: function () {
-								// if is_running_event, call function which formats all time
-								return this.value;
+								if (athlete_data[key].is_running_event) {
+									return this.value.formatTime();
+								} else {
+									return this.value.toFixed(2);
+								}
 							}
 						}
 					},

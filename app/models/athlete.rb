@@ -27,7 +27,8 @@ class Athlete < ActiveRecord::Base
     "Discus Throw",
     "Shot Put",
     "Javelin",
-    "Discus Throw"
+    "Discus Throw",
+    "Discus"
   ]
   
   MULTI_EVENTS = [
