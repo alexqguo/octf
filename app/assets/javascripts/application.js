@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require chosen-jquery
+//= require moment.min
 //= require_tree .
