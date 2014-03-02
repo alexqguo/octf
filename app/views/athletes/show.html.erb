@@ -61,94 +61,34 @@
 <a href="<%= athletes_url %>">Back to all athletes...</a>
 
 <script>
-$(function () {
+	$(function () {
 		var marks_by_event = <%=raw @marks_by_event.to_json %>;
-
-		for (var key in marks_by_event) {
-			var seriesData = getRelevantData(marks_by_event[key]);
-			// YEARS_ARRAY
-			// DISTANCE/TIME/WHATEVER
-
-			$("#" + key.replace(" ", "-")).highcharts({
-				chart: { type: "line" },
-				title: { text: key },
-				tooltip: { 
-					enabled: true,
-					formatter: function () {
-						return '<b>' + this.series.name + '</b><br>' + 
-						this.x +': '+ this.y;
-					}
-				},
-				xAxis: { categories: [] },
-				yAxis: { title: { text: "Data" } },
-				series: seriesData
-			});
-
-		}
-		/*
-		chart: { type: "line" },
-		title: { text: EVENT_NAME },
-		xAxis: { categories: YEARS_ARRAY },
-		yAxis: { title: { text: UNIT_OF_MEASUREMENT } },
-		plotOptions: {
-      line: {
-        dataLabels: {
-            enabled: false
-        },
-        enableMouseTracking: true
-      }
-    },
-		series: [{
-			name: "Indoor",
-			data: INDOOR_EVENT_DATA
-		}, {
-			name: "Outdoor",
-			data: OUTDOOR_EVENT_DATA
-		}]
+		var athlete_data;
 		
-		*/
-	});
-
-	/*
-	Where obj is in the format: {
-		"Indoor": [event, event, event],
-		"Outdoor": [event, event, event]
-	}
-	*/
-	var getRelevantData = function (obj) {
-		var series = [];
-		var seriesObj;
-
-		if (obj["Indoor"]) {
-			seriesObj = makeSeriesObj(obj["Indoor"], "Indoor");
-			series.push(seriesObj);
-		}
-		if (obj["Outdoor"]) {
-			seriesObj = makeSeriesObj(obj["Outdoor"], "Outdoor");
-			series.push(seriesObj);
-		}
-
-		return series;
-	}
-
-	/*
-	Takes an events array and turns it into an appropriate
-	series array for data
-	*/
-	var makeSeriesObj = function (events, name) {
-		var seriesObj = {};
-		seriesObj.name = name;
-		seriesObj.data = [];
-
-		for (var i = 0; i < events.length; i++) {
-			seriesObj.data.unshift(events[i].mark);
-			// TODO: maybe here start building up an array for years
-		}
-
-		return seriesObj;
-	}
-	
-	$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
-		console.log(data);
+		$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
+			athlete_data = data;
+			
+			for (var key in athlete_data) {
+				console.log(key);
+				console.log(athlete_data[key].series);
+				
+				$("#" + key.replace(" ", "-")).highcharts({
+					chart: { type: "line" },
+					title: { text: key },
+					tooltip: {
+						enabled: true,
+						formatter: function () {
+							return '<b>' + this.series.name + '</b><br>' + 
+							this.x +': '+ this.y;
+						}
+					},
+					xAxis: { categories: athlete_data[key].years },
+					yAxis: { title: { text: "Data" } },
+					series: athlete_data[key].series
+				})
+			}
+			
+		});
+		
 	});
 </script>

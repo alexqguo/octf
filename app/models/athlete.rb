@@ -58,14 +58,23 @@ class Athlete < ActiveRecord::Base
     marks_hash
   end
   
+  # Formats data to be easily used with highcharts
+  # TODO: unit of measurement, other various helper things
   def highcharts_data
     data = {}
-    self.marks_by_event.each do |key, mark_data|
+    self.marks_by_event.each do |event_name, mark_data|
       mark_hash = {}
       mark_hash["years"] = years_array(mark_data)
-      # mark_
+      mark_hash["series"] = []
       
-      data[key] = mark_hash
+      mark_data.each do |season, season_data|
+        mark_hash["series"] << {
+          name: season,
+          data: mark_array(mark_hash["years"], season_data) 
+        }
+      end
+      
+      data[event_name] = mark_hash
     end
     
     data
@@ -90,6 +99,17 @@ class Athlete < ActiveRecord::Base
     end
     
     (min..max).to_a
+  end
+  
+  def mark_array(years, season_data)
+    data = []
+
+    years.each do |year|
+      mark_to_add = season_data.select { |mark| mark.year == year }.first
+      data << (mark_to_add.nil? ? nil : mark_to_add.mark)
+    end
+    
+    data
   end
   
  #  def set_url(code)
