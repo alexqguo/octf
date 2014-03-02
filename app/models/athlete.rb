@@ -38,6 +38,14 @@ class Athlete < ActiveRecord::Base
     "Decathlon"
   ]
   
+  def self.males
+    where(gender: "m")
+  end
+  
+  def self.females
+    where(gender: "f")
+  end
+  
   # Returns a hash in the format:
   # { event_1 => { "Indoor" => [], "Outdoor" => [] },
   #   event_2 => { "Indoor" => [], "Outdoor" => [] }, etc. }
@@ -50,13 +58,41 @@ class Athlete < ActiveRecord::Base
     marks_hash
   end
   
+  def highcharts_data
+    data = {}
+    self.marks_by_event.each do |key, mark_data|
+      mark_hash = {}
+      mark_hash["years"] = years_array(mark_data)
+      # mark_
+      
+      data[key] = mark_hash
+    end
+    
+    data
+  end
+  
   def url_code
     return nil if self.url.nil?
     /athletes\/(.......)\.html/.match(self.url).captures.first if self.url.include?("tfrrs")
   end
   
+  def has_data?
+    !!self.url || Mark.where("athlete_id = ?", self.id).count > 0
+  end
   
-  # def set_url(code)
+  def years_array(mark_data)
+    if mark_data["Indoor"] && mark_data["Outdoor"]
+      min = [mark_data["Indoor"][-1].year, mark_data["Outdoor"][-1].year].min
+      max = [mark_data["Indoor"][0].year, mark_data["Outdoor"][0].year].max
+    else
+      min = mark_data.values.first[-1].year
+      max = mark_data.values.first[0].year
+    end
+    
+    (min..max).to_a
+  end
+  
+ #  def set_url(code)
  #    if self.url.include?("athletes/.html")
  #      puts code
  #      self.url = self.url.gsub(".html", "#{code.to_s}.html")
@@ -71,18 +107,5 @@ class Athlete < ActiveRecord::Base
  #      self.save!
  #    end
  #  end
-  
-  
-  def has_data?
-    !!self.url || Mark.where("athlete_id = ?", self.id).count > 0
-  end
-  
-  def self.males
-    where(gender: "m")
-  end
-  
-  def self.females
-    where(gender: "f")
-  end
   
 end

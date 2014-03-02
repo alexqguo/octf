@@ -15,6 +15,16 @@ class AthletesController < ApplicationController
     @marks_by_event = @athlete.marks_by_event
   end
   
+  def graph_data
+    if request.xhr?
+      @athlete = Athlete.find(params[:athlete_id])
+      @marks_by_event = @athlete.marks_by_event
+      render json: @marks_by_event
+    else
+      render json: "Error!", status: 422
+    end
+  end
+  
   def new
     @athlete = Athlete.new
   end

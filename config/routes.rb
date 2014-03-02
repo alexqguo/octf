@@ -6,6 +6,7 @@ AthleteLookup::Application.routes.draw do
   
   resources :athletes, except: :destroy do
     resources :marks, only: [:new, :create]
+    get "graph_data", action: "graph_data"
   end
   
   get "a" => "records"

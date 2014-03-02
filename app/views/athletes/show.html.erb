@@ -147,4 +147,8 @@ $(function () {
 
 		return seriesObj;
 	}
+	
+	$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
+		console.log(data);
+	});
 </script>
