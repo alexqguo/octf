@@ -19,4 +19,15 @@ class Mark < ActiveRecord::Base
   validates :season, inclusion: { in: "Indoor Outdoor" }
   
   belongs_to :athlete, inverse_of: :marks
+  
+  def units_of_measurement
+    if Athlete::FIELD_EVENTS.include?(self.event_name)
+      "Distance (meters)"
+    elsif Athlete::MULTI_EVENTS.include?(self.event_name)
+      "Points"
+    else
+      "Time (seconds)"
+    end
+  end
+  
 end

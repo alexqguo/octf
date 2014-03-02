@@ -6,9 +6,11 @@
 		-- work on view: athletes#new
 		-- fancy athlete page urls
 	
-	-- email page (link on header 'OCTF')
-	
 	-- add support for multiple browser login (IMPORTANT)
+	
+	-- GRAPHS
+		-- use moment.js?
+		-- yAxis title
 	
 ---------------------------------------------------------------------------------------
 

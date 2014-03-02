@@ -68,7 +68,7 @@
 			athlete_data = data;
 
 			for (var key in athlete_data) {
-
+				
 				$("#" + key.replace(" ", "-")).highcharts({
 					chart: { type: "line" },
 					title: { text: key },
@@ -80,7 +80,7 @@
 						}
 					},
 					xAxis: { categories: athlete_data[key].years },
-					yAxis: { title: { text: "Data" } },
+					yAxis: { title: { text: athlete_data[key].units } },
 					series: athlete_data[key].series
 				})
 			}
