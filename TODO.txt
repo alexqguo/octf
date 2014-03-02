@@ -33,3 +33,4 @@
 
 Notes:
 -- dump db: pg_dump athlete_lookup_development > backup_db (or whatever name you want)
+-- heroku pg:psql DATABASE_URL < backup.sql
