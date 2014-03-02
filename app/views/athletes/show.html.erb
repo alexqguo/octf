@@ -38,11 +38,11 @@
 		<% end %>
 	</ul> -->
 	<!-- TEXT VERSION -->
-	
+
 	<% @marks_by_event.keys.each do |event_name| %>
 		<div id="<%= event_name.gsub(" ", "-") %>"></div>
 	<% end %>
-	
+
 	<% if current_user.type == "Admin" %>
 		<a href="<%= edit_athlete_url(@athlete) %>">Update Data</a>
 		<br>
@@ -62,16 +62,13 @@
 
 <script>
 	$(function () {
-		var marks_by_event = <%=raw @marks_by_event.to_json %>;
 		var athlete_data;
-		
+
 		$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
 			athlete_data = data;
-			
+
 			for (var key in athlete_data) {
-				console.log(key);
-				console.log(athlete_data[key].series);
-				
+
 				$("#" + key.replace(" ", "-")).highcharts({
 					chart: { type: "line" },
 					title: { text: key },
@@ -87,8 +84,8 @@
 					series: athlete_data[key].series
 				})
 			}
-			
+
 		});
-		
+
 	});
 </script>
