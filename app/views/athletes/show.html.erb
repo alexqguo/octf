@@ -63,6 +63,8 @@
 <script>
 	$(function () {
 		var athlete_data;
+		var isMobile = screen.width <= 480;
+		console.log(isMobile);
 
 		$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
 			athlete_data = data;
@@ -84,6 +86,11 @@
 
 							return '<b>' + this.series.name + '</b><br>' + 
 							this.x +': '+ formattedY;
+						}
+					},
+					plotOptions: {
+						line: {
+							dataLabels: { enabled: isMobile }
 						}
 					},
 					xAxis: { categories: athlete_data[key].years },
