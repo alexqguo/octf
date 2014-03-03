@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140303145213) do
+ActiveRecord::Schema.define(:version => 20140303171050) do
 
   create_table "athlete_marks", :force => true do |t|
     t.integer  "athlete_id", :null => false
@@ -28,7 +28,10 @@ ActiveRecord::Schema.define(:version => 20140303145213) do
     t.integer "graduating_class"
     t.string  "gender"
     t.string  "url"
+    t.string  "slug"
   end
+
+  add_index "athletes", ["slug"], :name => "index_athletes_on_slug"
 
   create_table "marks", :force => true do |t|
     t.integer  "year",       :null => false

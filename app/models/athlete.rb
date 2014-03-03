@@ -10,6 +10,9 @@
 #
 
 class Athlete < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+  
   attr_accessible :name, :graduating_class, :gender, :url
   
   validates :name, :class, :gender, presence: true
