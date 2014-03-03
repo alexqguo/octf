@@ -2,16 +2,16 @@ module SessionsHelper
 
   def current_user
     return nil if session[:session_token].nil?
-    User.find_by_session_token(session[:session_token])
+    Session.find_user_by_session_token(session[:session_token])
   end
   
   def login_user(user)
-    user.reset_session_token!
-    session[:session_token] = user.session_token
+    new_session = user.sessions.create!
+    session[:session_token] = new_session.token
   end
   
   def logout_user
-    current_user.reset_session_token!
+    Session.find_by_token(session[:session_token]).destroy
     session[:session_token] = nil
   end
   

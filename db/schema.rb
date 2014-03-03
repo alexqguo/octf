@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140203011343) do
+ActiveRecord::Schema.define(:version => 20140303145213) do
 
   create_table "athlete_marks", :force => true do |t|
     t.integer  "athlete_id", :null => false
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(:version => 20140203011343) do
     t.string   "event_name"
     t.float    "mark"
   end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "token",      :null => false
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "sessions", ["user_id"], :name => "index_sessions_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username",        :null => false

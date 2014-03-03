@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 4, allow_nil: true }
   validates :session_token, presence: true
   
-  after_initialize :ensure_session_token
+  has_many :sessions
   
   def password=(password)
     @password = password
@@ -30,11 +30,6 @@ class User < ActiveRecord::Base
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
   
-  def reset_session_token!
-    self.session_token = self.class.generate_session_token
-    self.save!
-  end
-  
   def self.find_by_credentials(username, password)
     user = User.find_by_username(username)
     
@@ -43,16 +38,7 @@ class User < ActiveRecord::Base
     user.is_password?(password) ? user : nil
   end
   
-  def self.generate_session_token
-    SecureRandom::urlsafe_base64(16)
-  end
-  
   def admin?
     self.type == "Admin"
   end
-
-  private
-  def ensure_session_token
-    self.session_token ||= self.class.generate_session_token
-  end  
 end
