@@ -64,7 +64,6 @@
 	$(function () {
 		var athlete_data;
 		var isMobile = screen.width <= 480;
-		console.log(isMobile);
 
 		$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
 			athlete_data = data;
