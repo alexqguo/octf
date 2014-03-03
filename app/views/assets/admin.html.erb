@@ -1,14 +1,18 @@
 <h1>Welcome</h1>
-
+<h3>Please log in</h3>
 <form action=<%= session_url %> method="POST">
 	<%= auth_token %>
 	
-	<input type="hidden" name="user[username]" value="octf">
+	<div class="input">	 
+		<label for="username">Username:</label>
+		<input name="user[username]" id="username" type="text">
+	</div>
 	
 	<div class="input">
-		<label for="password">1, 2, 3...</label>
+		<label for="password">Password:</label>
 		<input name="user[password]" id="password" type="password">
 	</div>
+	
 	
 	<input value="Log in" type="submit">
 </form>
