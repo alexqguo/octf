@@ -4,16 +4,10 @@
 	-- all athletes
 		-- add jQuery popup loading thing for import data
 		-- work on view: athletes#new
-		-- fancy athlete page urls
 	
-	-- add support for multiple browser login (IMPORTANT)
-	
-	-- GRAPHS
-		-- use moment.js?
-		-- yAxis title
-	
-	-- just write own library to format times, put in asset pipeline
-	
+	-- mobile
+		-- only first three graphs show up
+		-- implementing tabs would fix this??
 ---------------------------------------------------------------------------------------
 
 -- DRY up:
