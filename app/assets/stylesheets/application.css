@@ -195,3 +195,19 @@ header nav ul {
 .chosen-form > input[type="submit"] {
 	color: white;
 }
+
+.github-button {
+	width: 30px;
+	height: 30px;
+	background-image: url('github-icon.png');
+	background-size: 30px 30px;
+	
+	position: relative;
+	top: 100px;
+}
+
+.github-button > a {
+	width: inherit;
+	height: inherit;
+	display: block;
+}
