@@ -77,6 +77,7 @@
 					tooltip: {
 						enabled: true,
 						formatter: function () {
+							var formattedY;
 							var eventName = this.series.chart.title.text;
 							if (athlete_data[eventName].is_running_event) {
 								formattedY = this.y.formatTime();
@@ -90,7 +91,20 @@
 					},
 					plotOptions: {
 						line: {
-							dataLabels: { enabled: isMobile }
+							dataLabels: { 
+								enabled: isMobile,
+								formatter: function () {
+									var formattedY;
+									var eventName = this.series.chart.title.text;
+									if (athlete_data[eventName].is_running_event) {
+										formattedY = this.y.formatTime();
+									} else {
+										formattedY = this.y.toFixed(2);
+									}
+									
+									return formattedY;
+								}
+							}
 						}
 					},
 					xAxis: { categories: athlete_data[key].years },
