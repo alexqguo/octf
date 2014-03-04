@@ -77,6 +77,10 @@ form {
 	display: none;
 }
 
+ul {
+	list-style-type: none;
+}
+
 a {
 	color: #3F94DC;
 	text-decoration: none;

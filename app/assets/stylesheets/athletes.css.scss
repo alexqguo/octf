@@ -41,3 +41,28 @@
 	margin-bottom: 30px;
 	font-size: 14px;
 }
+
+.event-list {
+//	background: red;
+}
+
+.event-list-item {
+	float: left;
+	padding: 10px 15px;
+	margin: 5px;
+	
+	background: #BE0F0F;
+	color: white;
+	border-radius: 2px;
+	
+	transition: 0.1s;
+}
+
+.event-list-item:hover {
+	cursor: pointer;
+	background: #FAE902;
+	color: black;
+}
+
+.graph {
+}

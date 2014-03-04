@@ -11,36 +11,17 @@
 </div>
 
 <% if @athlete.has_data? %>
-	<!-- TEXT VERSION -->
-	<!-- <ul>
-		<% @marks_by_event.keys.each do |event_name| %>
-			<li><%= event_name %></li>
-			<% if @marks_by_event[event_name]["Indoor"] %>
-				<ul>
-					<li>Indoor</li>
-					<ul>
-						<% @marks_by_event[event_name]["Indoor"].reverse.each do |mark| %>
-							<li><%= mark.year %> - <%= format(mark) %></li>
-						<% end %>
-					</ul>
-				</ul>
-			<% end %>
-			<% if @marks_by_event[event_name]["Outdoor"] %>
-				<ul>
-					<li>Outdoor</li>
-					<ul>
-						<% @marks_by_event[event_name]["Outdoor"].reverse.each do |mark| %>
-							<li><%= mark.year %> - <%= format(mark) %></li>
-						<% end %>
-					</ul>
-				</ul>
-			<% end %>
-		<% end %>
-	</ul> -->
-	<!-- TEXT VERSION -->
 
-	<% @marks_by_event.keys.each do |event_name| %>
-		<div id="<%= event_name.gsub(" ", "-") %>" class="graph"></div>
+	<ul class="event-list group">
+		<% @marks_by_event.keys.each do |key| %>
+			<li class="event-list-item" data-name="<%= key.gsub(" ", "-") %>">
+				<%= key %>
+			</li>
+		<% end %>
+	</ul>
+
+	<% @marks_by_event.keys.each_with_index do |event_name, idx| %>
+		<div id="<%= event_name.gsub(" ", "-") %>" class="graph <%= "invisible" unless idx == 0 %>"></div>
 	<% end %>
 
 	<% if current_user.type == "Admin" %>
@@ -64,6 +45,9 @@
 	$(function () {
 		var athlete_data;
 		var isMobile = screen.width <= 480;
+		var containerWidth = $($("#container")[0]).width();
+		var currentGraph = $($(".graph").not(".invisible")[0]);
+		
 
 		$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
 			athlete_data = data;
@@ -71,7 +55,11 @@
 			for (var key in athlete_data) {
 				
 				$("#" + key.replace(" ", "-")).highcharts({
-					chart: { type: "line" },
+					chart: { 
+						type: "line",
+						backgroundColor: "#FEFEFE",
+						width: containerWidth
+					},
 					title: { text: key },
 					tooltip: {
 						enabled: true,
@@ -125,6 +113,14 @@
 			}
 
 		});
+		
+		$(".event-list-item").on("click", function (event) {
+			var eventId = $(event.target).data("name");
+			
+			currentGraph.toggleClass("invisible");
+			$("#" + eventId).toggleClass("invisible");
+			currentGraph = $("#" + eventId);
+		})
 
 	});
 </script>
