@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>class Athlete - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>app/models/athlete.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">ActiveRecord::Base
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-females">::females</a>
+    
+    <li><a href="#method-c-males">::males</a>
+    
+    <li><a href="#method-i-has_data-3F">#has_data?</a>
+    
+    <li><a href="#method-i-highcharts_data">#highcharts_data</a>
+    
+    <li><a href="#method-i-mark_array">#mark_array</a>
+    
+    <li><a href="#method-i-marks_by_event">#marks_by_event</a>
+    
+    <li><a href="#method-i-url_code">#url_code</a>
+    
+    <li><a href="#method-i-years_array">#years_array</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./EventHelper.html">EventHelper</a>
+  
+    <li><a href="./EventHelper/Event.html">EventHelper::Event</a>
+  
+    <li><a href="./Admin.html">Admin</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./AssetsController.html">AssetsController</a>
+  
+    <li><a href="./Athlete.html">Athlete</a>
+  
+    <li><a href="./AthletesController.html">AthletesController</a>
+  
+    <li><a href="./AthletesHelper.html">AthletesHelper</a>
+  
+    <li><a href="./LookupHelper.html">LookupHelper</a>
+  
+    <li><a href="./Mark.html">Mark</a>
+  
+    <li><a href="./MarksController.html">MarksController</a>
+  
+    <li><a href="./MarksHelper.html">MarksHelper</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./RecordsHelper.html">RecordsHelper</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Athlete</h1>
+
+  <div id="description" class="description">
+    
+<h2 id="label-Schema+Information">Schema Information</h2>
+
+<p>Table name: athletes</p>
+
+<pre>id               :integer          not null, primary key
+name             :string(255)      not null
+graduating_class :integer
+gender           :string(255)
+url              :string(255)</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="FIELD_EVENTS">FIELD_EVENTS
+        
+        <dd class="description">
+        
+      
+        <dt id="MULTI_EVENTS">MULTI_EVENTS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-females" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">females</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="females-source">
+            <pre><span class="ruby-comment"># File app/models/athlete.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">females</span>
+  <span class="ruby-identifier">where</span>(<span class="ruby-identifier">gender</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;f&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- females-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- females-method -->
+
+    
+      <div id="method-c-males" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">males</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="males-source">
+            <pre><span class="ruby-comment"># File app/models/athlete.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">males</span>
+  <span class="ruby-identifier">where</span>(<span class="ruby-identifier">gender</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;m&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- males-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- males-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-has_data-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_data?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="has_data-3F-source">
+            <pre><span class="ruby-comment"># File app/models/athlete.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_data?</span>
+  <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">url</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Mark</span>.<span class="ruby-identifier">where</span>(<span class="ruby-string">&quot;athlete_id = ?&quot;</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span>).<span class="ruby-identifier">count</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_data-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_data-3F-method -->
+
+    
+      <div id="method-i-highcharts_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">highcharts_data</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Formats data to be easily used with highcharts TODO: unit of measurement,
+other various helper things</p>
+          
+
+          
+          <div class="method-source-code" id="highcharts_data-source">
+            <pre><span class="ruby-comment"># File app/models/athlete.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">highcharts_data</span>
+  <span class="ruby-identifier">data</span> = {}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">marks_by_event</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">event_name</span>, <span class="ruby-identifier">mark_data</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mark_hash</span> = {}
+    <span class="ruby-identifier">mark_hash</span>[<span class="ruby-string">&quot;years&quot;</span>] = <span class="ruby-identifier">years_array</span>(<span class="ruby-identifier">mark_data</span>)
+    <span class="ruby-identifier">mark_hash</span>[<span class="ruby-string">&quot;is_running_event&quot;</span>] = <span class="ruby-identifier">mark_data</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">is_running_event?</span>
+    <span class="ruby-identifier">mark_hash</span>[<span class="ruby-string">&quot;units&quot;</span>] = <span class="ruby-identifier">mark_data</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">units_of_measurement</span>
+    <span class="ruby-identifier">mark_hash</span>[<span class="ruby-string">&quot;series&quot;</span>] = []
+    
+    <span class="ruby-identifier">mark_data</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">season</span>, <span class="ruby-identifier">season_data</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">mark_hash</span>[<span class="ruby-string">&quot;series&quot;</span>] <span class="ruby-operator">&lt;&lt;</span> {
+        <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-identifier">season</span>,
+        <span class="ruby-identifier">data</span><span class="ruby-operator">:</span> <span class="ruby-identifier">mark_array</span>(<span class="ruby-identifier">mark_hash</span>[<span class="ruby-string">&quot;years&quot;</span>], <span class="ruby-identifier">season_data</span>),
+        <span class="ruby-identifier">color</span><span class="ruby-operator">:</span> (<span class="ruby-identifier">season</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;Indoor&quot;</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#BE0F0F&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;#EAD900&quot;</span>)
+      }
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-identifier">data</span>[<span class="ruby-identifier">event_name</span>] = <span class="ruby-identifier">mark_hash</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- highcharts_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- highcharts_data-method -->
+
+    
+      <div id="method-i-mark_array" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mark_array</span><span
+            class="method-args">(years, season_data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mark_array-source">
+            <pre><span class="ruby-comment"># File app/models/athlete.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mark_array</span>(<span class="ruby-identifier">years</span>, <span class="ruby-identifier">season_data</span>)
+  <span class="ruby-identifier">data</span> = []
+
+  <span class="ruby-identifier">years</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">year</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mark_to_add</span> = <span class="ruby-identifier">season_data</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">mark</span><span class="ruby-operator">|</span> <span class="ruby-identifier">mark</span>.<span class="ruby-identifier">year</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">year</span> }.<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">mark_to_add</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">mark_to_add</span>.<span class="ruby-identifier">mark</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mark_array-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mark_array-method -->
+
+    
+      <div id="method-i-marks_by_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">marks_by_event</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a hash in the format: { event_1 =&gt; { “Indoor” =&gt; [],
+“Outdoor” =&gt; [] },</p>
+
+<pre class="ruby"><span class="ruby-identifier">event_2</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-string">&quot;Indoor&quot;</span> =<span class="ruby-operator">&gt;</span> [], <span class="ruby-string">&quot;Outdoor&quot;</span> =<span class="ruby-operator">&gt;</span> [] }, <span class="ruby-identifier">etc</span>. }
+</pre>
+          
+
+          
+          <div class="method-source-code" id="marks_by_event-source">
+            <pre><span class="ruby-comment"># File app/models/athlete.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">marks_by_event</span>
+  <span class="ruby-identifier">marks_hash</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">marks</span>.<span class="ruby-identifier">group_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">mark</span><span class="ruby-operator">|</span> <span class="ruby-identifier">mark</span>.<span class="ruby-identifier">event_name</span> }
+  <span class="ruby-identifier">marks_hash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">event_name</span>, <span class="ruby-identifier">mark</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">marks_hash</span>[<span class="ruby-identifier">event_name</span>] = <span class="ruby-identifier">marks_hash</span>[<span class="ruby-identifier">event_name</span>].<span class="ruby-identifier">group_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">mark</span><span class="ruby-operator">|</span> <span class="ruby-identifier">mark</span>.<span class="ruby-identifier">season</span> }
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">marks_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- marks_by_event-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- marks_by_event-method -->
+
+    
+      <div id="method-i-url_code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">url_code</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="url_code-source">
+            <pre><span class="ruby-comment"># File app/models/athlete.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url_code</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">url</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-regexp">/athletes\/(.......)\.html/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">url</span>).<span class="ruby-identifier">captures</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">url</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;tfrrs&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- url_code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- url_code-method -->
+
+    
+      <div id="method-i-years_array" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">years_array</span><span
+            class="method-args">(mark_data)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="years_array-source">
+            <pre><span class="ruby-comment"># File app/models/athlete.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">years_array</span>(<span class="ruby-identifier">mark_data</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">mark_data</span>[<span class="ruby-string">&quot;Indoor&quot;</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">mark_data</span>[<span class="ruby-string">&quot;Outdoor&quot;</span>]
+    <span class="ruby-identifier">min</span> = [<span class="ruby-identifier">mark_data</span>[<span class="ruby-string">&quot;Indoor&quot;</span>][<span class="ruby-value">-1</span>].<span class="ruby-identifier">year</span>, <span class="ruby-identifier">mark_data</span>[<span class="ruby-string">&quot;Outdoor&quot;</span>][<span class="ruby-value">-1</span>].<span class="ruby-identifier">year</span>].<span class="ruby-identifier">min</span>
+    <span class="ruby-identifier">max</span> = [<span class="ruby-identifier">mark_data</span>[<span class="ruby-string">&quot;Indoor&quot;</span>][<span class="ruby-value">0</span>].<span class="ruby-identifier">year</span>, <span class="ruby-identifier">mark_data</span>[<span class="ruby-string">&quot;Outdoor&quot;</span>][<span class="ruby-value">0</span>].<span class="ruby-identifier">year</span>].<span class="ruby-identifier">max</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">min</span> = <span class="ruby-identifier">mark_data</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>[<span class="ruby-value">-1</span>].<span class="ruby-identifier">year</span>
+    <span class="ruby-identifier">max</span> = <span class="ruby-identifier">mark_data</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">first</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">year</span>
+  <span class="ruby-keyword">end</span>
+  
+  (<span class="ruby-identifier">min</span><span class="ruby-operator">..</span><span class="ruby-identifier">max</span>).<span class="ruby-identifier">to_a</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- years_array-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- years_array-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

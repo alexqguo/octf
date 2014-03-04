@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>module LookupHelper - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/lookup_helper.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-format_to_float">#format_to_float</a>
+    
+    <li><a href="#method-i-get_data">#get_data</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./EventHelper.html">EventHelper</a>
+  
+    <li><a href="./EventHelper/Event.html">EventHelper::Event</a>
+  
+    <li><a href="./Admin.html">Admin</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./AssetsController.html">AssetsController</a>
+  
+    <li><a href="./Athlete.html">Athlete</a>
+  
+    <li><a href="./AthletesController.html">AthletesController</a>
+  
+    <li><a href="./AthletesHelper.html">AthletesHelper</a>
+  
+    <li><a href="./LookupHelper.html">LookupHelper</a>
+  
+    <li><a href="./Mark.html">Mark</a>
+  
+    <li><a href="./MarksController.html">MarksController</a>
+  
+    <li><a href="./MarksHelper.html">MarksHelper</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./RecordsHelper.html">RecordsHelper</a>
+  
+    <li><a href="./Session.html">Session</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./User.html">User</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module LookupHelper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-format_to_float" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">format_to_float</span><span
+            class="method-args">(str)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This formats a string representation of a float into a float So if it’s in
+hour:minute:second format, it will change it into just a float</p>
+          
+
+          
+          <div class="method-source-code" id="format_to_float-source">
+            <pre><span class="ruby-comment"># File lib/lookup_helper.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format_to_float</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">str</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;:&quot;</span>)
+
+  <span class="ruby-identifier">array</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;:&quot;</span>).<span class="ruby-identifier">reverse!</span>
+  <span class="ruby-identifier">total</span> = <span class="ruby-value">0.0</span>
+  <span class="ruby-identifier">array</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">total</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">total</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_f</span> * (<span class="ruby-value">60</span> <span class="ruby-operator">**</span> <span class="ruby-identifier">i</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">total</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- format_to_float-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- format_to_float-method -->
+
+    
+      <div id="method-i-get_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_data</span><span
+            class="method-args">(url)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This gathers the selected athlete’s name once its URL is found by going to
+the athlete’s page on directathletics.com</p>
+          
+
+          
+          <div class="method-source-code" id="get_data-source">
+            <pre><span class="ruby-comment"># File lib/lookup_helper.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_data</span>(<span class="ruby-identifier">url</span>)
+  <span class="ruby-identifier">event_list</span> = []
+
+  <span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>(<span class="ruby-identifier">open</span>(<span class="ruby-identifier">url</span>))
+  <span class="ruby-identifier">tables</span> = <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">&quot;//table&quot;</span>) <span class="ruby-comment"># this is a Nokogiri::XML::Element</span>
+  <span class="ruby-identifier">first</span> = <span class="ruby-identifier">tables</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">inner_text</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+                   .<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span> <span class="ruby-identifier">el</span>.<span class="ruby-identifier">strip</span> }
+                   .<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">el</span><span class="ruby-operator">|</span> <span class="ruby-identifier">el</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span> }
+  <span class="ruby-identifier">first</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">event</span><span class="ruby-operator">|</span> 
+    <span class="ruby-keyword">unless</span> [<span class="ruby-string">&quot;Year&quot;</span>, <span class="ruby-string">&quot;Season&quot;</span>, <span class="ruby-string">&quot;Class&quot;</span>, <span class="ruby-string">&quot;Sport&quot;</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">event</span>)
+      <span class="ruby-identifier">event_list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Event</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">event</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">rows</span> = <span class="ruby-identifier">tables</span>[<span class="ruby-value">3</span>]
+  <span class="ruby-comment">######## testing</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\n there are #{rows.children.length} rows \n&quot;</span>
+  <span class="ruby-comment">########</span>
+  
+  <span class="ruby-identifier">rows</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">row</span>.<span class="ruby-identifier">inner_text</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;\n&quot;</span>
+    
+    <span class="ruby-identifier">cur_row</span> = <span class="ruby-identifier">row</span>.<span class="ruby-identifier">inner_text</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span> }
+    <span class="ruby-identifier">year</span> = <span class="ruby-identifier">cur_row</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">season</span> = <span class="ruby-identifier">cur_row</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-identifier">event_list_idx</span> = <span class="ruby-value">0</span>
+    
+    <span class="ruby-comment">######## testing</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;cur_row.length: #{cur_row.length}&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;event_list.length: #{event_list.length}&quot;</span>
+    <span class="ruby-comment"># if cur_row.length &lt; event_list.length + 3</span>
+    <span class="ruby-comment"># =&gt; cur_row.insert(3, &quot;-- --&quot;)</span>
+    <span class="ruby-comment"># end</span>
+    <span class="ruby-comment">########</span>
+    
+  
+    <span class="ruby-comment">######## testing</span>
+    <span class="ruby-identifier">print</span> <span class="ruby-identifier">cur_row</span>, <span class="ruby-identifier">cur_row</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;\n&quot;</span>
+    <span class="ruby-comment"># if cur_row.length &lt; event_list.length + 3</span>
+    <span class="ruby-comment"># =&gt; cur_row.insert(3, &quot;-- --&quot;)</span>
+    <span class="ruby-comment"># end</span>
+    <span class="ruby-comment">########</span>
+    
+    <span class="ruby-identifier">cur_row</span>[(<span class="ruby-identifier">cur_row</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">event_list</span>.<span class="ruby-identifier">length</span>)<span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">mark</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">float</span> = <span class="ruby-identifier">format_to_float</span>(<span class="ruby-identifier">mark</span>)
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mark</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;-- --&quot;</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">float</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span> <span class="ruby-comment"># prevents weird bug</span>
+        
+        <span class="ruby-comment">######## testing</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  adding #{mark} to #{event_list[event_list_idx].name}&quot;</span>
+        <span class="ruby-comment">########</span>
+        
+        <span class="ruby-identifier">event_list</span>[<span class="ruby-identifier">event_list_idx</span>].<span class="ruby-identifier">add_time</span>(<span class="ruby-identifier">float</span>, <span class="ruby-identifier">year</span>, <span class="ruby-identifier">season</span>)
+      <span class="ruby-keyword">end</span>
+      
+      <span class="ruby-identifier">event_list_idx</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">event_list</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_data-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_data-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
