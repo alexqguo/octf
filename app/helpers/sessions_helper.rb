@@ -29,7 +29,7 @@ module SessionsHelper
   def require_admin!
     if current_user.type != "Admin"
       flash[:errors] = "You don't have permission to do that."
-      redirect_to athletes_url 
+      redirect_to athletes_url
     end
   end
 

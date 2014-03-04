@@ -9,7 +9,7 @@
 		-- only first three graphs show up
 		-- implementing tabs would fix this??
 		
-	-- add demo page
+	-- separate file for highcharts scripts
 	
 ---------------------------------------------------------------------------------------
 

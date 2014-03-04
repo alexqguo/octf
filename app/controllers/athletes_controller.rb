@@ -2,7 +2,7 @@ class AthletesController < ApplicationController
   include EventHelper
   include LookupHelper
   
-  before_filter :require_current_user!
+  before_filter :require_current_user!, except: [:demo, :graph_data]
   before_filter :require_admin!, only: [:new, :create, :edit]
   
   def index
@@ -15,10 +15,16 @@ class AthletesController < ApplicationController
     @marks_by_event = @athlete.marks_by_event
   end
   
+  def demo
+    @athlete = Athlete.find_by_name("Alex Guo")
+    @marks_by_event = @athlete.marks_by_event
+  end
+  
   def graph_data
     if request.xhr?
       @athlete = Athlete.find(params[:athlete_id])
       @data = @athlete.highcharts_data
+      
       render json: @data
     else
       render json: "Error!", status: 422
