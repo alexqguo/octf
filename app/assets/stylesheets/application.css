@@ -73,6 +73,10 @@ form {
 	box-shadow: 0 0 5px #3F94DC;
 }
 
+.invisible {
+	display: none;
+}
+
 a {
 	color: #3F94DC;
 	text-decoration: none;
