@@ -20,9 +20,11 @@
 
 <%= render "records_table", title: "Outdoor Records - Men", gender: :men, season: :outdoor, invisible: true, table_class: "men-outdoor" %>
 
-<a href="/indoor_records.pdf">Indoor</a>
-<br>
-<a href="/outdoor_records.pdf">Outdoor</a>
+<p>
+	PDF Version:<br>
+	<a href="/indoor_records.pdf">Indoor</a><br>
+	<a href="/outdoor_records.pdf">Outdoor</a>
+</p>
 
 <script>
 	$(function () {

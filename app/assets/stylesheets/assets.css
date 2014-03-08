@@ -10,14 +10,14 @@
 }
 
 .records-table td {
+	width: 200px;
 	font-weight: 300;
 	padding: 10px 5px;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 }
 
-/*
-.records-table tr {
-	border: 2px solid blue;
+.records-table tr:hover {
+	background: #eee;
 }
-*/
+
