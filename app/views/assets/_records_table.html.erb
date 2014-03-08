@@ -1,6 +1,6 @@
-<div class="records <%= 'invisible' if invisible %>">
+<div class="records <%= table_class %> <%= 'invisible' if invisible %>">
 
-	<h2><%= title %></h2>
+	<h3><%= title %></h3>
 
 	<table class="records-table">
 		<tr>
@@ -10,13 +10,13 @@
 			<th>Date Set</th>
 			<th>Notes</th>
 		</tr>
-		<% women_indoor_events.each do |event_name| %>
+		<% get_events_list(season, gender).each do |event_name| %>
 			<tr>
 				<td><%= event_name %></td>
-				<td><%= records[event_name][:indoor][gender][0] %></td>
-				<td><%= records[event_name][:indoor][gender][1] %></td>
-				<td><%= records[event_name][:indoor][gender][2] %></td>
-				<td><%= records[event_name][:indoor][gender][3] %></td>
+				<td><%= records[event_name][season][gender][0] %></td>
+				<td><%= records[event_name][season][gender][1] %></td>
+				<td><%= records[event_name][season][gender][2] %></td>
+				<td><%= records[event_name][season][gender][3] %></td>
 			</tr>
 		<% end %>
 	</table>

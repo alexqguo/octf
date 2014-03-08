@@ -4,10 +4,38 @@
 	(as of February 2014)
 </p>
 
-<%= render "records_table", title: "Indoor Records - Women", gender: :women, invisible: false %>
+<!-- I was lazy and reused the classes from athletes/show.html.erb -->
+<ul class="event-list group">
+	<li class="event-list-item" data-table-name="women-indoor">Women - Indoors</li>
+	<li class="event-list-item" data-table-name="men-indoor">Men - Indoors</li>
+	<li class="event-list-item" data-table-name="women-outdoor">Women - Outdoors</li>
+	<li class="event-list-item" data-table-name="men-outdoor">Men - Outdoors</li>
+</ul>
 
-<%= render "records_table", title: "Indoor Records - Men", gender: :men, invisible: false %>
+<%= render "records_table", title: "Indoor Records - Women", gender: :women, season: :indoor, invisible: false, table_class: "women-indoor" %>
+
+<%= render "records_table", title: "Indoor Records - Men", gender: :men, season: :indoor, invisible: true, table_class: "men-indoor" %>
+
+<%= render "records_table", title: "Outdoor Records - Women", gender: :women, season: :outdoor, invisible: true, table_class: "women-outdoor" %>
+
+<%= render "records_table", title: "Outdoor Records - Men", gender: :men, season: :outdoor, invisible: true, table_class: "men-outdoor" %>
 
 <a href="/indoor_records.pdf">Indoor</a>
 <br>
 <a href="/outdoor_records.pdf">Outdoor</a>
+
+<script>
+	$(function () {
+		var currentGraph = $($(".records").not(".invisible")[0]);
+		console.log(currentGraph);
+		
+		$(".event-list-item").on("click", function (event) {
+			var tableName = $(event.target).data("table-name");
+			
+			currentGraph.toggleClass("invisible");
+			$("." + tableName).toggleClass("invisible");
+			currentGraph = $("." + tableName);
+		});
+		
+	});
+</script>

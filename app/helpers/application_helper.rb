@@ -11,12 +11,16 @@ module ApplicationHelper
     RECORDS
   end
   
-  def women_indoor_events
-    format_indoor_events("Indoor Pentathlon", "")
+  def get_events_list(season, gender)
+    gender == :women ? women_events(season) : men_events(season)
   end
   
-  def men_indoor_events
-    format_indoor_events("Indoor Pentathlon", "Heptathlon")
+  def women_events(season)
+    season == :indoor ? format_indoor_events("Indoor Pentathlon", "") : []
+  end
+  
+  def men_events(season)
+    season == :indoor ? format_indoor_events("Indoor Pentathlon", "Heptathlon") : []
   end
   
   def format_indoor_events(multi1, multi2)

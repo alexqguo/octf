@@ -1,18 +1,23 @@
 .records-table {
 	border-collapse: collapse;
+	width: 1000px;
+	margin: 20px auto;
 }
 
 .records-table th {
+	font-weight: 400;
 	text-align: left;
 }
 
-td {
+.records-table td {
+	font-weight: 300;
 	padding: 10px 5px;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 }
 
-/*.records-table tr {
+/*
+.records-table tr {
 	border: 2px solid blue;
 }
 */
