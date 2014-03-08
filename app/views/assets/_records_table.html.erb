@@ -1,0 +1,24 @@
+<div class="records <%= 'invisible' if invisible %>">
+
+	<h2><%= title %></h2>
+
+	<table class="records-table">
+		<tr>
+			<th>Event</th>
+			<th>Mark</th>
+			<th>Record Holder</th>
+			<th>Date Set</th>
+			<th>Notes</th>
+		</tr>
+		<% women_indoor_events.each do |event_name| %>
+			<tr>
+				<td><%= event_name %></td>
+				<td><%= records[event_name][:indoor][gender][0] %></td>
+				<td><%= records[event_name][:indoor][gender][1] %></td>
+				<td><%= records[event_name][:indoor][gender][2] %></td>
+				<td><%= records[event_name][:indoor][gender][3] %></td>
+			</tr>
+		<% end %>
+	</table>
+
+</div>

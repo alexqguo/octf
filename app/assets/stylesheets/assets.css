@@ -1,0 +1,18 @@
+.records-table {
+	border-collapse: collapse;
+}
+
+.records-table th {
+	text-align: left;
+}
+
+td {
+	padding: 10px 5px;
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+/*.records-table tr {
+	border: 2px solid blue;
+}
+*/
