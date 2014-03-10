@@ -13,6 +13,7 @@
 -- separate file for highcharts scripts
 
 -- move the constants into a completely separate file
+	-- eventually will probably have to make a model for it, so that there can be an edit page for admin
 	
 ---------------------------------------------------------------------------------------
 
