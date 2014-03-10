@@ -1,15 +1,18 @@
 -- OCTF (change the title to something more interesting)
+
+-- Home page
 	-- recent headlines
-		
-	-- all athletes
-		-- add jQuery popup loading thing for import data
-		-- work on view: athletes#new
 	
-	-- mobile
-		-- only first three graphs show up
-		-- implementing tabs would fix this??
-		
-	-- separate file for highcharts scripts
+-- all athletes
+	-- add jQuery popup loading thing for import data
+	-- work on view: athletes#new
+
+-- mobile
+	-- make the condition better, not just check for screen width
+	
+-- separate file for highcharts scripts
+
+-- move the constants into a completely separate file
 	
 ---------------------------------------------------------------------------------------
 

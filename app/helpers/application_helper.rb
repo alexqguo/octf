@@ -24,11 +24,11 @@ module ApplicationHelper
   end
   
   def format_outdoor_events(multi)
-    OUTDOOR_RECORD_EVENTS.map { |event_name| event_name == "MULTI" ? multi : event_name }
+      OUTDOOR_RECORD_EVENTS.map { |event_name| event_name == "MULTI" ? multi : event_name }
   end
   
   def format_indoor_events(multi1, multi2)
-    INDOOR_RECORD_EVENTS.map do |event_name|
+      INDOOR_RECORD_EVENTS.map do |event_name|
       if event_name == "MULTI1"
         multi1
       elsif event_name == "MULTI2"
@@ -37,7 +37,7 @@ module ApplicationHelper
         event_name
       end      
     end.reject { |event_name| event_name == "" }
-  end
+  end  
   
   # I didn't feel the need to create an entire new table for all of this stuff,
   # since for the most part the data never changes
@@ -103,7 +103,7 @@ module ApplicationHelper
     },
     "60m Dash" => {
       indoor: {
-        women: ["8.15", "Margaret Miller", "March 3, 2012", ""],
+        women: ["8.11", "Margaret Miller", "March 8, 2014", "NCAC Meet"],
         men: ["7.16", "Shawn Chrapczynski", "March 2, 2012", "NCAC Meet"]
       }
     },
@@ -174,7 +174,7 @@ module ApplicationHelper
     "3000m Run" => {
       indoor: {
         women: ["10:04.56", "Joanna Johnson", "March 4, 2011", "NCAC Meet"],
-        men: ["8:41.08", "Stephen Williams", "March 4, 2011", "NCAC Meet"]
+        men: ["8:35.66", "Geno Arthur", "February 22, 2014", ""]
       }# ,
 #       outdoor: {
 #         women: ["10:13.00", "Sarah Cox", "1985", ""],
@@ -249,7 +249,7 @@ module ApplicationHelper
         men: ["13.96m", "Alex Guo", "March 4, 2013", "NCAC Meet"]
       },
       outdoor: {
-        women: ["11.70", "Apryl Wynn", "2001", ""],
+        women: ["11.70m", "Apryl Wynn", "2001", ""],
         men: ["14.46m", "Alex Guo", "May 6, 2013", "NCAC Meet"]
       }
     },
@@ -275,7 +275,7 @@ module ApplicationHelper
     },
     "Weight Throw" => {
       indoor: {
-        women: ["15.15m", "Tiffany Henry", "January 31, 2014", ""],
+        women: ["65.15m", "Tiffany Henry", "March 8, 2014", "NCAC Meet, NCAC Record"],
         men: ["14.05m", "Josh Gallagher", "February 18, 2011", ""]
       }
     },
@@ -351,11 +351,9 @@ module ApplicationHelper
     "4000m Distance Medley Relay" => {
       indoor: {
         women: ["12:06.71", "Cerbin, Ouellet, Newberger, Davis-Hayes", "2007", ""],
-        men: ["10:32.50", "Davila, King, Williams, Taljan", "March 6, 2009", "NCAC Meet"]
+        men: ["10:30.62", "Moreton, Choi, Taylor, Arthur", "March 8, 2014", "NCAC Meet"]
       }
     }
   }
-  
-  
   
 end

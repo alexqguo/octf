@@ -16,20 +16,20 @@ module SessionsHelper
   end
   
   def require_current_user!
-    if current_user.nil?
+    unless current_user
       flash[:errors] = "You must be logged in to do that!"
       redirect_to new_session_url
     end
   end
   
   def require_no_user!
-    redirect_to athletes_url if !!current_user
+    redirect_to home_url if !!current_user
   end
   
   def require_admin!
     if current_user.type != "Admin"
       flash[:errors] = "You don't have permission to do that."
-      redirect_to athletes_url
+      redirect_to home_url
     end
   end
 

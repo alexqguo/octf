@@ -11,7 +11,7 @@
 			<th>Notes</th>
 		</tr>
 		<% get_events_list(season, gender).each do |event_name| %>
-			<tr>
+			<tr class="table-row">
 				<td><%= event_name %></td>
 				<td><%= records[event_name][season][gender][0] %></td>
 				<td><%= records[event_name][season][gender][1] %></td>

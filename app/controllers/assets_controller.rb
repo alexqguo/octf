@@ -6,7 +6,7 @@ class AssetsController < ApplicationController
   def records
   end
   
-  def about
+  def home
   end
   
   def admin
