@@ -18,7 +18,7 @@ module EventHelper
       end
     end
   
-    def to_s()
+    def to_s
       s = "#{@name}"
     
       if @times_indoor.size > 0
