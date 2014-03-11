@@ -69,7 +69,18 @@ form {
 	transition: 0.2s;
 }
 
-.input input:focus {
+.inline-input input {
+	float: left;
+	border: 1px solid #ccc;
+	height: 15px;
+	
+	padding: 5px 10px;
+	border-radius: 3px;
+	outline: none;
+	transition: 0.2s;
+}
+
+.input input:focus, .inline-input input:focus {
 	box-shadow: 0 0 5px #3F94DC;
 }
 

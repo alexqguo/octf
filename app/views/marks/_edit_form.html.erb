@@ -1,0 +1,16 @@
+<%= "#{mark.year} #{mark.season}: #{mark.event_name}" %>
+
+<form action="<%= athlete_mark_url(athlete, mark) %>" method="POST">
+	
+	<%= auth_token %>
+	<input type="hidden" name="_method" value="PUT">
+	<div class="inline-input">
+		<input name="mark[mark]" value="<%= mark.mark %>">
+	</div>
+	<input type="submit" value="Edit">
+	
+</form>
+
+<!-- TODO: add form -->
+<!-- TODO: delete form as well -->
+<br>

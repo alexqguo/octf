@@ -26,8 +26,8 @@
 
 	<% if current_user %>
 	<% if current_user.type == "Admin" %>
-		<a href="<%= edit_athlete_url(@athlete) %>">Update Data</a>
-		<br>
+		<a href="<%= athlete_marks_url(@athlete) %>">Edit Marks</a><br>
+		<a href="<%= edit_athlete_url(@athlete) %>">Update Data</a><br>
 	<% else %>
 		<form action="<%= athlete_url(@athlete) %>" method="POST">
 			<%= auth_token %>

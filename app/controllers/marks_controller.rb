@@ -5,7 +5,7 @@ class MarksController < ApplicationController
   include EventHelper
   include LookupHelper
   
-  before_filter :require_admin!, only: [:new, :create]
+  before_filter :require_admin!, only: [:new, :create, :index, :update]
   
   def new
     @athlete = Athlete.find(params[:athlete_id])
@@ -36,6 +36,15 @@ class MarksController < ApplicationController
     else
       flash[:errors] = @athlete.errors.full_messages
     end
+  end
+  
+  def index
+    @athlete = Athlete.find(params[:athlete_id])
+    @marks = @athlete.marks
+  end
+  
+  def update
+    render json: "ASDFASDFASDF"
   end
   
 end

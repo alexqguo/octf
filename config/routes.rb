@@ -7,7 +7,7 @@ AthleteLookup::Application.routes.draw do
   resource :session, only: [:new, :create, :destroy]
   
   resources :athletes, except: :destroy do
-    resources :marks, only: [:new, :create]
+    resources :marks, only: [:new, :create, :index, :update]
     get "graph_data", action: "graph_data"
   end
   
