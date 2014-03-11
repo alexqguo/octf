@@ -20,9 +20,6 @@ module LookupHelper
     end
     
     rows = tables[3]
-    ######## testing
-    puts "\n there are #{rows.children.length} rows \n"
-    ########
     
     rows.children.each do |row|
       next if row.inner_text == "\n"
@@ -32,30 +29,9 @@ module LookupHelper
       season = cur_row[1]
       event_list_idx = 0
       
-      ######## testing
-      puts "cur_row.length: #{cur_row.length}"
-      puts "event_list.length: #{event_list.length}"
-      # if cur_row.length < event_list.length + 3
-      # => cur_row.insert(3, "-- --")
-      # end
-      ########
-      
-    
-      ######## testing
-      print cur_row, cur_row.length
-      puts "\n"
-      # if cur_row.length < event_list.length + 3
-      # => cur_row.insert(3, "-- --")
-      # end
-      ########
-      
       cur_row[(cur_row.length - event_list.length)..-1].each do |mark|
         float = format_to_float(mark)
         unless mark.include?("-- --") || float == 0.0 # prevents weird bug
-          
-          ######## testing
-          puts "  adding #{mark} to #{event_list[event_list_idx].name}"
-          ########
           
           event_list[event_list_idx].add_time(float, year, season)
         end
