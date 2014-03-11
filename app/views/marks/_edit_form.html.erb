@@ -1,6 +1,8 @@
-<%= "#{mark.year} #{mark.season}: #{mark.event_name}" %>
-
-<form action="<%= athlete_mark_url(athlete, mark) %>" method="POST">
+<form class="edit-mark-form" 
+	action="<%= athlete_mark_url(athlete, mark) %>" 
+	method="POST">
+	
+	<%= "#{mark.year} #{mark.season}: #{mark.event_name}" %>
 	
 	<%= auth_token %>
 	<input type="hidden" name="_method" value="PUT">
@@ -10,7 +12,4 @@
 	<input type="submit" value="Edit">
 	
 </form>
-
-<!-- TODO: add form -->
-<!-- TODO: delete form as well -->
-<br>
+<!-- TODO: delete button as well? -->

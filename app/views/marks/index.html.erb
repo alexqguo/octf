@@ -1,6 +1,8 @@
-<h1>marks for this guy</h1>
+<h1>Marks for <%= @athlete.name %></h1>
 
-<% @marks.each do |mark| %>
+<!-- TODO: add form -->
+
+<% @marks.sort_by(&:created_at).each do |mark| %>
 	<%= render "edit_form", athlete: @athlete, mark: mark %>
 <% end %>
 

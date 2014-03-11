@@ -5,7 +5,7 @@ class MarksController < ApplicationController
   include EventHelper
   include LookupHelper
   
-  before_filter :require_admin!, only: [:new, :create, :index, :update]
+  before_filter :require_admin!, only: [:new, :create, :index, :update, :create]
   
   def new
     @athlete = Athlete.find(params[:athlete_id])
@@ -46,11 +46,15 @@ class MarksController < ApplicationController
   def update
     @mark = Mark.find(params[:id])
 
-    if @mark.update_attributes(params[:mark])
-      render json: @mark
-    else
-      render json: @mark.errors.full_messages, status: 422
+    unless @mark.update_attributes(params[:mark])
+      flash[:errors] = @mark.errors.full_messages
     end
+
+    redirect_to athlete_marks_url(@mark.athlete, @mark)
+  end
+  
+  def create
+    
   end
   
 end
