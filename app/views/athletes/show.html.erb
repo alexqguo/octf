@@ -54,6 +54,7 @@
 
 		$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
 			athlete_data = data;
+			console.log(athlete_data);
 
 			for (var key in athlete_data) {
 				

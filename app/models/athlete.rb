@@ -98,11 +98,10 @@ class Athlete < ActiveRecord::Base
   
   def years_array(mark_data)
     if mark_data["Indoor"] && mark_data["Outdoor"]
-      min = [mark_data["Indoor"][-1].year, mark_data["Outdoor"][-1].year].min
-      max = [mark_data["Indoor"][0].year, mark_data["Outdoor"][0].year].max
+      min = [mark_data["Indoor"].min_by(&:year).year, mark_data["Outdoor"].min_by(&:year).year].min
+      max = [mark_data["Indoor"].max_by(&:year).year, mark_data["Outdoor"].max_by(&:year).year].max
     else
-      min = mark_data.values.first[-1].year
-      max = mark_data.values.first[0].year
+      min, max = mark_data.values.first.minmax_by(&:year).map(&:year)
     end
     
     (min..max).to_a
