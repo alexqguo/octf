@@ -44,7 +44,13 @@ class MarksController < ApplicationController
   end
   
   def update
-    render json: "ASDFASDFASDF"
+    @mark = Mark.find(params[:id])
+
+    if @mark.update_attributes(params[:mark])
+      render json: @mark
+    else
+      render json: @mark.errors.full_messages, status: 422
+    end
   end
   
 end

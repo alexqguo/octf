@@ -17,6 +17,7 @@ class Mark < ActiveRecord::Base
   
   validates :event_name, :year, :mark, :season, :athlete, presence: true
   validates :season, inclusion: { in: "Indoor Outdoor" }
+  validate :mark_is_valid
   
   belongs_to :athlete, inverse_of: :marks
   
@@ -32,6 +33,13 @@ class Mark < ActiveRecord::Base
   
   def is_running_event?
     Athlete::FIELD_EVENTS.exclude?(self.event_name) && Athlete::MULTI_EVENTS.exclude?(self.event_name)
+  end
+  
+  private
+  
+  def mark_is_valid
+    puts mark
+    errors[:mark] << "must be a valid mark" if self.mark.nil? || self.mark <= 0
   end
   
 end
