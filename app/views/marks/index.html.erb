@@ -1,6 +1,31 @@
 <h1>Marks for <%= @athlete.name %></h1>
 
-<!-- TODO: add form -->
+<form action="<%= athlete_marks_url(@athlete) %>" method="POST">
+	<%= auth_token %>
+	
+	<div class="input">
+		<label for="year">Year</label>
+		<input name="mark[year]" id="year">
+	</div>
+	
+	<div class="input">
+		<label for="season">Season</label>
+		<input name="mark[season]" id="season">
+	</div>
+	
+	<div class="input">
+		<label for="event_name">Event</label>
+		<input name="mark[event_name]" id="event_name">
+	</div>
+	
+	<div class="input">
+		<label for="mark">Mark</label>
+		<input name="mark[mark]" id="mark">
+	</div>
+	
+	<input type="submit" value="Create!">
+	
+</form>
 
 <% @marks.sort_by(&:created_at).each do |mark| %>
 	<%= render "edit_form", athlete: @athlete, mark: mark %>

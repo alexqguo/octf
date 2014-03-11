@@ -54,7 +54,13 @@ class MarksController < ApplicationController
   end
   
   def create
+    @athlete = Athlete.find(params[:athlete_id])
+    @athlete.marks.new(params[:mark])
+    fail
     
+    if @athlete.save
+    else
+    end
   end
   
 end
