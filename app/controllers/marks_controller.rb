@@ -59,7 +59,9 @@ class MarksController < ApplicationController
     fail
     
     if @athlete.save
+      
     else
+      
     end
   end
   
