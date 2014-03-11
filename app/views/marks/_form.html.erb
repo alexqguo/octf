@@ -15,10 +15,10 @@
 	<%= auth_token %>
 	<input type="hidden" name="_method" value="<%= method %>">
 	
-	<label>
-		URL Code
+	<div class="input">
+		<label for="url_code">URL Code: </label>
 		<input name="url_code" type="text" value="<%= athlete.url_code %>"> 
-	</label>
+	</div>
 	
 	<input type="submit" value="<%= message %>">
 	
