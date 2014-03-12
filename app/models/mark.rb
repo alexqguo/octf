@@ -18,6 +18,7 @@ class Mark < ActiveRecord::Base
   validates :event_name, :year, :mark, :season, :athlete, presence: true
   validates :season, inclusion: { in: "Indoor Outdoor" }
   validate :mark_is_valid
+  # Note: Currently you can create an event with any name. I'm leaving it for now.
   
   belongs_to :athlete, inverse_of: :marks
   

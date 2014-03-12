@@ -50,18 +50,19 @@ class MarksController < ApplicationController
       flash[:errors] = @mark.errors.full_messages
     end
 
-    redirect_to athlete_marks_url(@mark.athlete, @mark)
+    redirect_to athlete_marks_url(@mark.athlete)
   end
   
   def create
     @athlete = Athlete.find(params[:athlete_id])
-    @athlete.marks.new(params[:mark])
-    fail
+    @mark = Mark.new(params[:mark])
+    @athlete.marks << @mark
     
     if @athlete.save
-      
+      redirect_to @athlete
     else
-      
+      flash[:errors] = @mark.errors.full_messages
+      redirect_to athlete_marks_url(@athlete)
     end
   end
   
