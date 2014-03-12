@@ -61,6 +61,7 @@ class AthletesController < ApplicationController
         # TODO: DRY THIS UP
         event.times_indoor.each do |year, mark| # key, value
           prev_mark = @athlete.marks.where(year: year.to_i, season: "Indoor", event_name: event.name).first
+          
           if prev_mark
             prev_mark.update_attributes(mark: mark)
           else
@@ -70,6 +71,7 @@ class AthletesController < ApplicationController
         
         event.times_outdoor.each do |year, mark|
           prev_mark = @athlete.marks.where(year: year.to_i, season: "Outdoor", event_name: event.name).first
+          
           if prev_mark
             prev_mark.update_attributes(mark: mark)
           else
