@@ -53,20 +53,28 @@ class AthletesController < ApplicationController
   def update
     @athlete = Athlete.find(params[:id])
     url = @athlete.url
-
-    # TODO: this needs to change
-    # Maybe below instead of adding each mark, check to see if a mark with that year and season exists
-    # If not, then add
-    @athlete.marks.destroy_all
-    event_list = get_data(url)
     
+    event_list = get_data(url)
     if event_list
       event_list.each do |event|
+        
+        # TODO: DRY THIS UP
         event.times_indoor.each do |year, mark| # key, value
-          @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Indoor")
+          prev_mark = @athlete.marks.where(year: year.to_i, season: "Indoor", event_name: event.name).first
+          if prev_mark
+            prev_mark.update_attributes(mark: mark)
+          else
+            @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Indoor")
+          end
         end
+        
         event.times_outdoor.each do |year, mark|
-          @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Outdoor")
+          prev_mark = @athlete.marks.where(year: year.to_i, season: "Outdoor", event_name: event.name).first
+          if prev_mark
+            prev_mark.update_attributes(mark: mark)
+          else
+            @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Outdoor")
+          end
         end
       end
     end
