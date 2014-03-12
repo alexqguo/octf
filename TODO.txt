@@ -18,6 +18,7 @@
 -- Edit marks page
 	-- change to ujs
 	-- make the form use dropdowns instead of just text
+	-- delete marks
 	
 ---------------------------------------------------------------------------------------
 
