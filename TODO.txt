@@ -1,7 +1,8 @@
 -- OCTF (change the title to something more interesting)
 
 -- Home page
-	-- recent headlines
+	-- recent headlines?
+		-- rss feeds on the website are separated in to m/f, with a lot being similar
 	
 -- all athletes
 	-- add jQuery popup loading thing for import data

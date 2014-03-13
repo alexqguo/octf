@@ -3,10 +3,10 @@
 <form action="<%= athletes_url %>" method="POST">
 	<%= auth_token %>
 	
-	<label>
-		Name
-		<input type="text" name="athlete[name]">
-	</label>
+	<div class="input">
+		<label for="name">Name</label>
+		<input id="name" name="athlete[name]">
+	</div>
 	
 	<label>
 		Male
@@ -18,6 +18,6 @@
 		<input type="radio" name="athlete[gender]" value="f">
 	</label>
 	
-	<input type="submit" value="Create Athlete!">
+	<br><br><input type="submit" value="Create Athlete!">
 	
 </form>
