@@ -49,6 +49,10 @@
 			successfulUpdate($(event.currentTarget).find(".inline-input input"));
 		});
 		
+		$(".delete-mark-form").on("ajax:success", function (event, data) {
+			$(event.target).closest("li").remove();
+		});
+		
 		$("body").on("ajax:error", function (event, data) {
 			alert("Error!");
 		});
@@ -63,6 +67,6 @@
 	function fadeOut($el) {
 		$el.removeClass("green-background");
 		$el.removeClass("no-transition");
-	}
+	};
 
 </script>

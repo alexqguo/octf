@@ -53,9 +53,18 @@ form {
 	
 }
 
-.edit-mark-form {
+.edit-form-list {
+	margin-top: 20px;
+}
+
+.edit-delete-forms {
 	float: left;
-	margin: 10px 0;
+}
+
+.delete-mark-form {
+	position: relative;
+	top: -20px;
+	right: -40px;
 }
 
 .input {

@@ -1,16 +1,29 @@
-<form class="edit-mark-form" 
-	data-remote="true"
-	action="<%= athlete_mark_url(athlete, mark) %>" 
-	method="POST">
+<div class="edit-delete-forms">
+	<form class="edit-mark-form" 
+		data-remote="true"
+		action="<%= athlete_mark_url(athlete, mark) %>" 
+		method="POST">
 	
-	<%= "#{mark.year} #{mark.season}: #{mark.event_name}" %>
+		<%= "#{mark.year} #{mark.season}: #{mark.event_name}" %>
 	
-	<%= auth_token %>
-	<input type="hidden" name="_method" value="PUT">
-	<div class="inline-input">
-		<input name="mark[mark]" value="<%= mark.mark %>">
-	</div>
-	<input type="submit" value="Edit">
+		<%= auth_token %>
+		<input type="hidden" name="_method" value="PUT">
+		<div class="inline-input">
+			<input name="mark[mark]" value="<%= mark.mark %>">
+		</div>
+		<input type="submit" value="Edit">
 	
-</form>
-<!-- TODO: delete button as well? -->
+	</form>
+
+	<form class="delete-mark-form"
+		data-remote="true"
+		action="<%= athlete_mark_url(athlete, mark) %>"
+		method="POST">
+	
+		<%= auth_token %>
+		<input type="hidden" name="_method" value="DELETE">
+	
+		<input type="submit" value="Delete">
+	
+	</form>
+</div>
