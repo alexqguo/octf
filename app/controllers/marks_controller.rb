@@ -45,12 +45,20 @@ class MarksController < ApplicationController
   
   def update
     @mark = Mark.find(params[:id])
+    
+    if request.xhr?
+      if @mark.update_attributes(params[:mark])
+        render json: @mark
+      else
+        render json: @mark, status: 422
+      end
+    else
+      unless @mark.update_attributes(params[:mark])
+        flash[:errors] = @mark.errors.full_messages
+      end
 
-    unless @mark.update_attributes(params[:mark])
-      flash[:errors] = @mark.errors.full_messages
+      redirect_to athlete_marks_url(@mark.athlete)
     end
-
-    redirect_to athlete_marks_url(@mark.athlete)
   end
   
   def create
@@ -59,10 +67,18 @@ class MarksController < ApplicationController
     @athlete.marks << @mark
     
     if @athlete.save
-      redirect_to @athlete
+      if request.xhr?
+        render json: @athlete
+      else
+        redirect_to @athlete
+      end
     else
-      flash[:errors] = @mark.errors.full_messages
-      redirect_to athlete_marks_url(@athlete)
+      if request.xhr?
+        render json: @athlete, status: 422
+      else
+        flash[:errors] = @mark.errors.full_messages
+        redirect_to athlete_marks_url(@athlete)
+      end
     end
   end
   

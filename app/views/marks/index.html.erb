@@ -1,6 +1,9 @@
-<h1>Marks for <%= @athlete.name %></h1>
+<h1>Marks for <a href="<%= athlete_url(@athlete) %>"><%= @athlete.name %></a></h1>
 
-<form action="<%= athlete_marks_url(@athlete) %>" method="POST">
+<form class="new-mark-form"
+	action="<%= athlete_marks_url(@athlete) %>" 
+	data-remote="true"
+	method="POST">
 	<%= auth_token %>
 	
 	<div class="input">
@@ -34,7 +37,19 @@
 <script>
 
 	$(function () {
+		$(".new-mark-form").on("ajax:success", function (event, data) {
+			console.log(event);
+			console.log(data);
+		});
 		
+		$(".edit-mark-form").on("ajax:success", function (event, data) {
+			console.log(event);
+			console.log(data);
+		});
+		
+		$("body").on("ajax:error", function (event, data) {
+			console.log("Error");
+		});
 	});
 
 </script>
