@@ -4,6 +4,7 @@
 class MarksController < ApplicationController
   include EventHelper
   include LookupHelper
+  include MarksHelper
   
   before_filter :require_admin!, only: [:new, :create, :index, :update, :create, :destroy]
   

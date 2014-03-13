@@ -27,7 +27,7 @@ module SessionsHelper
   end
   
   def require_admin!
-    if current_user.type != "Admin"
+    if current_user.nil? || current_user.type != "Admin"
       flash[:errors] = "You don't have permission to do that."
       redirect_to home_url
     end

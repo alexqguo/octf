@@ -8,17 +8,27 @@
 	
 	<div class="input">
 		<label for="year">Year</label>
-		<input name="mark[year]" id="year">
+		<select id="year" name="mark[year]">
+			<% past_ten_years.each do |year| %>
+				<option value="<%= year %>"><%= year %></option>
+			<% end %>
+		</select>
 	</div>
+
 	
-	<div class="input">
-		<label for="season">Season</label>
-		<input name="mark[season]" id="season">
+	<label for="season">Season</label>
+	<div class="season-radio">
+		Indoor <input type="radio" value="Indoor" name="mark[season]">
+		Outdoor <input type="radio" value="Outdoor" name="mark[season]">
 	</div>
 	
 	<div class="input">
 		<label for="event_name">Event</label>
-		<input name="mark[event_name]" id="event_name">
+		<select id="event_name" name="mark[event_name]">
+			<% all_events.each do |event| %>
+				<option value="<%= event %>"><%= event %></option>
+			<% end %>
+		</select>
 	</div>
 	
 	<div class="input">

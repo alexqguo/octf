@@ -20,7 +20,7 @@ Blue: #3F94DC
 */
 
 
-html, body, header, nav, h1, h3, ul, li, div, footer, form, input, a {
+html, body, header, nav, h1, h3, ul, li, div, footer, form, input, a, select {
   border: 0px;
   margin: 0px;
   padding: 0px;
@@ -53,6 +53,12 @@ form {
 	
 }
 
+select {
+	outline: none;
+	background: #fefefe;
+	border-radius: 2px;
+}
+
 .edit-form-list {
 	margin-top: 20px;
 }
@@ -61,11 +67,24 @@ form {
 	float: left;
 }
 
+.flt-right {
+	float: right;
+}
+
+.flt-left {
+	float: left;
+}
+
 .delete-mark-form {
 	display: inline;
 	position: relative;
 	top: -20px;
 	right: -40px;
+}
+
+.season-radio {
+	display: inline;
+	margin-left: 60px;
 }
 
 .input {
@@ -84,6 +103,10 @@ form {
 	transition: 0.2s;
 }
 
+.input select {
+	float: right;
+}
+
 .inline-input input {
 	float: left;
 	border: 1px solid #ccc;
@@ -94,6 +117,11 @@ form {
 	border-radius: 3px;
 	outline: none;
 	transition: 0.2s;
+}
+
+input[type="radio"] {
+	margin-left: 3px;
+	margin-right: 10px;
 }
 
 .input input:focus, .inline-input input:focus {
