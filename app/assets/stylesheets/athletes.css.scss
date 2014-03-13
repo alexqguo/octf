@@ -66,3 +66,16 @@
 
 .graph {
 }
+
+.green-background {
+	background: lightgreen;
+	transition: 0.5s;
+}
+
+.no-transition {
+	transition: 0 !important;
+}
+
+.form-transition {
+	transition: 0.2s;
+}

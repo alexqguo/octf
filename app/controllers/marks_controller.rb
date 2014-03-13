@@ -68,7 +68,7 @@ class MarksController < ApplicationController
     
     if @athlete.save
       if request.xhr?
-        render json: @athlete
+        render partial: "marks/edit_form", locals: {athlete: @athlete, mark: @mark}
       else
         redirect_to @athlete
       end

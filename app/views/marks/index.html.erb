@@ -30,26 +30,39 @@
 	
 </form>
 
-<% @marks.sort_by(&:created_at).each do |mark| %>
-	<%= render "edit_form", athlete: @athlete, mark: mark %>
-<% end %>
+<ul class="edit-form-list">
+	<% @marks.sort_by(&:created_at).each do |mark| %>
+		<li><%= render "edit_form", athlete: @athlete, mark: mark %></li>
+	<% end %>
+</ul>
 
 <script>
 
 	$(function () {
 		$(".new-mark-form").on("ajax:success", function (event, data) {
-			console.log(event);
-			console.log(data);
+			event.currentTarget.reset();
+			$(".edit-form-list").append(data);
+			$("body").animate({ scrollTop: $(document).height() }, "slow");
 		});
 		
 		$(".edit-mark-form").on("ajax:success", function (event, data) {
-			console.log(event);
-			console.log(data);
+			successfulUpdate($(event.currentTarget).find(".inline-input input"));
 		});
 		
 		$("body").on("ajax:error", function (event, data) {
-			console.log("Error");
+			alert("Error!");
 		});
 	});
+	
+	function successfulUpdate($el) {
+		$el.addClass("no-transition");
+		$el.addClass("green-background");
+		setTimeout(fadeOut.bind(null, $el), 100);
+	};
+	
+	function fadeOut($el) {
+		$el.removeClass("green-background");
+		$el.removeClass("no-transition");
+	}
 
 </script>
