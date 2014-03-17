@@ -20,3 +20,10 @@
 .records-table .table-row:hover {
 	background: #eee;
 }
+
+.records {
+}
+
+.records-hidden {
+	display: none;
+}

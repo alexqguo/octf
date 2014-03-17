@@ -3,19 +3,18 @@
 -- Home page
 	-- recent headlines?
 		-- rss feeds on the website are separated in to m/f, with a lot being similar
-	
+
 -- all athletes
 	-- add jQuery popup loading thing for import data
-	-- work on view: athletes#new
 
 -- mobile
 	-- make the condition better, not just check for screen width
-	
+
 -- separate file for highcharts scripts
 
 -- move the school records constants into a completely separate file
 	-- eventually will probably have to make a model for it, so that there can be an edit page for admin
-	
+
 ---------------------------------------------------------------------------------------
 
 -- DRY up:
@@ -27,7 +26,6 @@
 		-- almost exactly the same except for the destroy_all in athletes#update
 
 -- look into tfrrs API: http://images.tfrrs.org/TFRRS_API_18.pdf
-
 
 Notes:
 -- dump db: pg_dump athlete_lookup_development > backup_db (or whatever name you want)

@@ -18,13 +18,13 @@
 
 <script>
 	$(function () {
-		var currentGraph = $($(".records").not(".invisible")[0]);
+		var currentGraph = $($(".records").not(".records-hidden")[0]);
 		
 		$(".event-list-item").on("click", function (event) {
 			var tableName = $(event.target).data("table-name");
 			
-			currentGraph.toggleClass("invisible");
-			$("." + tableName).toggleClass("invisible");
+			currentGraph.toggleClass("records-hidden");
+			$("." + tableName).toggleClass("records-hidden");
 			currentGraph = $("." + tableName);
 		});
 		
