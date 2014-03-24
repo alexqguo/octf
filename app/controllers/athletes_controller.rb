@@ -52,7 +52,9 @@ class AthletesController < ApplicationController
   
   def update
     @athlete = Athlete.find(params[:id])
-    url = @athlete.url
+
+    url = @athlete.url || params[:url_code]
+    @athlete.url = params[:url_code]
     
     event_list = get_data(url)
     if event_list

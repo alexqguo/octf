@@ -91,6 +91,11 @@ class Athlete < ActiveRecord::Base
     return nil if self.url.nil?
     /athletes\/(.......)\.html/.match(self.url).captures.first if self.url.include?("tfrrs")
   end
+
+  def update_url_code(url)
+    self.url = "http://www.tfrrs.org/athletes/#{url}.html"
+    self.save!
+  end
   
   def has_data?
     !!self.url || Mark.where("athlete_id = ?", self.id).count > 0
