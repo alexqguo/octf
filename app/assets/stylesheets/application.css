@@ -91,6 +91,10 @@ select {
 	margin-left: 60px;
 }
 
+.email {
+	margin: 50px 0;
+}
+
 .input {
 	margin: 20px 0;
 	width: 270px;

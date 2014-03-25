@@ -6,11 +6,14 @@
 </p>
 
 <div class="email">
+
+	<h3>Send me an email!</h3>
+
 	<form action="<%= send_email_url %>" method="POST">
 		<%= auth_token %>
 
 		<div class="email-input">
-			<label for="from">From</label>
+			<label for="from">Name</label>
 			<input type="text" id="from" name="email[from]">
 		</div>
 

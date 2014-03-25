@@ -18,6 +18,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
+  gem 'letter_opener'
 end
 
 # Gems used only for assets and not required

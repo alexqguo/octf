@@ -16,8 +16,11 @@ class AssetsController < ApplicationController
   	from = params[:email][:from]
   	subject = params[:email][:subject]
   	body = params[:email][:body]
-  	email = AdminMailer.admin_email(from, subject, body)
-  	fail
+
+  	email = ApplicationMailer.admin_email(from, subject, body)
+  	email.deliver!
+
+  	redirect_to home_url
   end
 
 end
