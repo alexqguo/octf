@@ -20,6 +20,8 @@ class AssetsController < ApplicationController
   	email = ApplicationMailer.admin_email(from, subject, body)
   	email.deliver!
 
+    flash[:notice] = "Email successfully delivered."
+
   	redirect_to home_url
   end
 
