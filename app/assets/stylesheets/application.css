@@ -20,7 +20,7 @@ Blue: #3F94DC
 */
 
 
-html, body, header, nav, h1, h3, ul, li, div, footer, form, input, a, select {
+html, body, header, nav, h1, h3, ul, li, div, footer, form, input, a, select, label, textarea {
   border: 0px;
   margin: 0px;
   padding: 0px;
@@ -96,7 +96,7 @@ select {
 	width: 270px;
 }
 
-.input input, .input textarea {
+.input input, .inline-input input {
 	float: right;
 	border: 1px solid #ccc;
 	height: 15px;
@@ -108,11 +108,35 @@ select {
 	transition: 0.2s;
 }
 
-.input textarea {
-	
+.inline-input input {
+	float: left;
+	width: 155px;
+	margin-right: 10px;
 }
 
-.input input:hover, .input textarea:hover {
+.email-input {
+	margin: 20px 0;
+}
+
+.email-input label {
+	display: inline-block;
+	width: 75px;
+}
+
+.email-input input, .email-input textarea {
+	width: 400px;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	border-radius: 3px;
+	outline: none;
+	transition: 0.2s;
+}
+
+.email-input textarea {
+	height: 80px;
+}
+
+.input input:hover, .inline-input input:hover, .email-input input:hover, .email-input textarea:hover {
 	border: 1px solid #999;
 }
 
@@ -120,24 +144,12 @@ select {
 	float: right;
 }
 
-.inline-input input {
-	float: left;
-	border: 1px solid #ccc;
-	margin-right: 10px;
-	height: 15px;
-	
-	padding: 5px 10px;
-	border-radius: 3px;
-	outline: none;
-	transition: 0.2s;
-}
-
 input[type="radio"] {
 	margin-left: 3px;
 	margin-right: 10px;
 }
 
-.input input:focus, .inline-input input:focus, .input textarea:focus {
+.input input:focus, .inline-input input:focus, .email-input input:focus, .email-input textarea:focus {
 	box-shadow: 0 0 5px #3F94DC;
 }
 

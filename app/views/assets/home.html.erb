@@ -9,12 +9,12 @@
 	<form action="<%= send_email_url %>" method="POST">
 		<%= auth_token %>
 
-		<div class="input">
+		<div class="email-input">
 			<label for="subject">Subject</label>
 			<input type="text" id="subject" name="email[subject]">
 		</div>
 
-		<div class="input">
+		<div class="email-input">
 			<label for="body">Body</label>
 			<textarea id="body" name="email[body]"></textarea>
 		</div>
