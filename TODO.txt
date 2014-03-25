@@ -15,6 +15,9 @@
 -- move the school records constants into a completely separate file
 	-- eventually will probably have to make a model for it, so that there can be an edit page for admin
 
+-- BUGS
+	-- highcharts for 10,000m doesn't display anything
+
 ---------------------------------------------------------------------------------------
 
 -- DRY up:
