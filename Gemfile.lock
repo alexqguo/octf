@@ -63,6 +63,9 @@ GEM
     debug_inspector (0.0.2)
     erubis (2.7.0)
     execjs (2.0.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     friendly_id (4.0.10.1)
       activerecord (>= 3.0, < 4.0)
     fssm (0.2.10)
@@ -150,6 +153,7 @@ DEPENDENCIES
   binding_of_caller
   chosen-rails
   coffee-rails (~> 3.2.1)
+  figaro
   friendly_id
   jquery-rails
   letter_opener

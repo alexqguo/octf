@@ -11,6 +11,7 @@ gem 'nokogiri'
 gem 'chosen-rails'
 gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'friendly_id'
+gem 'figaro'
 
 
 group :development do

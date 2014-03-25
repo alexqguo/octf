@@ -15,3 +15,5 @@
 /tmp
 /.DS_Store
 /backup_db
+# Ignore application configuration
+/config/application.yml
