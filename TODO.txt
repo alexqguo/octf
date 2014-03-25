@@ -17,7 +17,6 @@
 
 -- BUGS
 	-- highcharts for 10,000m doesn't display anything
-	-- finish setting up sendgrid, should use figaro
 
 ---------------------------------------------------------------------------------------
 
