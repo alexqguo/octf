@@ -53,6 +53,10 @@ form {
 	
 }
 
+textarea {
+	font: inherit;
+}
+
 select {
 	outline: none;
 	background: #fefefe;
@@ -92,15 +96,24 @@ select {
 	width: 270px;
 }
 
-.input input {
+.input input, .input textarea {
 	float: right;
 	border: 1px solid #ccc;
 	height: 15px;
+	width: 170px;
 	
 	padding: 5px 10px;
 	border-radius: 3px;
 	outline: none;
 	transition: 0.2s;
+}
+
+.input textarea {
+	
+}
+
+.input input:hover, .input textarea:hover {
+	border: 1px solid #999;
 }
 
 .input select {
@@ -124,7 +137,7 @@ input[type="radio"] {
 	margin-right: 10px;
 }
 
-.input input:focus, .inline-input input:focus {
+.input input:focus, .inline-input input:focus, .input textarea:focus {
 	box-shadow: 0 0 5px #3F94DC;
 }
 

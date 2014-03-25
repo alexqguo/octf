@@ -4,3 +4,21 @@
 	This site is currently under construction, but feel free to poke around.
 	You can check out the source <a href="http://github.com/alexqguo/octf">here</a>.
 </p>
+
+<div class="email">
+	<form action="<%= send_email_url %>" method="POST">
+		<%= auth_token %>
+
+		<div class="input">
+			<label for="subject">Subject</label>
+			<input type="text" id="subject" name="email[subject]">
+		</div>
+
+		<div class="input">
+			<label for="body">Body</label>
+			<textarea id="body" name="email[body]"></textarea>
+		</div>
+
+		<input type="submit" value="Send">
+	</form>
+</div>

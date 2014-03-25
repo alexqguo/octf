@@ -12,4 +12,8 @@ class AssetsController < ApplicationController
   def admin
   end
 
+  def send_email
+  	fail
+  end
+
 end
