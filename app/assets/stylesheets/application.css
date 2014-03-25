@@ -121,6 +121,7 @@ select {
 .email-input label {
 	display: inline-block;
 	width: 75px;
+	vertical-align: top;
 }
 
 .email-input input, .email-input textarea {

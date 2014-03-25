@@ -13,6 +13,10 @@ class AssetsController < ApplicationController
   end
 
   def send_email
+  	from = params[:email][:from]
+  	subject = params[:email][:subject]
+  	body = params[:email][:body]
+  	email = AdminMailer.admin_email(from, subject, body)
   	fail
   end
 
