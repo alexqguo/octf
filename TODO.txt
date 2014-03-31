@@ -16,7 +16,8 @@
 	-- eventually will probably have to make a model for it, so that there can be an edit page for admin
 
 -- BUGS
-	-- (nothing major as of right now)
+	-- Saving athlete with no data errors instead of just failing validation and printing flash message
+		-- because of gender radio defaults to blank instead of "M" or "F"
 
 ---------------------------------------------------------------------------------------
 

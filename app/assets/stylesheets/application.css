@@ -63,6 +63,29 @@ select {
 	border-radius: 2px;
 }
 
+.flash-notice {
+	font-weight: 200;
+	padding: 10px 15px;
+	background: #96FF96;
+	border: 1px solid lime;
+	border-radius: 5px;
+}
+
+.flash-error {
+	font-weight: 200;
+	padding: 10px 15px;
+	background: #FFB9B9;
+	border: 1px solid red;
+	border-radius: 5px;
+}
+
+.params {
+	padding: 0 15px;
+	background: #FFFFB9;
+	border: 1px solid yellow;
+	border-radius: 5px;
+}
+
 .edit-form-list {
 	margin-top: 20px;
 }

@@ -48,8 +48,12 @@
 	
 	<div id="container">
 
-		<div class="flash-notice"><%= flash[:notice] %></div>
-		<div class="flash-error"><%= flash[:errors] %></div>
+		<% if flash[:notice] %>
+			<div class="flash-notice"><%= flash[:notice] %></div>
+		<% end %>
+		<% if flash[:errors] %>
+			<div class="flash-error"><%= flash[:errors] %></div>
+		<% end %>
 		<%= yield %>
 	
 		<% if current_user && current_user.type = "Admin" %>
