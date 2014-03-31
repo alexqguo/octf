@@ -1,6 +1,4 @@
 class AthletesController < ApplicationController
-  include EventHelper
-  include LookupHelper
   
   before_filter :require_current_user!, except: [:demo, :graph_data]
   before_filter :require_admin!, only: [:new, :create, :edit]
@@ -53,42 +51,16 @@ class AthletesController < ApplicationController
   def update
     @athlete = Athlete.find(params[:id])
     @athlete.update_url_code(params[:url_code]) if params[:url_code] && params[:url_code] != @athlete.url_code
-    url = @athlete.url
-    
-    event_list = get_data(url)
-    if event_list
-      event_list.each do |event|
-        
-        # TODO: DRY THIS UP
-        event.times_indoor.each do |year, mark| # key, value
-          prev_mark = @athlete.marks.where(year: year.to_i, season: "Indoor", event_name: event.name).first
-          
-          if prev_mark
-            prev_mark.update_attributes(mark: mark)
-          else
-            @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Indoor")
-          end
-        end
-        
-        event.times_outdoor.each do |year, mark|
-          prev_mark = @athlete.marks.where(year: year.to_i, season: "Outdoor", event_name: event.name).first
-          
-          if prev_mark
-            prev_mark.update_attributes(mark: mark)
-          else
-            @athlete.marks.new(event_name: event.name, year: year, mark: mark, season: "Outdoor")
-          end
-        end
-      end
-    end
+    @athlete.fetch_from_tfrrs
     
     if @athlete.save
       flash[:notice] = "Data for #{@athlete.name} updated successfully!"
       @athlete.update_attributes(updated_at: DateTime.now)
-      redirect_to @athlete
     else
       flash[:errors] = @athlete.errors.full_messages
     end
+
+    redirect_to @athlete
   end
   
 end

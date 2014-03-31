@@ -10,6 +10,8 @@
 #
 
 class Athlete < ActiveRecord::Base
+  include EventHelper
+  include LookupHelper
   extend FriendlyId
   friendly_id :name, use: :slugged
   
@@ -121,6 +123,33 @@ class Athlete < ActiveRecord::Base
     end
     
     data
+  end
+
+  def fetch_from_tfrrs
+    event_list = get_data(self.url)
+
+    if event_list
+      event_list.each do |event|
+        add_marks_for_event(event)
+      end
+    end
+  end
+
+  def add_marks_for_event(event)
+    self.add_times(event.times_indoor, "Indoor", event.name)
+    self.add_times(event.times_outdoor, "Outdoor", event.name)
+  end
+
+  def add_times(times_hash, season, event_name)
+    times_hash.each do |year, mark|
+      prev_mark = self.marks.where(event_name: event_name, year: year.to_i, season: season).first
+
+      if prev_mark
+        prev_mark.update_attributes(mark: mark)
+      else
+        self.marks.new(event_name: event_name, year: year.to_i, season: season, mark: mark)
+      end
+    end
   end
   
  #  def set_url(code)
