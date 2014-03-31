@@ -80,6 +80,7 @@ select {
 }
 
 .params {
+	clear: both;
 	padding: 0 15px;
 	background: #FFFFB9;
 	border: 1px solid yellow;

@@ -20,7 +20,6 @@
 					<%= auth_token %>
 	
 					<select class="chosen-select">
-						<!-- <option value=""></option> -->
 						<% Athlete.all.each do |athlete| %>
 							<option value="<%= athlete.id %>"><%= athlete.name %></option>
 						<% end %>
@@ -52,7 +51,7 @@
 			<div class="flash-notice"><%= flash[:notice] %></div>
 		<% end %>
 		<% if flash[:errors] %>
-			<div class="flash-error"><%= flash[:errors] %></div>
+			<div class="flash-error"><%= flash[:errors].join(", ") %></div>
 		<% end %>
 		<%= yield %>
 	

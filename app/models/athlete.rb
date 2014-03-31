@@ -15,8 +15,8 @@ class Athlete < ActiveRecord::Base
   
   attr_accessible :name, :graduating_class, :gender, :url
   
-  validates :name, :class, :gender, presence: true
-  validates :gender, inclusion: { in: "m f" }
+  validates :name, :gender, presence: true
+  validates :gender, inclusion: { in: "m f", allow_nil: true }
   
   has_many :marks, inverse_of: :athlete, dependent: :destroy
   
