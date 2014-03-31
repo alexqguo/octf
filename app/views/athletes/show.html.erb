@@ -8,6 +8,8 @@
 	<% if @athlete.url %>
 		<a href="<%= @athlete.url %>"><%= @athlete.url %></a>
 	<% end %>
+	<br>
+	Last update: <%= @athlete.updated_at || "No updates yet" %>
 </div>
 
 <% if @athlete.has_data? %>

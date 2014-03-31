@@ -35,6 +35,10 @@ class Mark < ActiveRecord::Base
   def is_running_event?
     Athlete::FIELD_EVENTS.exclude?(self.event_name) && Athlete::MULTI_EVENTS.exclude?(self.event_name)
   end
+
+  def update_athlete
+    self.athlete.update_attributes(updated_at: DateTime.now)
+  end
   
   private
   

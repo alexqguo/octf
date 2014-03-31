@@ -7,6 +7,7 @@ gem 'rails', '3.2.16'
 
 gem 'pg'
 gem 'jquery-rails'
+gem 'simple-rss'
 gem 'nokogiri'
 gem 'chosen-rails'
 gem 'bcrypt-ruby', :require => 'bcrypt'
