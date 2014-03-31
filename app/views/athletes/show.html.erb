@@ -9,7 +9,7 @@
 		<a href="<%= @athlete.url %>"><%= @athlete.url %></a>
 	<% end %>
 	<br>
-	Last update: <%= @athlete.updated_at || "No updates yet" %>
+	Last TFRRS update: <%= @athlete.updated_at.strftime("%b %d, %Y at %H:%M %P") || "No updates yet" %>
 </div>
 
 <% if @athlete.has_data? %>

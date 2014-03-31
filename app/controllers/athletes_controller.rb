@@ -84,6 +84,7 @@ class AthletesController < ApplicationController
     
     if @athlete.save
       flash[:notice] = "Data for #{@athlete.name} updated successfully!"
+      @athlete.update_attributes(updated_at: DateTime.now)
       redirect_to @athlete
     else
       flash[:errors] = @athlete.errors.full_messages
