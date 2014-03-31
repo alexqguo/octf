@@ -48,17 +48,12 @@
 	
 	<div id="container">
 
-		<%= flash[:notice] %>
-		<%= flash[:errors] %>
+		<div class="flash-notice"><%= flash[:notice] %></div>
+		<div class="flash-error"><%= flash[:errors] %></div>
 		<%= yield %>
 	
-		<% if current_user %>
-
-			<% if current_user.type == "Admin" %>
-				<%= debug params %>
-			<% end %>
-	
-		
+		<% if current_user && current_user.type = "Admin" %>
+			<div class="params"><%= debug params %></div>
 		<% end %>
 	
 	</div>

@@ -16,7 +16,7 @@
 	-- eventually will probably have to make a model for it, so that there can be an edit page for admin
 
 -- BUGS
-	-- highcharts for 10,000m doesn't display anything
+	-- (nothing major as of right now)
 
 ---------------------------------------------------------------------------------------
 
