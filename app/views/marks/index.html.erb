@@ -64,7 +64,7 @@
 		});
 		
 		$("body").on("ajax:error", function (event, data) {
-			alert("Error!");
+			$("#container").prepend("<div class='flash-error'>" + data.responseText + "</div>");
 		});
 	});
 	

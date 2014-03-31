@@ -48,7 +48,7 @@ class MarksController < ApplicationController
       end
     else
       if request.xhr?
-        render json: @athlete, status: 422
+        render json: @mark.errors.full_messages.join(", "), status: 422
       else
         flash[:errors] = @mark.errors.full_messages
         redirect_to athlete_marks_url(@athlete)

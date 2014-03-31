@@ -2,7 +2,8 @@
 
 -- Home page
 	-- recent headlines?
-		-- rss feeds on the website are separated in to m/f, with a lot being similar
+		-- rss feeds on the website are separated in to m/f with a lot being similar so this is a problem
+		-- could just do two columns again. Maybe try this
 
 -- all athletes
 	-- add jQuery popup loading thing for import data

@@ -69,6 +69,7 @@ select {
 	background: #96FF96;
 	border: 1px solid lime;
 	border-radius: 5px;
+	margin: 10px 0;
 }
 
 .flash-error {
@@ -77,6 +78,7 @@ select {
 	background: #FFB9B9;
 	border: 1px solid red;
 	border-radius: 5px;
+	margin: 10px 0;
 }
 
 .params {
