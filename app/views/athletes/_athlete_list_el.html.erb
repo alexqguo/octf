@@ -1,0 +1,6 @@
+<div class="athlete-list-el">
+	<li>
+		<a href="<%= athlete_url(athlete) %>"><%= athlete.name %></a>
+		<%= "*" unless athlete.has_data? %>
+	</li>
+</div>

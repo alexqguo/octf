@@ -16,15 +16,12 @@
 	-- eventually will probably have to make a model for it, so that there can be an edit page for admin
 
 -- BUGS
-	-- Saving athlete with no data errors instead of just failing validation and printing flash message
-		-- because of gender radio defaults to blank instead of "M" or "F"
+	-- (nothing major right now)
 
 ---------------------------------------------------------------------------------------
 
 -- DRY up:
-	-- athletes#index
 	-- athletes#update
-	-- app.html.erb -> a lot of (if current_user) statements
 	-- event_list.each in MarksController
 	-- athletes#update and marks#create
 		-- almost exactly the same except for the destroy_all in athletes#update
