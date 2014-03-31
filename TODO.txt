@@ -18,14 +18,14 @@
 -- move the school records constants into a completely separate file
 	-- eventually will probably have to make a model for it, so that there can be an edit page for admin
 
+-- add an "Update Everything" button for admin that will run through all athletes and call fetch_from_tfrrs?
+
 -- BUGS
 	-- (nothing major right now)
 
 ---------------------------------------------------------------------------------------
 
 -- DRY up:
-	-- athletes#update
-	-- event_list.each in MarksController
 	-- athletes#update and marks#create
 		-- almost exactly the same except for the destroy_all in athletes#update
 
