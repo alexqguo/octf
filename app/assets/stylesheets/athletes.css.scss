@@ -10,17 +10,38 @@
 	margin-left: 0px;
 }
 
+.athlete-list-el > li {
+	display: inline-block;
+	position: relative;
+	border-radius: 3px;
+	transition: 0.2s;
+}
+
+.athlete-list-el li:hover {
+	background: #FFFFB9;
+}
+
+/*
+	Uncomment that line to implement the arrow
+*/
+.athlete-list-el li:hover .arrow {
+	/*opacity: 1;*/
+}
+
 .athlete-list-el a {
 	color: black;
 	text-decoration: none;
 	padding: 0 5px;
-	
-	border-radius: 3px;
-	transition: 0.1s;
 }
 
-.athlete-list-el a:hover {
-	background: #FFFFB9;
+.arrow {
+	opacity: 0;
+	position: absolute;
+	left: -20px;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid #FFFFB9;
+	transition: 0.2s;
 }
 
 .males {
