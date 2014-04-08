@@ -20,6 +20,8 @@
 
 -- add an "Update Everything" button for admin that will run through all athletes and call fetch_from_tfrrs?
 
+-- implement redis for graph_data
+
 -- BUGS
 	-- (nothing major right now)
 
