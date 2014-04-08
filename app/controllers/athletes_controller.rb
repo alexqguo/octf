@@ -62,5 +62,17 @@ class AthletesController < ApplicationController
 
     redirect_to @athlete
   end
+
+  def update_all
+    Athlete.all.each do |athlete|
+      athlete.fetch_from_tfrrs
+      athlete.save!
+      athlete.update_attributes(updated_at: DateTime.now)
+    end
+
+    flash[:notice] = "Successfully fetched TFRRS data for all athletes!"
+
+    redirect_to athletes_url
+  end
   
 end
