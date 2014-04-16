@@ -188,12 +188,12 @@ module ApplicationHelper
       },
       outdoor: {
         women: ["16:42.98", "Molly Martorella", "April 26, 2012", ""],
-        men: ["15:10.36", "Stephen Williams", "May 6, 2011", "NCAC Meet"]
+        men: ["14:49.01", "Geno Arthur", "April 12, 2014", ""]
       }
     },
     "10000m Run" => {
       outdoor: {
-        women: ["35:40.29", "Joanna Johnson", "April 16, 2011", "NCAA Auto Qualifier"],
+        women: ["35:11.36", "Molly Martorella", "April 13, 2013", ""],
         men: ["31:53.67", "Everett Schlawin", "May 1, 2009", "NCAC Meet"]
       }
     },

@@ -63,6 +63,11 @@ select {
 	border-radius: 2px;
 }
 
+.homebox {
+	border-top: 1px solid #ccc;
+	margin: 20px 0;
+}
+
 .flash-notice {
 	font-weight: 200;
 	padding: 10px 15px;
@@ -116,10 +121,6 @@ select {
 .season-radio {
 	display: inline;
 	margin-left: 60px;
-}
-
-.email {
-	margin: 50px 0;
 }
 
 .input {
