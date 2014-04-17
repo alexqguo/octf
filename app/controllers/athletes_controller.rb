@@ -19,14 +19,10 @@ class AthletesController < ApplicationController
   end
   
   def graph_data
-    if request.xhr?
-      @athlete = Athlete.find(params[:athlete_id])
-      @data = @athlete.highcharts_data
-      
-      render json: @data
-    else
-      render json: "Error!", status: 422
-    end
+    @athlete = Athlete.find(params[:athlete_id])
+    data = @athlete.highcharts_data
+    
+    render json: data
   end
   
   def new
