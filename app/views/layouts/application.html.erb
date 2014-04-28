@@ -51,7 +51,9 @@
 			<div class="flash-notice"><%= flash[:notice] %></div>
 		<% end %>
 		<% if flash[:errors] %>
-			<div class="flash-error"><%= flash[:errors].join(", ") %></div>
+			<div class="flash-error">
+				<%= flash[:errors].is_a?(Array) ? flash[:errors].join(", ") : flash[:errors] %>
+			</div>
 		<% end %>
 		<%= yield %>
 	
