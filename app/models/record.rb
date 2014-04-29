@@ -21,4 +21,20 @@ class Record < ActiveRecord::Base
   validates :gender, inclusion: { in: "men women" }
   validates :season, inclusion: { in: "indoor outdoor" }
 
+  def self.men_indoor
+  	where({ gender: "men", season: "indoor" })
+  end
+
+  def self.men_outdoor
+  	where({ gender: "men", season: "outdoor" })
+  end
+
+  def self.women_indoor
+  	where({ gender: "women", season: "indoor" })
+  end
+
+  def self.women_outdoor
+  	where({ gender: "women", season: "outdoor" })
+  end
+
 end
