@@ -229,7 +229,7 @@ module ApplicationHelper
     },
     "3000m Steeplechase" => {
       outdoor: {
-        women: ["11:10.02", "Piper Nash", "May 6, 2012", "NCAC Meet, NCAC Record"],
+        women: ["10:52.52", "Carey Lyons", "April 25, 2014", ""],
         men: ["9:12.31", "Stephen Williams", "May 7, 2011", "NCAC Meet, NCAA Prov. Qualifier"]
       }
     },
@@ -291,7 +291,7 @@ module ApplicationHelper
     },
     "Discus" => {
       outdoor: {
-        women: ["38.10m", "Megan Schulte", "1979", ""],
+        women: ["39.19m", "Tiffany Henry", "April 26, 2014", ""],
         men: ["51.53m", "John Morton", "1971", ""]
       }
     },
