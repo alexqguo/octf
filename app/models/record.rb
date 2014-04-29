@@ -17,9 +17,49 @@
 class Record < ActiveRecord::Base
   attr_accessible :gender, :season, :event, :mark, :record_holder, :date_set, :notes
 
+  ALL_EVENTS = [
+	"55m Dash",
+	"60m Dash",
+  	"100m Dash",
+	"200m Dash",
+	"300m Dash",
+	"400m Dash",
+	"500m Dash",
+	"800m Run",
+	"1000m Run",
+	"1500m Run",
+	"1 Mile Run",
+	"3000m Run",
+	"5000m Run",
+	"10000m Run",
+	"55m Hurdles",
+	"60m Hurdles",
+	"100m Hurdles",
+	"400m Hurdles",
+	"3000m Steeplechase",
+	"Long Jump",
+	"Triple Jump",
+	"High Jump",
+	"Pole Vault",
+	"Shot Put",
+	"Discus",
+	"Hammer Throw",
+	"Javelin",
+	"Weight Throw",
+	"Pentathlon",
+	"Helptathlon",
+	"Indoor Pentathlon",
+	"Decathlon",
+	"4x100m Relay",
+	"4x400m Relay",
+	"4x200m Relay",
+	"4000m Distance Medley Relay"
+  ]
+
   validates :gender, :season, :event, :mark, :record_holder, :date_set, presence: true
-  validates :gender, inclusion: { in: "men women" }
-  validates :season, inclusion: { in: "indoor outdoor" }
+  validates :gender, inclusion: { in: "men women", allow_nil: true }
+  validates :season, inclusion: { in: "indoor outdoor", allow_nil: true }
+  validates :event, inclusion: { in: Record::ALL_EVENTS, allow_nil: true }
 
   def self.men_indoor
   	where({ gender: "men", season: "indoor" })
@@ -38,3 +78,5 @@ class Record < ActiveRecord::Base
   end
 
 end
+
+# a = Record.new({ gender: "men", season: "indoor", event: "derppp", mark: "33.33", record_holder: "John Doe", date_set: "May 4, 2013" })
