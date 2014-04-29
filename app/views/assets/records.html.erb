@@ -8,13 +8,13 @@
 	<li class="event-list-item" data-table-name="men-outdoor">Outdoors - Men</li>
 </ul>
 
-<%= render "records_table", title: "Indoor Records - Women", gender: :women, season: :indoor, invisible: false, table_class: "women-indoor" %>
+<%= render "records_table", title: "Indoor Records - Women", recs: @women_indoor, gender: :women, season: :indoor, invisible: false, table_class: "women-indoor" %>
 
-<%= render "records_table", title: "Indoor Records - Men", gender: :men, season: :indoor, invisible: true, table_class: "men-indoor" %>
+<%= render "records_table", title: "Indoor Records - Men", recs: @men_indoor, gender: :men, season: :indoor, invisible: true, table_class: "men-indoor" %>
 
-<%= render "records_table", title: "Outdoor Records - Women", gender: :women, season: :outdoor, invisible: true, table_class: "women-outdoor" %>
+<%= render "records_table", title: "Outdoor Records - Women", recs: @women_outdoor, gender: :women, season: :outdoor, invisible: true, table_class: "women-outdoor" %>
 
-<%= render "records_table", title: "Outdoor Records - Men", gender: :men, season: :outdoor, invisible: true, table_class: "men-outdoor" %>
+<%= render "records_table", title: "Outdoor Records - Men", recs: @men_outdoor, gender: :men, season: :outdoor, invisible: true, table_class: "men-outdoor" %>
 
 <script>
 	$(function () {

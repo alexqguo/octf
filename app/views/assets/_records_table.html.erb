@@ -10,13 +10,13 @@
 			<th>Date Set</th>
 			<th>Notes</th>
 		</tr>
-		<% get_events_list(season, gender).each do |event_name| %>
+		<% recs.each do |rec| %>
 			<tr class="table-row">
-				<td><%= event_name %></td>
-				<td><%= records[event_name][season][gender][0] %></td>
-				<td><%= records[event_name][season][gender][1] %></td>
-				<td><%= records[event_name][season][gender][2] %></td>
-				<td><%= records[event_name][season][gender][3] %></td>
+				<td><%= rec.event %></td>
+				<td><%= rec.mark %></td>
+				<td><%= rec.record_holder %></td>
+				<td><%= rec.date_set %></td>
+				<td><%= rec.notes %></td>
 			</tr>
 		<% end %>
 	</table>

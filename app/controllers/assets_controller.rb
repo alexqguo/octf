@@ -4,6 +4,10 @@ class AssetsController < ApplicationController
   before_filter :require_no_user!, only: :admin
   
   def records
+    @men_indoor = Record.men_indoor
+    @men_outdoor = Record.men_outdoor
+    @women_indoor = Record.women_indoor
+    @women_outdoor = Record.women_outdoor
   end
   
   def home
