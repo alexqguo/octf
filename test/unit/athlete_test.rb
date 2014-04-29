@@ -7,6 +7,9 @@
 #  graduating_class :integer
 #  gender           :string(255)
 #  url              :string(255)
+#  slug             :string(255)
+#  created_at       :datetime
+#  updated_at       :datetime
 #
 
 require 'test_helper'
