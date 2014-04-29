@@ -62,19 +62,19 @@ class Record < ActiveRecord::Base
   validates_inclusion_of :event, in: ALL_EVENTS, allow_nil: true
 
   def self.men_indoor
-  	where({ gender: "men", season: "indoor" })
+  	where({ gender: "men", season: "indoor" }).sort_by { |r| ALL_EVENTS.index(r.event) }
   end
 
   def self.men_outdoor
-  	where({ gender: "men", season: "outdoor" })
+  	where({ gender: "men", season: "outdoor" }).sort_by { |r| ALL_EVENTS.index(r.event) }
   end
 
   def self.women_indoor
-  	where({ gender: "women", season: "indoor" })
+  	where({ gender: "women", season: "indoor" }).sort_by { |r| ALL_EVENTS.index(r.event) }
   end
 
   def self.women_outdoor
-  	where({ gender: "women", season: "outdoor" })
+  	where({ gender: "women", season: "outdoor" }).sort_by { |r| ALL_EVENTS.index(r.event) }
   end
 
 end
