@@ -47,7 +47,7 @@ class Record < ActiveRecord::Base
 	"Javelin",
 	"Weight Throw",
 	"Pentathlon",
-	"Helptathlon",
+	"Heptathlon",
 	"Indoor Pentathlon",
 	"Decathlon",
 	"4x100m Relay",

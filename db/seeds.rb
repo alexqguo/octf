@@ -275,7 +275,7 @@ Record.create({
 	gender: "women", season: "indoor", event: "Weight Throw", mark: "16.15m", record_holder: "Tiffany Henry", date_set: "March 8, 2014", notes: "NCAC Meet, NCAC Record" 
 })
 Record.create({ 
-	gender: "women", season: "indoor", event: "Shot Put", mark: "12.53m", record_holder: "Larisa Lewis, date_set: "December 7, 2013", notes: "" 
+	gender: "women", season: "indoor", event: "Shot Put", mark: "12.53m", record_holder: "Larisa Lewis", date_set: "December 7, 2013", notes: "" 
 })
 Record.create({ 
 	gender: "women", season: "indoor", event: "Indoor Pentathlon", mark: "2984", record_holder: "Madeline Schultz", date_set: "February 13, 2009", notes: "" 
