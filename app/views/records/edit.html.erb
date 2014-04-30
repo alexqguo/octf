@@ -1,5 +1,31 @@
 <h1>Edit <%= @record.event %> Record</h1>
 
-<form action="<%= update_record_url(@record) %>">
+<form action="<%= record_url(@record) %>" method="POST">
+
+	<%= auth_token %>
+	<input type="hidden" name="_method" value="PUT">
+	<input type="hidden" name="id" value="<%= @record.id %>">
+
+	<div class="input">
+		<label for="mark">Mark:</label>
+		<input id="mark" name="record[mark]" value="<%= @record.mark %>">
+	</div>
+
+	<div class="input">
+		<label for="holder">Holder:</label>
+		<input id="holder" name="record[record_holder]" value="<%= @record.record_holder %>">
+	</div>
+
+	<div class="input">
+		<label for="date">Date Set:</label>
+		<input id="date" name="record[date_set]" value="<%= @record.date_set %>">
+	</div>
+
+	<div class="input">
+		<label for="notes">Notes:</label>
+		<input id="notes" name="record[notes]" value="<%= @record.notes %>">
+	</div>
+
+	<input type="submit" value="Update!">
 
 </form>

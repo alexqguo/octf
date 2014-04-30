@@ -7,7 +7,15 @@ class RecordsController < ApplicationController
 	end
 
 	def update
-		fail
+		@record = Record.find(params[:id])
+		
+		if @record.update_attributes(params[:record])
+			flash[:notice] = "Successfully updated school record!"
+			redirect_to records_url
+		else
+			flash[:errors] = "Error updating record!"
+			redirect_to edit_record_url(@record)
+		end
 	end
 
 end
