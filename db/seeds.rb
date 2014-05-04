@@ -91,10 +91,10 @@ Record.create({
 	gender: "women", season: "outdoor", event: "10000m Run", mark: "35:11.36", record_holder: "Molly Martorella", date_set: "April 13, 2013", notes: ""
 })
 Record.create({
-	gender: "women", season: "outdoor", event: "100m Hurdles", mark: "Kristi Barksdale", record_holder: "1982", date_set: "", notes: ""
+	gender: "women", season: "outdoor", event: "100m Hurdles", mark: "13.90", record_holder: "Kristi Barksdale", date_set: "1982", notes: ""
 })
 Record.create({
-		gender: "women", season: "outdoor", event: "400m Hurdles", mark: "1:03.88", record_holder: "Madeline Schultz", date_set: "April 18, 2009", notes: "NCAA Prov. Qualifier"
+	gender: "women", season: "outdoor", event: "400m Hurdles", mark: "1:03.88", record_holder: "Madeline Schultz", date_set: "April 18, 2009", notes: "NCAA Prov. Qualifier"
 })
 Record.create({
 	gender: "women", season: "outdoor", event: "3000m Steeplechase", mark: "10:52.52", record_holder: "Carey Lyons", date_set: "April 25, 2014", notes: ""
