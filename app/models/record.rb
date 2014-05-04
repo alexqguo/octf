@@ -35,6 +35,7 @@ class Record < ActiveRecord::Base
 	"55m Hurdles",
 	"60m Hurdles",
 	"100m Hurdles",
+	"110m Hurdles",
 	"400m Hurdles",
 	"3000m Steeplechase",
 	"Long Jump",
