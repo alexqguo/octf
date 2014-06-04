@@ -3,8 +3,7 @@
 -- Home page
 	-- recent headlines?
 		-- rss feeds on the website are separated in to m/f with a lot being similar so this is a problem
-		-- goyeo.com doesn't work with open-uri at all so this won't work
-		-- TODO: try this again
+		-- goyeo.com doesn't work with open-uri at all so this won't work	
 		-- wtrack: goyeo.com/rss.aspx?rss=ZAcp4bsO
 		-- mtrack: goyeo.com/rss.aspx?rss=CvcY9DTM
 
@@ -18,11 +17,7 @@
 
 -- make navbar responsive
 
--- specify specific nokogiri version in gemfile
-
 -- migrate to rails 4
-
--- change to SASS (in progress)
 
 -- mobile
 	-- make the condition better, not just check for screen width
