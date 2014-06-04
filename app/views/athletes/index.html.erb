@@ -15,3 +15,8 @@
 		<% end %>
 	</ul>
 </div>
+
+
+<% if current_user.admin? %>
+	<%= link_to "Add Athlete", new_athlete_url %>
+<% end %>

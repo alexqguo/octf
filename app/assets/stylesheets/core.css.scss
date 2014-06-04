@@ -7,9 +7,11 @@
 */
 
 $crimson: #be0f0f;
+$fadedYellow: #ffffb9;
 $gold: #fae902;
 $blue: #3f94dc;
 $lightest-gray: #f6f6f6;
+$dark-gray: #999999;
 $gray: #cccccc;
 $white: #ffffff;
 $black: #000000;
@@ -32,6 +34,7 @@ body {
 	width: 1000px;
 	min-height: 100%;
 	margin: 10px auto;
+	padding: 0 15px;
 }
 
 .group:after {
@@ -136,7 +139,7 @@ select {
 
 .input input, .inline-input input {
 	float: right;
-	border: 1px solid #ccc;
+	border: 1px solid $gray;
 	height: 15px;
 	width: 170px;
 	
@@ -163,7 +166,7 @@ select {
 
 	input, textarea {
 		width: 400px;
-		border: 1px solid #ccc;
+		border: 1px solid $gray;
 		padding: 5px 10px;
 		border-radius: 3px;
 		outline: none;
@@ -173,10 +176,6 @@ select {
 	textarea {
 		height: 80px;
 	}
-}
-
-.input input:hover, .inline-input input:hover, .email-input input:hover, .email-input textarea:hover {
-	border: 1px solid #999;
 }
 
 .input select {
@@ -189,17 +188,18 @@ input[type="radio"] {
 }
 
 .input input:focus, .inline-input input:focus, .email-input input:focus, .email-input textarea:focus {
-	box-shadow: 0 0 5px #3F94DC;
+	border: 1px solid $dark-gray;
+	box-shadow: 0 0 3px $blue;
 }
 
 form input[type="submit"] {
 	background: none;
-	color: #3F94DC;
-}
+	color: $blue;
 
-form input[type="submit"]:hover {
-	cursor: pointer;
-	text-decoration: underline;
+	&:hover {
+		cursor: pointer;
+		text-decoration: underline;
+	}
 }
 
 header nav ul {
@@ -213,6 +213,7 @@ header nav ul {
 
 .navbar {
 	height: 45px;
+	min-width: 800px;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
 }
@@ -238,6 +239,7 @@ header nav ul {
 	margin-top: 14px;
 	padding: 0 12px;
 	opacity: 0.7;
+	transition: 0.2s;
 
 	&:hover {
 		opacity: 1;
@@ -248,37 +250,48 @@ header nav ul {
 	}
 
 	a {
-		text-decoration: none;
 		color: $black;
+		text-decoration: none;
 		padding-bottom: 8px;
-		transition: 0.2s;
 		border-bottom: 2px solid transparent;
-	}
-
-	form {
-		height: 0;
-		width: 0;
+		transition: 0.2s;
 	}
 
 	input[type="submit"] {
-		-webkit-appearance: none;
-		outline: none;
-		background: transparent;
-		
-		border: none;
 		color: $black;
-		font: inherit;
+		-webkit-appearance: none;
+		background: transparent;
+		transition: 0.2s;
+
+		padding-bottom: 8px;
+		border-bottom: 2px solid transparent;
 
 		&:hover {
 			cursor: pointer;
 			text-decoration: none;
+			border-bottom: 2px solid $gold;
+		}
+	}
+}
+
+.selected {
+	opacity: 1;
+
+	a {
+		font-weight: 500;
+		border-bottom: 2px solid $crimson;
+	}
+
+	&:hover {
+		a {
+			border-bottom: 2px solid $crimson;
 		}
 	}
 }
 
 .chosen-form {
 	float: left;
-	margin-top: 27px;
+	margin: 15px 0 0 10px;
 
 	input[type="submit"] {
 		color: $white;
