@@ -30,14 +30,14 @@
 				</form>
 				
 			
-				<ul class="nav-list">
-					<li class="nav-list-item"><a href="<%= home_url %>">Home</a></li>
-					<li class="nav-list-item"><a href="<%= athletes_url %>">All Athletes</a></li>
-					<li class="nav-list-item"><a href="<%= records_url %>">School Records</a></li>
-					<li class="nav-list-item"><%= button_to "Sign Out", session_url, method: :delete %></li>
+				<ul class="navlist">
+					<li class="navlist-item"><a href="<%= home_url %>">Home</a></li>
+					<li class="navlist-item"><a href="<%= athletes_url %>">All Athletes</a></li>
+					<li class="navlist-item"><a href="<%= records_url %>">School Records</a></li>
 					<% if current_user.admin? %>
-						<li class="nav-list-item"><%= link_to "Add Athlete", new_athlete_url %></li>
+						<li class="navlist-item"><%= link_to "Add Athlete", new_athlete_url %></li>
 					<% end %>
+					<li class="navlist-item"><%= button_to "Sign Out", session_url, method: :delete %></li>
 				</ul>
 			</nav>
 		
@@ -56,10 +56,6 @@
 			</div>
 		<% end %>
 		<%= yield %>
-	
-		<% if current_user && current_user.type = "Admin" %>
-			<div class="params"><%= debug params %></div>
-		<% end %>
 	
 	</div>
 	
