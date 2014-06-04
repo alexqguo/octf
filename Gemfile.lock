@@ -175,7 +175,7 @@ DEPENDENCIES
   friendly_id
   jquery-rails
   letter_opener
-  nokogiri
+  nokogiri (~> 1.6.1)
   pg
   pry-rails
   rails (= 3.2.16)
