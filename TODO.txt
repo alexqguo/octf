@@ -4,19 +4,28 @@
 	-- recent headlines?
 		-- rss feeds on the website are separated in to m/f with a lot being similar so this is a problem
 		-- goyeo.com doesn't work with open-uri at all so this won't work
+		-- TODO: try this again
 		-- wtrack: goyeo.com/rss.aspx?rss=ZAcp4bsO
 		-- mtrack: goyeo.com/rss.aspx?rss=CvcY9DTM
 
--- all athletes
-	-- add jQuery popup loading thing for import data
+-- add popup loading thing for import data
+
+-- absolutely need to break out JS into separate files, not inline script
+
+-- season weekly graphs??
+
+-- make navbar responsive
+
+-- specify specific nokogiri version in gemfile
+
+-- migrate to rails 4
+
+-- change to SASS (in progress)
 
 -- mobile
 	-- make the condition better, not just check for screen width
 
 -- separate file for highcharts scripts
-
--- move the school records constants into a completely separate file
-	-- eventually will probably have to make a model for it, so that there can be an edit page for admin
 
 -- add an "Update Everything" button for admin that will run through all athletes and call fetch_from_tfrrs?
 
@@ -24,6 +33,7 @@
 
 -- BUGS
 	-- (nothing major right now)
+	-- since removal of current_user, there could still be some bugs lingering so check for that
 
 ---------------------------------------------------------------------------------------
 

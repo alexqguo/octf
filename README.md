@@ -1,9 +1,8 @@
 #OCTF App
 Alex Guo
 
-##Read my todo file
+##Read my todo file if you're interested
 TODO.txt
 
 ##Visit the site
 [OCTF](http://octf.alexguo.us)
-(sadly I have to restrict most of the site but you can check out some of the basic highcharts stuff on the demo page)
