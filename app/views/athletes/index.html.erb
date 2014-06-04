@@ -1,7 +1,7 @@
 <div class="box group">
 	<h3>All Athletes:</h3>
 
-	<% if current_user.admin? %>
+	<% if is_admin? %>
 		<%= link_to "Add Athlete", new_athlete_url %>
 	<% end %>
 

@@ -1,6 +1,5 @@
 class AthletesController < ApplicationController
   
-  before_filter :require_current_user!, except: [:demo, :graph_data]
   before_filter :require_admin!, only: [:new, :create, :edit]
   
   def index

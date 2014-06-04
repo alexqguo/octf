@@ -14,5 +14,5 @@ AthleteLookup::Application.routes.draw do
   get "demo", action: "demo", controller: "athletes"
   get "update_all", action: "update_all", controller: "athletes"
 
-  root to: "sessions#new"
+  root to: "assets#home"
 end
