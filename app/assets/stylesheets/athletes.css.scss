@@ -32,7 +32,6 @@
 
 .females {
 	margin-left: 200px;
-	padding-bottom: 30px;
 	float: left;
 }
 
@@ -48,16 +47,16 @@
 	padding: 10px 15px;
 	margin: 5px;
 	
-	background: #BE0F0F;
-	color: white;
+	background: $crimson;
+	color: $white;
 	border-radius: 2px;
 	
 	transition: 0.1s;
 
 	&:hover {
 		cursor: pointer;
-		background: #fae902;
-		color: black;
+		background: $gold;
+		color: $black;
 	}
 }
 

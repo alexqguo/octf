@@ -1,56 +1,60 @@
-<h1>Details for <%= @athlete.name %></h1>
+<div class="box">
+	<h1>Details for <%= @athlete.name %></h1>
 
-<div class="details">
-	<% if @athlete.graduating_class %>
-		Class of <%= @athlete.graduating_class %>
-	<% end %>
-	<br>
-	<% if @athlete.url %>
-		<a href="<%= @athlete.url %>"><%= @athlete.url %></a>
-	<% end %>
-	<br>
-	Last TFRRS update: <%= @athlete.updated_at.strftime("%b %d, %Y at %H:%M %P") || "No updates yet" %>
-</div>
-
-<% if @athlete.has_data? %>
-
-	<ul class="event-list group">
-		<% @marks_by_event.keys.each do |key| %>
-			<li class="event-list-item" data-name="<%= key.gsub(" ", "-").delete(",") %>">
-				<%= key %>
-			</li>
+	<div class="details">
+		<% if @athlete.graduating_class %>
+			Class of <%= @athlete.graduating_class %>
 		<% end %>
-	</ul>
+		<br>
+		<% if @athlete.url %>
+			<a href="<%= @athlete.url %>"><%= @athlete.url %></a>
+		<% end %>
+		<br>
+		Last TFRRS update: <%= @athlete.updated_at.strftime("%b %d, %Y at %H:%M %P") || "No updates yet" %>
+	</div>
 
-	<% @marks_by_event.keys.each_with_index do |event_name, idx| %>
-		<div id="<%= event_name.gsub(" ", "-").delete(",") %>" class="graph <%= "invisible" unless idx == 0 %>"></div>
-	<% end %>
+	<% if @athlete.has_data? %>
 
-	<% if current_user %>
-	<% if current_user.type == "Admin" %>
-		<a href="<%= athlete_marks_url(@athlete) %>">Edit Marks</a><br>
-		<a href="<%= edit_athlete_url(@athlete) %>">Update Data</a><br>
+		<ul class="event-list group">
+			<% @marks_by_event.keys.each do |key| %>
+				<li class="event-list-item" data-name="<%= key.gsub(" ", "-").delete(",") %>">
+					<%= key %>
+				</li>
+			<% end %>
+		</ul>
+
+		<% @marks_by_event.keys.each_with_index do |event_name, idx| %>
+			<div id="<%= event_name.gsub(" ", "-").delete(",") %>" class="graph <%= "invisible" unless idx == 0 %>"></div>
+		<% end %>
+
+		<% if current_user %>
+		<% if current_user.type == "Admin" %>
+			<a href="<%= athlete_marks_url(@athlete) %>">Edit Marks</a><br>
+			<a href="<%= edit_athlete_url(@athlete) %>">Update Data</a><br>
+		<% else %>
+			<form action="<%= athlete_url(@athlete) %>" method="POST">
+				<%= auth_token %>
+				<input type="hidden" name="_method" value="PUT">
+				<input type="submit" value="Update Data">
+			</form>
+		<% end %>
+		<% end %>
+		
 	<% else %>
-		<form action="<%= athlete_url(@athlete) %>" method="POST">
-			<%= auth_token %>
-			<input type="hidden" name="_method" value="PUT">
-			<input type="submit" value="Update Data">
-		</form>
+		<a href="<%= new_athlete_mark_url(@athlete.id) %>">Import Data</a>
+		<br>
 	<% end %>
-	<% end %>
-	
-<% else %>
-	<a href="<%= new_athlete_mark_url(@athlete.id) %>">Import Data</a>
-	<br>
-<% end %>
 
-<a href="<%= athletes_url %>">Back to all athletes...</a>
+	<a href="<%= athletes_url %>">Back to all athletes...</a>
+
+</div>
 
 <script>
 	$(function () {
 		var athlete_data;
 		var isMobile = screen.width <= 480;
-		var containerWidth = $($("#container")[0]).width();
+		// var containerWidth = $($("#container")[0]).width();
+		var containerWidth = 938;
 		var currentGraph = $($(".graph").not(".invisible")[0]);
 
 		$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {

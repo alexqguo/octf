@@ -1,22 +1,24 @@
-<h1>Welcome</h1>
-<h3>Please log in</h3>
-<form action=<%= session_url %> method="POST">
-	<%= auth_token %>
-	
-	<div class="input">	 
-		<label for="username">Username:</label>
-		<input name="user[username]" id="username" type="text">
-	</div>
-	
-	<div class="input">
-		<label for="password">Password:</label>
-		<input name="user[password]" id="password" type="password">
-	</div>
-	
-	
-	<input value="Log in" type="submit">
-</form>
+<div class="box">
+	<h1>Welcome</h1>
+	<h3>Please log in</h3>
+	<form action=<%= session_url %> method="POST">
+		<%= auth_token %>
+		
+		<div class="input">	 
+			<label for="username">Username:</label>
+			<input name="user[username]" id="username" type="text">
+		</div>
+		
+		<div class="input">
+			<label for="password">Password:</label>
+			<input name="user[password]" id="password" type="password">
+		</div>
+		
+		
+		<input value="Log in" type="submit">
+	</form>
 
-<div class="github-button">
-	<a href="http://github.com/alexqguo/octf"></a>
+	<div class="github-button">
+		<a href="http://github.com/alexqguo/octf"></a>
+	</div>
 </div>

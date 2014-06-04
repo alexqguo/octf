@@ -35,6 +35,16 @@ body {
 	display: block;
 }
 
+.box {
+	background: $dark-white;
+	padding: 20px;
+	margin: 10px;
+	border: 1px solid $light-gray;
+	border-radius: 4px;
+
+	box-shadow: 0px 0px 1px $crimson; /* change this back to light-gray? */
+}
+
 h1 {
 	font-size: 42px;
 	margin: 20px 0;
@@ -212,6 +222,7 @@ header nav ul {
 	min-width: 800px;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
+	margin-bottom: 20px;
 
 	.logo {
 		margin: 4px;
@@ -227,10 +238,10 @@ header nav ul {
 
 	.chosen-form {
 		float: left;
-		margin: 15px 0 0 10px;
+		margin: 13px 0 0 10px;
 
 		input[type="submit"] {
-			color: $white;
+			color: $black;
 		}
 	}
 

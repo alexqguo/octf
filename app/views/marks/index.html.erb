@@ -1,50 +1,53 @@
-<h1>Marks for <a href="<%= athlete_url(@athlete) %>"><%= @athlete.name %></a></h1>
+<div class="box group">
+	<h1>Marks for <a href="<%= athlete_url(@athlete) %>"><%= @athlete.name %></a></h1>
 
-<form class="new-mark-form"
-	action="<%= athlete_marks_url(@athlete) %>" 
-	data-remote="true"
-	method="POST">
-	<%= auth_token %>
-	
-	<div class="input">
-		<label for="year">Year</label>
-		<select id="year" name="mark[year]">
-			<% past_ten_years.each do |year| %>
-				<option value="<%= year %>"><%= year %></option>
-			<% end %>
-		</select>
-	</div>
+	<form class="new-mark-form"
+		action="<%= athlete_marks_url(@athlete) %>" 
+		data-remote="true"
+		method="POST">
+		<%= auth_token %>
+		
+		<div class="input">
+			<label for="year">Year</label>
+			<select id="year" name="mark[year]">
+				<% past_ten_years.each do |year| %>
+					<option value="<%= year %>"><%= year %></option>
+				<% end %>
+			</select>
+		</div>
 
-	
-	<label for="season">Season</label>
-	<div class="season-radio">
-		Indoor <input type="radio" value="Indoor" name="mark[season]">
-		Outdoor <input type="radio" value="Outdoor" name="mark[season]">
-	</div>
-	
-	<div class="input">
-		<label for="event_name">Event</label>
-		<select id="event_name" name="mark[event_name]">
-			<% all_events.each do |event| %>
-				<option value="<%= event %>"><%= event %></option>
-			<% end %>
-		</select>
-	</div>
-	
-	<div class="input">
-		<label for="mark">Mark</label>
-		<input name="mark[mark]" id="mark">
-	</div>
-	
-	<input type="submit" value="Create!">
-	
-</form>
+		
+		<label for="season">Season</label>
+		<div class="season-radio">
+			Indoor <input type="radio" value="Indoor" name="mark[season]">
+			Outdoor <input type="radio" value="Outdoor" name="mark[season]">
+		</div>
+		
+		<div class="input">
+			<label for="event_name">Event</label>
+			<select id="event_name" name="mark[event_name]">
+				<% all_events.each do |event| %>
+					<option value="<%= event %>"><%= event %></option>
+				<% end %>
+			</select>
+		</div>
+		
+		<div class="input">
+			<label for="mark">Mark</label>
+			<input name="mark[mark]" id="mark">
+		</div>
+		
+		<input type="submit" value="Create!">
+		
+	</form>
 
-<ul class="edit-form-list">
-	<% @marks.sort_by(&:created_at).each do |mark| %>
-		<li><%= render "edit_form", athlete: @athlete, mark: mark %></li>
-	<% end %>
-</ul>
+	<ul class="edit-form-list">
+		<% @marks.sort_by(&:created_at).each do |mark| %>
+			<li><%= render "edit_form", athlete: @athlete, mark: mark %></li>
+		<% end %>
+	</ul>
+
+</div>
 
 <script>
 

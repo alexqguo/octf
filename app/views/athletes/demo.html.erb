@@ -1,41 +1,44 @@
-<h1>Details for <%= @athlete.name %></h1>
+<div class="box">
+	<h1>Details for <%= @athlete.name %></h1>
 
-<div class="details">
-	<% if @athlete.graduating_class %>
-		Class of <%= @athlete.graduating_class %>
-	<% end %>
-	<br>
-	<% if @athlete.url %>
-		<a href="<%= @athlete.url %>"><%= @athlete.url %></a>
-	<% end %>
-</div>
-
-<% if @athlete.has_data? %>
-
-	<ul class="event-list group">
-		<% @marks_by_event.keys.each do |key| %>
-			<li class="event-list-item" data-name="<%= key.gsub(" ", "-") %>">
-				<%= key %>
-			</li>
+	<div class="details">
+		<% if @athlete.graduating_class %>
+			Class of <%= @athlete.graduating_class %>
 		<% end %>
-	</ul>
+		<br>
+		<% if @athlete.url %>
+			<a href="<%= @athlete.url %>"><%= @athlete.url %></a>
+		<% end %>
+	</div>
 
-	<% @marks_by_event.keys.each_with_index do |event_name, idx| %>
-		<div id="<%= event_name.gsub(" ", "-") %>" class="graph <%= "invisible" unless idx == 0 %>"></div>
+	<% if @athlete.has_data? %>
+
+		<ul class="event-list group">
+			<% @marks_by_event.keys.each do |key| %>
+				<li class="event-list-item" data-name="<%= key.gsub(" ", "-") %>">
+					<%= key %>
+				</li>
+			<% end %>
+		</ul>
+
+		<% @marks_by_event.keys.each_with_index do |event_name, idx| %>
+			<div id="<%= event_name.gsub(" ", "-") %>" class="graph <%= "invisible" unless idx == 0 %>"></div>
+		<% end %>
+
 	<% end %>
 
-<% end %>
+	<a href="<%= root_url %>">Back Home...</a>
 
-<a href="<%= root_url %>">Back Home...</a>
+</div>
 
 <script>
 $(function () {
 	var athlete_data;
 	var isMobile = screen.width <= 480;
-	var containerWidth = $($("#container")[0]).width();
+	// var containerWidth = $($("#container")[0]).width();
+	var containerWidth = 938;
 	var currentGraph = $($(".graph").not(".invisible")[0]);
 	
-
 	$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
 		athlete_data = data;
 
