@@ -225,14 +225,12 @@ header nav ul {
 	margin-bottom: 20px;
 
 	.logo {
-		margin: 4px;
-		padding-left: 10px;
 		float: left;
-		font-size: 30px;
+		margin-left: 10px;
 
-		a {
-			text-decoration: none;
-			color: $black;
+		img {
+			width: 45px;
+			height: 45px;
 		}
 	}
 
