@@ -15,6 +15,9 @@ class AssetsController < ApplicationController
   def admin
   end
 
+  def videos
+  end
+
   def send_email
   	from = params[:email][:from]
   	subject = params[:email][:subject]

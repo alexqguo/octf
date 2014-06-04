@@ -1,5 +1,11 @@
 -- OCTF (change the title to something more interesting)
 
+-- VIDEOS!!!!!
+	-- videos page with a list of embedded youtube clips?
+
+-- athlete.rb
+	-- remove graduating class- it's useless
+
 -- Home page
 	-- recent headlines?
 		-- rss feeds on the website are separated in to m/f with a lot being similar so this is a problem
