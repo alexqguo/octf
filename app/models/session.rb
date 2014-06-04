@@ -21,6 +21,9 @@ class Session < ActiveRecord::Base
     SecureRandom::urlsafe_base64(16)
   end
   
+  # Can't just do where(token: token).first.user because after I removed the log in feature
+  # I cleared all the sessions from heroku db leaving some users' browsers with a session token
+  # but no corresponding user in the db and the site would crash. oops
   def self.find_user_by_session_token(token)
     session = where(token: token).first
 
