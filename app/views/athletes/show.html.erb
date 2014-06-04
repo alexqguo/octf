@@ -27,8 +27,7 @@
 			<div id="<%= event_name.gsub(" ", "-").delete(",") %>" class="graph <%= "invisible" unless idx == 0 %>"></div>
 		<% end %>
 
-		<% if current_user %>
-		<% if current_user.type == "Admin" %>
+		<% if is_admin? %>
 			<a href="<%= athlete_marks_url(@athlete) %>">Edit Marks</a><br>
 			<a href="<%= edit_athlete_url(@athlete) %>">Update Data</a><br>
 		<% else %>
@@ -37,7 +36,6 @@
 				<input type="hidden" name="_method" value="PUT">
 				<input type="submit" value="Update Data">
 			</form>
-		<% end %>
 		<% end %>
 		
 	<% else %>

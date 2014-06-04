@@ -13,7 +13,7 @@
 		<% recs.each do |rec| %>
 			<tr class="table-row">
 				<td>
-					<% if current_user.type == "Admin" %>
+					<% if is_admin? %>
 						<a href="<%= edit_record_url(rec) %>"><%= rec.event %></a>
 					<% else %>
 						<%= rec.event %>
