@@ -8,30 +8,23 @@
 	list-style-type: none;
 	margin: 7px;
 	margin-left: 0px;
-}
 
-.athlete-list-el > li {
-	display: inline-block;
-	position: relative;
-	border-radius: 3px;
-	transition: 0.2s;
-}
+	li {
+		display: inline-block;
+		position: relative;
+		border-radius: 3px;
+		transition: 0.2s;
 
-.athlete-list-el li:hover {
-	background: #FFFFB9;
-}
+		&:hover {
+			background: #ffffb9;
+		}
+	}
 
-/*
-	Uncomment that line to implement the arrow
-*/
-.athlete-list-el li:hover .arrow {
-	/*opacity: 1;*/
-}
-
-.athlete-list-el a {
-	color: black;
-	text-decoration: none;
-	padding: 0 5px;
+	a {
+		color: black;
+		text-decoration: none;
+		padding: 0 5px;
+	}
 }
 
 .arrow {
@@ -82,9 +75,6 @@
 	cursor: pointer;
 	background: #FAE902;
 	color: black;
-}
-
-.graph {
 }
 
 .green-background {

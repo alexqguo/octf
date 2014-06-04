@@ -180,6 +180,6 @@ DEPENDENCIES
   pry-rails
   rails (= 3.2.16)
   redis-rails
-  sass-rails (~> 3.2.3)
+  sass-rails
   simple-rss
   uglifier (>= 1.0.3)
