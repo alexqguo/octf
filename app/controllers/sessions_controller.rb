@@ -3,9 +3,6 @@ class SessionsController < ApplicationController
   before_filter :require_current_user!, only: :destroy
   before_filter :require_no_user!, only: :new
 
-  def new
-  end
-
   def create
     @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
 

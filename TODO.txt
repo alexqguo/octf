@@ -10,6 +10,8 @@
 
 -- add popup loading thing for import data
 
+-- multievents graph label shows decimal, need to fix to not show decimals
+
 -- absolutely need to break out JS into separate files, not inline script
 
 -- season weekly graphs??
