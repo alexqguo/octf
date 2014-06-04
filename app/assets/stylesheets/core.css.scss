@@ -6,15 +6,7 @@
 
 */
 
-$crimson: #be0f0f;
-$fadedYellow: #ffffb9;
-$gold: #fae902;
-$blue: #3f94dc;
-$lightest-gray: #f6f6f6;
-$dark-gray: #999999;
-$gray: #cccccc;
-$white: #ffffff;
-$black: #000000;
+@import "vars";
 
 html, body, header, nav, h1, h3, ul, li, div, footer, form, input, a, select, label, textarea {
 	border: 0;
@@ -135,6 +127,10 @@ select {
 .input {
 	margin: 20px 0;
 	width: 270px;
+
+	select {
+		float: right;
+	}
 }
 
 .input input, .inline-input input {
@@ -178,27 +174,27 @@ select {
 	}
 }
 
-.input select {
-	float: right;
-}
-
-input[type="radio"] {
-	margin-left: 3px;
-	margin-right: 10px;
-}
-
 .input input:focus, .inline-input input:focus, .email-input input:focus, .email-input textarea:focus {
 	border: 1px solid $dark-gray;
 	box-shadow: 0 0 3px $blue;
 }
 
-form input[type="submit"] {
-	background: none;
-	color: $blue;
 
-	&:hover {
-		cursor: pointer;
-		text-decoration: underline;
+form {
+
+	input[type="submit"] {
+		background: none;
+		color: $blue;
+
+		&:hover {
+			cursor: pointer;
+			text-decoration: underline;
+		}
+	}
+
+	input[type="radio"] {
+		margin-left: 3px;
+		margin-right: 10px;
 	}
 }
 
@@ -216,85 +212,85 @@ header nav ul {
 	min-width: 800px;
 	border-left: 1px solid black;
 	border-right: 1px solid black;
-}
 
-.navlist {
-	float: right;
-}
-
-.logo {
-	margin: 4px;
-	padding-left: 10px;
-	float: left;
-	font-size: 30px;
-
-	a {
-		text-decoration: none;
-		color: $black;
-	}
-}
-
-.navlist-item {
-	float: left;
-	margin-top: 14px;
-	padding: 0 12px;
-	opacity: 0.7;
-	transition: 0.2s;
-
-	&:hover {
-		opacity: 1;
+	.logo {
+		margin: 4px;
+		padding-left: 10px;
+		float: left;
+		font-size: 30px;
 
 		a {
-			border-bottom: 2px solid $gold;
-		}
-	}
-
-	a {
-		color: $black;
-		text-decoration: none;
-		padding-bottom: 8px;
-		border-bottom: 2px solid transparent;
-		transition: 0.2s;
-	}
-
-	input[type="submit"] {
-		color: $black;
-		-webkit-appearance: none;
-		background: transparent;
-		transition: 0.2s;
-
-		padding-bottom: 8px;
-		border-bottom: 2px solid transparent;
-
-		&:hover {
-			cursor: pointer;
 			text-decoration: none;
-			border-bottom: 2px solid $gold;
+			color: $black;
 		}
 	}
-}
 
-.selected {
-	opacity: 1;
+	.chosen-form {
+		float: left;
+		margin: 15px 0 0 10px;
 
-	a {
-		font-weight: 500;
-		border-bottom: 2px solid $crimson;
-	}
-
-	&:hover {
-		a {
-			border-bottom: 2px solid $crimson;
+		input[type="submit"] {
+			color: $white;
 		}
 	}
-}
 
-.chosen-form {
-	float: left;
-	margin: 15px 0 0 10px;
+	.navlist {
+		float: right;
 
-	input[type="submit"] {
-		color: $white;
+		.navlist-item {
+			float: left;
+			margin-top: 14px;
+			padding: 0 12px;
+			opacity: 0.7;
+			transition: 0.2s;
+
+			&:hover {
+				opacity: 1;
+
+				a {
+					border-bottom: 2px solid $gold;
+				}
+			}
+
+			a {
+				color: $black;
+				text-decoration: none;
+				padding-bottom: 8px;
+				border-bottom: 2px solid transparent;
+				transition: 0.2s;
+			}
+
+			input[type="submit"] {
+				color: $black;
+				-webkit-appearance: none;
+				background: transparent;
+				transition: 0.2s;
+
+				padding-bottom: 8px;
+				border-bottom: 2px solid transparent;
+
+				&:hover {
+					cursor: pointer;
+					text-decoration: none;
+					border-bottom: 2px solid $gold;
+				}
+			}
+		}
+
+		.selected {
+			opacity: 1;
+
+			a {
+				font-weight: 500;
+				border-bottom: 2px solid $crimson;
+			}
+
+			&:hover {
+				a {
+					border-bottom: 2px solid $crimson;
+				}
+			}
+		}
 	}
 }
 

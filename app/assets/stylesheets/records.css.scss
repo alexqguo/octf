@@ -1,3 +1,32 @@
 // Place all the styles related to the Records controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "vars";
+
+.records-table {
+	border-collapse: collapse;
+	width: 1000px;
+	margin: 20px auto;
+
+	th {
+		font-weight: 400;
+		text-align: left;
+	}
+
+	td {
+		width: 200px;
+		font-weight: 300;
+		padding: 10px 5px;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+	}
+
+	.table-row:hover {
+		background: $light-gray;
+	}
+}
+
+.records-hidden {
+	display: none;
+}

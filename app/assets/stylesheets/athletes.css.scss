@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$fadedYellow: #ffffb9;
+
+@import "vars";
 
 .athlete-list-el {
 	/* For button to athlete page from athletes index */
@@ -42,10 +43,6 @@ $fadedYellow: #ffffb9;
 	font-size: 14px;
 }
 
-.event-list {
-//	background: red;
-}
-
 .event-list-item {
 	float: left;
 	padding: 10px 15px;
@@ -56,12 +53,12 @@ $fadedYellow: #ffffb9;
 	border-radius: 2px;
 	
 	transition: 0.1s;
-}
 
-.event-list-item:hover {
-	cursor: pointer;
-	background: #FAE902;
-	color: black;
+	&:hover {
+		cursor: pointer;
+		background: #fae902;
+		color: black;
+	}
 }
 
 .green-background {
