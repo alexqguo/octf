@@ -6,9 +6,5 @@ module ApplicationHelper
       name=\"authenticity_token\"
       value=\"#{form_authenticity_token}\">".html_safe
   end
-
-  def is_admin?
-  	current_user && current_user.admin?
-  end
   
 end
