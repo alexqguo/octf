@@ -1,9 +1,16 @@
 <div class="box">
-	<h1>Videos</h1>
+	<h1>
+		Videos
+		<% if is_admin? %>
+			<a class="small-link" href="<%= new_video_url %>">Add Video</a>
+		<% end %>
+	</h1>
 
 	<ul class="videolist">
 		<% @videos.each do |video| %>
 			<li class="videolist-item">
+				<%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
+                              class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
 				<a href="<%= video.url %>"><%= video.title %></a>
 			</li>
 		<% end %>

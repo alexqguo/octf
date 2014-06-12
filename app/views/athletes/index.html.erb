@@ -1,9 +1,10 @@
 <div class="box group">
-	<h3>All Athletes:</h3>
-
-	<% if is_admin? %>
-		<%= link_to "Add Athlete", new_athlete_url %>
-	<% end %>
+	<h1>
+		Athletes
+		<% if is_admin? %>
+			<a class="small-link" href="<%= new_athlete_url %>">Add Athlete</a>
+		<% end %>
+	</h1>
 
 	<div class="males">
 		<ul>
