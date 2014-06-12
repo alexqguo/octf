@@ -2,6 +2,7 @@
 
 -- VIDEOS!!!!!
 	-- videos page with a list of embedded youtube clips?
+	-- http://www.sitepoint.com/youtube-rails/
 
 -- athlete.rb
 	-- remove graduating class- it's useless

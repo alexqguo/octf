@@ -1,0 +1,18 @@
+<div class="box">
+	<h1>Videos</h1>
+
+	<ul class="videolist">
+		<% @videos.each do |video| %>
+			<li class="videolist-item">
+				<a href="<%= video.url %>"><%= video.title %></a>
+			</li>
+		<% end %>
+	</ul>
+</div>
+
+<script>
+	$(function () {
+		console.log("asdf");
+		$(".videolist a").attr("target", "_blank");
+	});
+</script>

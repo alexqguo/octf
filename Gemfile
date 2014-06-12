@@ -15,6 +15,7 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'friendly_id'
 gem 'figaro'
 gem 'sass-rails'
+gem 'youtube_it'
 
 
 group :development do
