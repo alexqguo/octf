@@ -28,8 +28,6 @@
 -- mobile
 	-- make the condition better, not just check for screen width
 
--- separate file for highcharts scripts
-
 -- add an "Update Everything" button for admin that will run through all athletes and call fetch_from_tfrrs?
 
 -- implement redis for graph_data
