@@ -1,4 +1,4 @@
-<div class="box">
+<div class="box group">
 	<h1>
 		Videos
 		<% if is_admin? %>
@@ -9,9 +9,15 @@
 	<ul class="videolist">
 		<% @videos.each do |video| %>
 			<li class="videolist-item">
-				<%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
-                              class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
-				<a href="<%= video.url %>"><%= video.title %></a>
+				<a href="<%= video.url %>">
+					<img src="https://img.youtube.com/vi/<%= video.uid %>/mqdefault.jpg"
+						alt="<%= video.title %>" title="<%= video.title %>">
+	            </a>
+				<a href="<%= video.url %>" title="<%= video.title %>">
+					<span class="video-title"><%= video.title %></span>
+				</a>
+				<span class="video-detail"><%= video.author %></span>
+				<span class="video-detail"><%= video.duration %></span>
 			</li>
 		<% end %>
 	</ul>

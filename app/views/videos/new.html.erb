@@ -5,9 +5,9 @@
 	<form action="<%= videos_url %>" method="POST">
 		<%= auth_token %>
 
-		<div class="input">
+		<div class="input input-long">
 			<label for="url">URL: </label>
-			<input type="text" id="url" name="video[url]">
+			<input type="text" id="url" name="video[url]" value="<%= @video.url %>">
 		</div>
 
 		<input type="submit" value="Create video">

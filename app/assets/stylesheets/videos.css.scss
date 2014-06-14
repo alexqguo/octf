@@ -1,3 +1,47 @@
 // Place all the styles related to the videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "vars";
+
+.videolist {
+
+}
+
+.videolist-item {
+	float: left;
+	width: 290px;
+
+	margin: 10px;
+	padding-bottom: 5px;
+	border: 1px solid $light-gray;
+	border-radius: 4px;
+	transition: 0.3s;
+
+	img {
+		width: 290px;
+	}
+
+	span {
+		margin-left: 5px;
+	}
+
+	.video-title {
+		font-size: 14px;
+		font-weight: 500;
+		display: inline-block;
+		color: $black;
+	}
+
+	.video-detail {
+		font-size: 13px;
+		font-weight: 400;
+		display: block;
+		color: $dark-gray;
+	}
+
+	&:hover {
+		border: 1px solid $gray;
+		box-shadow: 0 0 5px $gray;
+	}
+}

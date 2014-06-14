@@ -189,6 +189,14 @@ select {
 	box-shadow: 0 0 3px $blue;
 }
 
+.input-long {
+	width: 400px;
+
+	input {
+		width: 320px;
+		font-size: 14px;
+	}
+}
 
 form {
 
