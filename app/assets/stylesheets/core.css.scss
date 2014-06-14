@@ -223,12 +223,12 @@ header nav ul {
 .header-wrap {
 	width: 100%;
 	background: $white;
+	margin-bottom: 20px;
 }
 
 .navbar {
 	height: 45px;
-	min-width: 800px;
-	margin-bottom: 20px;
+	min-width: 750px;
 
 	.logo {
 		float: left;
@@ -308,6 +308,21 @@ header nav ul {
 			}
 		}
 	}
+}
+
+.navbar-mini {
+	height: 45px;
+
+	.logo {
+		margin-left: 10px;
+
+		img {
+			width: 41px;
+			height: 41px;
+			margin: 2px 0;
+		}
+	}
+
 }
 
 .small-link {
