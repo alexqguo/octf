@@ -1,8 +1,7 @@
 -- OCTF (change the title to something more interesting)
 
 -- VIDEOS!!!!!
-	-- videos page with a list of embedded youtube clips?
-	-- http://www.sitepoint.com/youtube-rails/
+	-- clicking a video opens a modal with video embedded instead of linking to youtube
 
 -- athlete.rb
 	-- remove graduating class- it's useless
