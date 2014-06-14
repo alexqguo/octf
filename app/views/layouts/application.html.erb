@@ -19,7 +19,7 @@
 
 				<select class="chosen-select">
 					<% Athlete.all.each do |athlete| %>
-						<option value="<%= athlete.id %>"><%= athlete.name %></option>
+						<option value="<%= athlete.slug %>"><%= athlete.name %></option>
 					<% end %>
 				</select>
 
