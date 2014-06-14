@@ -7,14 +7,20 @@ $(function () {
 	var currentNavlistTab = $(".navlist-item[data-tab=" + location + "]");
 	currentNavlistTab.addClass("selected");
 
+	if (window.innerWidth < 750) {
+		showSmallNavbar();
+	} else {
+		$("#navlistMini").hide();
+	}
+
 	function showSmallNavbar() {
-		$(".navbar").hide();
-		$(".navbar-mini").show();
+		$("#navlistLarge").hide();
+		$("#navlistMini").show();
 	}
 
 	function showBigNavbar() {
-		$(".navbar").show();
-		$(".navbar-mini").hide();
+		$("#navlistLarge").show();
+		$("#navlistMini").hide();
 	}
 
 	$(window).resize(function () {
@@ -23,5 +29,12 @@ $(function () {
 		} else {
 			showBigNavbar();
 		}
+
+		$(".header-wrap").css("left: 0");
+	});
+
+	$(".menu-button").click(function (event) {
+		event.preventDefault();
+		$("#droplist").toggle();
 	});
 });
