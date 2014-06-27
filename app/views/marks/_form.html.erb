@@ -10,7 +10,7 @@
 	<img src="/assets/url_code.png">
 </p>
 
-<form action="<%= action %>" method="POST">
+<form class="update-marks-form" action="<%= action %>" method="POST">
 	
 	<%= auth_token %>
 	<input type="hidden" name="_method" value="<%= method %>">
@@ -23,3 +23,11 @@
 	<input type="submit" value="<%= message %>">
 	
 </form>
+
+<script>
+$(function () {
+	$(".update-marks-form").submit(function (event) {
+		$(".modal, .loading-modal").toggle();
+	});
+});
+</script>
