@@ -11,7 +11,7 @@
 html, body, header, nav, h1, h3, ul, li, div, footer, form, input, a, select, label, textarea {
 	border: 0;
 	margin: 0;
-  	padding: 0;
+	padding: 0;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -21,11 +21,11 @@ body {
 	font-family: 'Roboto', Arial, sans-serif;
 }
 
-#container {
-	height: auto;
-	min-height: 100%;
-	max-width: 1000px;
-	margin: 10px auto;
+.container {
+	min-width: 900px;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 20px;
 	overflow: scroll;
 }
 
@@ -36,7 +36,7 @@ body {
 }
 
 .box {
-	width: 950px;
+	margin-bottom: 20px;
 	background: $dark-white;
 	padding: 20px;
 	border: 1px solid $light-gray;
@@ -216,14 +216,14 @@ form {
 	}
 }
 
-header nav ul {
-	list-style-type: none;
-}
-
 .header-wrap {
-	width: 100%;
 	background: $white;
+	min-width: 940px;
 	margin-bottom: 20px;
+
+	nav ul {
+		list-style-type: none;		
+	}
 }
 
 .navbar {

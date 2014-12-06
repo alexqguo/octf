@@ -23,15 +23,15 @@ $(function () {
 		$("#navlistMini").hide();
 	}
 
-	$(window).resize(function () {
-		if (window.innerWidth < 750) {
-			showSmallNavbar();
-		} else {
-			showBigNavbar();
-		}
+	// $(window).resize(function () {
+	// 	if (window.innerWidth < 750) {
+	// 		showSmallNavbar();
+	// 	} else {
+	// 		showBigNavbar();
+	// 	}
 
-		$(".header-wrap").css("left: 0");
-	});
+	// 	$(".header-wrap").css("left: 0");
+	// });
 
 	$(".menu-button").click(function (event) {
 		event.preventDefault();
