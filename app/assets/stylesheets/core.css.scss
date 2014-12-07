@@ -252,7 +252,7 @@ form {
 		}
 	}
 
-	#navlistLarge {
+	#navlist {
 		float: right;
 
 		.navlist-item {
@@ -307,26 +307,6 @@ form {
 				a {
 					border-bottom: 2px solid $crimson;
 				}
-			}
-		}
-	}
-}
-
-#navlistMini {
-	float: right;
-
-	.navlist-item {
-		float: left;
-		height: 45px;
-		width: 45px;
-		margin-right: 10px;
-
-		.menu-button {
-			position: relative;
-
-			img {
-				width: 35px;
-				margin: 5px 0 0 5px;
 			}
 		}
 	}

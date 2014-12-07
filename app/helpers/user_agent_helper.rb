@@ -10,4 +10,8 @@ module UserAgentHelper
 			"desktop"
 		end
 	end
+
+	def mobile?
+		ua_type == "mobile"
+	end
 end

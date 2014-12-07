@@ -8,53 +8,13 @@
 	<%= javascript_include_tag "application" %>
 	<%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= mobile? ? 'mobile' : '' %>">
 	
-		
-	<header class="header-wrap">
-		<nav class="navbar group container">
-			<a class="logo" href="<%= root_url %>"><img src="/assets/logo.png"></a>
-			<form class="chosen-form" action="" method="GET">
-				<%= auth_token %>
-
-				<select class="chosen-select">
-					<% Athlete.all.each do |athlete| %>
-						<option value="<%= athlete.slug %>"><%= athlete.name %></option>
-					<% end %>
-				</select>
-
-				<input type="submit" value="Go">
-
-			</form>
-			
-		
-			<ul id="navlistLarge" class="navlist">
-				<li class="navlist-item" data-tab="home"><a href="<%= home_url %>">Home</a></li>
-				<li class="navlist-item" data-tab="athletes"><a href="<%= athletes_url %>">Athletes</a></li>
-				<li class="navlist-item" data-tab="records"><a href="<%= records_url %>">School Records</a></li>
-				<li class="navlist-item" data-tab="videos"><a href="<%= videos_url %>">Videos</a></li>
-				<% if is_admin? %>
-					<li class="navlist-item"><%= button_to "Sign Out", session_url, method: :delete %></li>
-				<% end %>
-			</ul>
-			<ul id="navlistMini" class="">
-				<li class="navlist-item">
-					<a class="menu-button" href="#">
-						<img src="/assets/menu-icon.png">
-						<ul id="droplist" class="invisible">
-							<li class="droplist-item"><a href="<%= home_url %>">Home</a></li>
-							<li class="droplist-item"><a href="<%= athletes_url %>">Athletes</a></li>
-							<li class="droplist-item"><a href="<%= records_url %>">School Records</a></li>
-							<li class="droplist-item"><a href="<%= videos_url %>">Videos</a></li>
-							<% if is_admin? %>
-								<li class="droplist-item"><%= button_to "Sign Out", session_url, method: :delete %></li>
-							<% end %>
-						</ul>
-					</a>
-				</li>
-			</ul>
-		</nav>
-	</header>
+	<% if mobile? %>
+		<%= render "navbars/mobile" %>
+	<% else %>
+		<%= render "navbars/desktop" %>
+	<% end %>
 	
 	<div class="container">
 
