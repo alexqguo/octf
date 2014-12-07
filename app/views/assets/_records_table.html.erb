@@ -8,7 +8,9 @@
 			<th>Mark</th>
 			<th>Record Holder</th>
 			<th>Date Set</th>
-			<th>Notes</th>
+			<% if !mobile? %>
+				<th>Notes</th>
+			<% end %>
 		</tr>
 		<% recs.each do |rec| %>
 			<tr class="table-row">
@@ -22,7 +24,9 @@
 				<td><%= rec.mark %></td>
 				<td><%= rec.record_holder %></td>
 				<td><%= rec.date_set %></td>
-				<td><%= rec.notes %></td>
+				<% if !mobile? %>
+					<td><%= rec.notes %></td>
+				<% end %>
 			</tr>
 		<% end %>
 	</table>
