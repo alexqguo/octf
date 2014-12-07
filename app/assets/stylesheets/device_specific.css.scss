@@ -1,7 +1,6 @@
 @import "vars";
 
 body.mobile {
-
 	overflow-x: hidden;
 
 	.box {
@@ -81,6 +80,16 @@ body.mobile {
 }
 
 body.desktop {
+	.box {
+		margin-bottom: 20px;
+		background: $dark-white;
+		padding: 20px;
+		border: 1px solid $light-gray;
+		border-radius: 4px;
+
+		box-shadow: 0px 0px 1px $light-gray;
+	}
+
 	.header-wrap {
 		background: $white;
 		min-width: 940px;
