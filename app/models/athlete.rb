@@ -86,7 +86,7 @@ class Athlete < ActiveRecord::Base
         }
       end
       
-      data[event_name] = mark_hash
+      data[event_name.gsub(" ", "-").gsub(",", "")] = mark_hash
     end
     
     data
