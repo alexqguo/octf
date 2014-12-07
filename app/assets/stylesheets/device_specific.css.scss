@@ -1,7 +1,21 @@
-/* Mobile only styles go here */
 @import "vars";
 
 body.mobile {
+
+	overflow-x: hidden;
+
+	.box {
+		margin-bottom: 20px;
+		background: $dark-white;
+		padding: 10px;
+	}
+
+	.email-input {
+		input, textarea {
+			width: 90%;
+		}
+	}
+
 	.header-wrap {
 		background: $white;
 		margin-bottom: 20px;
