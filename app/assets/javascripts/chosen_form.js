@@ -13,4 +13,11 @@ $(function () {
 			window.location.href = "/athletes/" + athlete_id;
 		}
 	});
+
+	$(".chosen-form").keydown(function(event) {
+    if (event.which == 13) {
+        event.preventDefault();
+        $(".chosen-form").submit();
+    }
+	});
 });

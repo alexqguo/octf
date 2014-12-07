@@ -227,7 +227,6 @@ form {
 }
 
 .navbar {
-	height: 45px;
 
 	.logo {
 		float: left;
@@ -235,16 +234,20 @@ form {
 
 		img {
 			width: 41px;
-			height: 41px;
-			margin: 2px 0;
+			margin: 3px 0 0;
 		}
 	}
 
 	.chosen-form {
-		float: left;
+		float:left;
 		margin: 13px 0 0 10px;
 
+		.chosen-container {
+			position: absolute;
+		}
+
 		input[type="submit"] {
+			margin-left: 205px;
 			color: $black;
 		}
 	}
