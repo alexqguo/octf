@@ -8,7 +8,7 @@ $(function () {
 		function createGraph(key) {
 			generatedGraphs[key] = true;
 
-			$("#" + key).highcharts({
+			$("#" + key.replace(" ", "-").replace(",", "")).highcharts({
 				chart: { 
 					type: "line",
 					backgroundColor: "#FEFEFE"
@@ -79,7 +79,7 @@ $(function () {
 			currentGraph = $("#" + eventId);
 
 			if (!generatedGraphs[eventId]) {
-				createGraph(eventId);
+				createGraph(eventId.replace("-", " "));
 			}
 		});
 });
