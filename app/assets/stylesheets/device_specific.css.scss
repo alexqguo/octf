@@ -2,15 +2,71 @@
 @import "vars";
 
 body.mobile {
-	.navbar {
-		.logo {
+	.header-wrap {
+		background: $white;
+		margin-bottom: 20px;
+	}
+
+	.header-menu {
+		display: none;
+		border-top: 1px solid $gray;
+		padding: 10px 20px;
+
+		#navlist {
 			display: block;
-			margin: 0 auto;
+			margin-bottom: 10px;
+
+			.navlist-item {
+				float: left;
+				color: $black;
+				margin-right: 20px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+
+		.chosen-form {
+			display: block;
+			input[type="submit"] {
+				color: $black;
+			}
+		}
+
+	}
+
+	.navbar {
+		text-align: center;
+
+		.hamburger {
+			position: absolute;
+			left: 20px;
+			top: 8px;
+
+			img {
+				width: 30px;
+			}
+		}
+
+		.logo img {
+			width: 41px;
+			margin-top: 3px;
+		}
+
+		.search {
+			position: absolute;
+			right: 20px;
+			top: 8px;
+
+			img {
+				width: 30px;
+			}
 		}
 	}
 }
 
-.desktop {
+body.desktop {
 	.header-wrap {
 		background: $white;
 		min-width: 940px;

@@ -7,4 +7,8 @@ $(function () {
 	var currentNavlistTab = $(".navlist-item[data-tab=" + location + "]");
 	currentNavlistTab.addClass("selected");
 
+	$(".hamburger").click(function() {
+		$(".header-menu").toggle();
+	});
+
 });
