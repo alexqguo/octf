@@ -12,6 +12,6 @@ module UserAgentHelper
 	end
 
 	def mobile?
-		ua_type == "mobile"
+		ua_type == "mobile" || params[:mobile]
 	end
 end

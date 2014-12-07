@@ -1,5 +1,6 @@
 <header class="header-wrap">
 	<nav class="navbar group container">
+		<a class="hamburger" href="javascript:void(0);"><img src="/assets/hamburger.png"></a>
 		<a class="logo" href="<%= root_url %>"><img src="/assets/logo.png"></a>
 		<form class="chosen-form" action="" method="GET">
 			<%= auth_token %>
@@ -13,8 +14,8 @@
 			<input type="submit" value="Go">
 		</form>
 		
-	
-		<ul id="navlistLarge" class="navlist">
+<!-- 	
+		<ul id="navlist" class="navlist">
 			<li class="navlist-item" data-tab="home"><a href="<%= home_url %>">Home</a></li>
 			<li class="navlist-item" data-tab="athletes"><a href="<%= athletes_url %>">Athletes</a></li>
 			<li class="navlist-item" data-tab="records"><a href="<%= records_url %>">School Records</a></li>
@@ -22,6 +23,6 @@
 			<% if is_admin? %>
 				<li class="navlist-item"><%= button_to "Sign Out", session_url, method: :delete %></li>
 			<% end %>
-		</ul>
+		</ul> -->
 	</nav>
 </header>
