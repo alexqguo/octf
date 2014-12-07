@@ -51,8 +51,6 @@
 	$(function () {
 		var athlete_data;
 		var isMobile = screen.width <= 480;
-		// var containerWidth = $($("#container")[0]).width();
-		var containerWidth = 938;
 		var currentGraph = $($(".graph").not(".invisible")[0]);
 
 		$.get("/athletes/<%=raw @athlete.id %>/graph_data", function (data) {
@@ -63,8 +61,7 @@
 				$("#" + key.replace(" ", "-").replace(",", "")).highcharts({
 					chart: { 
 						type: "line",
-						backgroundColor: "#FEFEFE",
-						width: containerWidth
+						backgroundColor: "#FEFEFE"
 					},
 					title: { text: key },
 					tooltip: {
