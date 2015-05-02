@@ -8,7 +8,7 @@ module LookupHelper
   def get_data(url)
     event_list = []
   
-    doc = Nokogiri::HTML(open(url))
+    doc = Nokogiri::HTML(open(url, 'User-Agent' => 'firefox'))
     tables = doc.xpath("//table") # this is a Nokogiri::XML::Element
     first = tables[2].inner_text.split("\n")
                      .map { |el| el.strip }
