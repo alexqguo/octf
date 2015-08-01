@@ -98,7 +98,7 @@ class Athlete < ActiveRecord::Base
   end
 
   def update_url_code(url)
-    self.url = "http://www.tfrrs.org/athletes/#{url}.html"
+    self.url = "https://www.tfrrs.org/athletes/#{url}.html"
     self.save!
   end
   
